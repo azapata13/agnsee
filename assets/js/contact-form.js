@@ -1,14 +1,14 @@
 /**
- * Agancy — soumission AJAX du formulaire de contact vers FluentCRM.
+ * Agnsee — soumission AJAX du formulaire de contact vers FluentCRM.
  */
 ( function () {
 	'use strict';
 
-	if ( typeof agancyContact === 'undefined' ) {
+	if ( typeof agnseeContact === 'undefined' ) {
 		return;
 	}
 
-	var form = document.getElementById( 'agancy-contact-form' );
+	var form = document.getElementById( 'agnsee-contact-form' );
 	var messageBox = document.getElementById( 'contact-form-message' );
 	var submitBtn = document.getElementById( 'contact-submit-btn' );
 
@@ -28,10 +28,10 @@
 		submitBtn.disabled = true;
 
 		var formData = new FormData( form );
-		formData.append( 'action', 'agancy_submit_contact' );
-		formData.append( 'nonce', agancyContact.nonce );
+		formData.append( 'action', 'agnsee_submit_contact' );
+		formData.append( 'nonce', agnseeContact.nonce );
 
-		fetch( agancyContact.ajaxUrl, {
+		fetch( agnseeContact.ajaxUrl, {
 			method: 'POST',
 			credentials: 'same-origin',
 			body: formData,

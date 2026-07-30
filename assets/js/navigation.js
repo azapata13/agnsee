@@ -1,5 +1,5 @@
 /**
- * Agancy — navigation sticky, hamburger, sous-menu mobile.
+ * Agnsee — navigation sticky, hamburger, sous-menu mobile.
  */
 ( function () {
 	'use strict';

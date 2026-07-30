@@ -5,8 +5,8 @@
 
 get_header();
 
-$agancy_preselect = isset( $_GET['produit'] ) ? sanitize_text_field( wp_unslash( $_GET['produit'] ) ) : '';
-$agancy_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Aranet' );
+$agnsee_preselect = isset( $_GET['produit'] ) ? sanitize_text_field( wp_unslash( $_GET['produit'] ) ) : '';
+$agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Aranet' );
 ?>
 
 <main id="main-content" class="site-main">
@@ -32,7 +32,7 @@ $agancy_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Aranet' );
 				<div>
 					<div id="contact-form-message" style="display:none;"></div>
 
-					<form id="agancy-contact-form" novalidate>
+					<form id="agnsee-contact-form" novalidate>
 						<div class="form-field" style="position:absolute;left:-9999px;" aria-hidden="true">
 							<label for="website">Website</label>
 							<input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -72,10 +72,10 @@ $agancy_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Aranet' );
 							</label>
 							<select id="product" name="product">
 								<option value="">
-									<?php echo esc_html( agancy_t( 'Sélectionner...', 'Select...' ) ); ?>
+									<?php echo esc_html( agnsee_t( 'Sélectionner...', 'Select...' ) ); ?>
 								</option>
-								<?php foreach ( $agancy_products as $product ) : ?>
-									<option value="<?php echo esc_attr( $product ); ?>" <?php selected( $agancy_preselect, $product ); ?>>
+								<?php foreach ( $agnsee_products as $product ) : ?>
+									<option value="<?php echo esc_attr( $product ); ?>" <?php selected( $agnsee_preselect, $product ); ?>>
 										<?php echo esc_html( $product ); ?>
 									</option>
 								<?php endforeach; ?>
@@ -101,7 +101,7 @@ $agancy_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Aranet' );
 
 				<div>
 					<h2><span class="lang-fr">Coordonnées</span><span class="lang-en">Direct contact</span></h2>
-					<p><a href="mailto:info@agancy.ca">info@agancy.ca</a></p>
+					<p><a href="mailto:info@agnsee.ca">info@agnsee.ca</a></p>
 					<hr class="divider">
 					<h3><span class="lang-fr">Pourquoi nous contacter</span><span class="lang-en">Why reach out</span></h3>
 					<ul style="color:var(--color-text-secondary);">

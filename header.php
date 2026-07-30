@@ -1,8 +1,8 @@
 <?php
 /**
- * En-tête du thème Agancy — nav sticky, toggle FR/EN, menu mobile.
+ * En-tête du thème Agnsee — nav sticky, toggle FR/EN, menu mobile.
  */
-$agancy_lang = agancy_get_lang();
+$agnsee_lang = agnsee_get_lang();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -19,7 +19,7 @@ $agancy_lang = agancy_get_lang();
 [data-lang="en"] .lang-fr{display:none}
 </style>
 </head>
-<body <?php body_class(); ?> data-lang="<?php echo esc_attr( $agancy_lang ); ?>">
+<body <?php body_class(); ?> data-lang="<?php echo esc_attr( $agnsee_lang ); ?>">
 <?php wp_body_open(); ?>
 
 <a class="skip-link" href="#main-content">
@@ -36,11 +36,11 @@ $agancy_lang = agancy_get_lang();
 				<?php if ( has_custom_logo() ) : ?>
 					<?php the_custom_logo(); ?>
 				<?php else : ?>
-					Agancy
+					Agnsee
 				<?php endif; ?>
 			</a>
 
-			<nav class="main-nav" aria-label="<?php echo esc_attr( agancy_t( 'Menu principal', 'Primary menu' ) ); ?>">
+			<nav class="main-nav" aria-label="<?php echo esc_attr( agnsee_t( 'Menu principal', 'Primary menu' ) ); ?>">
 				<ul>
 					<li>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -100,15 +100,15 @@ $agancy_lang = agancy_get_lang();
 
 			<div class="header-actions">
 				<div class="lang-toggle" id="lang-toggle" role="group" aria-label="Langue / Language">
-					<button type="button" data-lang-btn="fr" class="<?php echo 'fr' === $agancy_lang ? 'is-active' : ''; ?>">FR</button>
-					<button type="button" data-lang-btn="en" class="<?php echo 'en' === $agancy_lang ? 'is-active' : ''; ?>">EN</button>
+					<button type="button" data-lang-btn="fr" class="<?php echo 'fr' === $agnsee_lang ? 'is-active' : ''; ?>">FR</button>
+					<button type="button" data-lang-btn="en" class="<?php echo 'en' === $agnsee_lang ? 'is-active' : ''; ?>">EN</button>
 				</div>
 
 				<a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 					<span class="lang-fr">Nous contacter</span><span class="lang-en">Contact us</span>
 				</a>
 
-				<button class="hamburger" id="hamburger-toggle" aria-label="<?php echo esc_attr( agancy_t( 'Ouvrir le menu', 'Open menu' ) ); ?>" aria-expanded="false" aria-controls="mobile-nav">
+				<button class="hamburger" id="hamburger-toggle" aria-label="<?php echo esc_attr( agnsee_t( 'Ouvrir le menu', 'Open menu' ) ); ?>" aria-expanded="false" aria-controls="mobile-nav">
 					<span></span><span></span><span></span>
 				</button>
 			</div>

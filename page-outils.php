@@ -3,12 +3,12 @@
  * Template Name: Outils
  *
  * Grille des outils techniques. Architecture extensible : ajouter un outil =
- * ajouter une entrée dans $agancy_tools + un fichier page-{slug}.php.
+ * ajouter une entrée dans $agnsee_tools + un fichier page-{slug}.php.
  */
 
 get_header();
 
-$agancy_tools = array(
+$agnsee_tools = array(
 	array(
 		'slug' => 'suntracker',
 		'name' => 'SunTracker',
@@ -43,7 +43,7 @@ $agancy_tools = array(
 	<section class="section" style="padding-top:0;">
 		<div class="container">
 			<div class="grid grid-3">
-				<?php foreach ( $agancy_tools as $tool ) : ?>
+				<?php foreach ( $agnsee_tools as $tool ) : ?>
 					<a class="card" href="<?php echo esc_url( home_url( '/outils/' . $tool['slug'] . '/' ) ); ?>">
 						<div class="card-icon">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>

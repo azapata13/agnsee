@@ -4,7 +4,7 @@
 			<div class="footer-grid">
 
 				<div class="footer-col">
-					<div class="site-logo" style="color:#fff;margin-bottom:1rem;">Agancy</div>
+					<div class="site-logo" style="color:#fff;margin-bottom:1rem;">Agnsee</div>
 					<p style="max-width:280px;">
 						<span class="lang-fr">Agent manufacturier représentant des produits techniques pour l'horticulture protégée au Canada.</span>
 						<span class="lang-en">Manufacturer's representative for technical products serving protected horticulture across Canada.</span>
@@ -46,7 +46,7 @@
 						<?php dynamic_sidebar( 'footer-4' ); ?>
 					<?php else : ?>
 						<ul>
-							<li><a href="mailto:info@agancy.ca">info@agancy.ca</a></li>
+							<li><a href="mailto:info@agnsee.ca">info@agnsee.ca</a></li>
 							<li>
 								<span class="lang-fr">Canada</span><span class="lang-en">Canada</span>
 							</li>
@@ -63,13 +63,13 @@
 
 			<div class="footer-bottom">
 				<div>
-					&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> Agancy.
+					&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> Agnsee.
 					<span class="lang-fr">Tous droits réservés.</span><span class="lang-en">All rights reserved.</span>
 				</div>
 
 				<div class="lang-toggle" role="group" aria-label="Langue / Language">
-					<button type="button" data-lang-btn="fr" class="<?php echo 'fr' === agancy_get_lang() ? 'is-active' : ''; ?>">FR</button>
-					<button type="button" data-lang-btn="en" class="<?php echo 'en' === agancy_get_lang() ? 'is-active' : ''; ?>">EN</button>
+					<button type="button" data-lang-btn="fr" class="<?php echo 'fr' === agnsee_get_lang() ? 'is-active' : ''; ?>">FR</button>
+					<button type="button" data-lang-btn="en" class="<?php echo 'en' === agnsee_get_lang() ? 'is-active' : ''; ?>">EN</button>
 				</div>
 			</div>
 

@@ -12,12 +12,12 @@ get_header();
 		<div class="container">
 			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Qui nous sommes</span><span class="lang-en">Who we are</span></div>
 			<h1>
-				<span class="lang-fr">À propos d'Agancy</span>
-				<span class="lang-en">About Agancy</span>
+				<span class="lang-fr">À propos d'Agnsee</span>
+				<span class="lang-en">About Agnsee</span>
 			</h1>
 			<p class="hero-lead">
-				<span class="lang-fr">Agancy est une agence manufacturière canadienne dédiée à l'horticulture protégée.</span>
-				<span class="lang-en">Agancy is a Canadian manufacturer's representative agency dedicated to protected horticulture.</span>
+				<span class="lang-fr">Agnsee est une agence manufacturière canadienne dédiée à l'horticulture protégée.</span>
+				<span class="lang-en">Agnsee is a Canadian manufacturer's representative agency dedicated to protected horticulture.</span>
 			</p>
 		</div>
 	</section>
@@ -35,8 +35,8 @@ get_header();
 				<div>
 					<h2><span class="lang-fr">Le modèle agent manufacturier</span><span class="lang-en">The manufacturer's rep model</span></h2>
 					<p>
-						<span class="lang-fr">En tant qu'agent manufacturier, Agancy représente des fabricants sélectionnés sans jamais devenir propriétaire des produits vendus. Nous facilitons la mise en relation, le support technique et la distribution — sans commerce en ligne ni transaction directe.</span>
-						<span class="lang-en">As a manufacturer's representative, Agancy represents selected manufacturers without ever taking ownership of the products sold. We facilitate introductions, technical support and distribution — with no online commerce or direct transactions.</span>
+						<span class="lang-fr">En tant qu'agent manufacturier, Agnsee représente des fabricants sélectionnés sans jamais devenir propriétaire des produits vendus. Nous facilitons la mise en relation, le support technique et la distribution — sans commerce en ligne ni transaction directe.</span>
+						<span class="lang-en">As a manufacturer's representative, Agnsee represents selected manufacturers without ever taking ownership of the products sold. We facilitate introductions, technical support and distribution — with no online commerce or direct transactions.</span>
 					</p>
 				</div>
 			</div>

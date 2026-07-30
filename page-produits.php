@@ -5,7 +5,7 @@
 
 get_header();
 
-$agancy_products = array(
+$agnsee_products = array(
 	array(
 		'slug'    => 'safegrow-ag',
 		'segment' => 'irrigation',
@@ -36,7 +36,7 @@ $agancy_products = array(
 	),
 );
 
-$agancy_segments = array(
+$agnsee_segments = array(
 	'all'           => array( 'fr' => 'Tous', 'en' => 'All' ),
 	'irrigation'    => array( 'fr' => "Traitement d'irrigation", 'en' => 'Irrigation treatment' ),
 	'biostimulants' => array( 'fr' => 'Biostimulants', 'en' => 'Biostimulants' ),
@@ -64,7 +64,7 @@ $agancy_segments = array(
 		<div class="container">
 
 			<div class="hero-actions" style="justify-content:flex-start;margin-bottom:2rem;flex-wrap:wrap;" id="segment-filters">
-				<?php foreach ( $agancy_segments as $key => $label ) : ?>
+				<?php foreach ( $agnsee_segments as $key => $label ) : ?>
 					<button type="button" class="btn btn-sm <?php echo 'all' === $key ? 'btn-primary' : 'btn-secondary'; ?>" data-segment-filter="<?php echo esc_attr( $key ); ?>">
 						<span class="lang-fr"><?php echo esc_html( $label['fr'] ); ?></span>
 						<span class="lang-en"><?php echo esc_html( $label['en'] ); ?></span>
@@ -73,11 +73,11 @@ $agancy_segments = array(
 			</div>
 
 			<div class="grid grid-4" id="products-grid">
-				<?php foreach ( $agancy_products as $product ) : ?>
+				<?php foreach ( $agnsee_products as $product ) : ?>
 					<a class="card" data-segment="<?php echo esc_attr( $product['segment'] ); ?>" href="<?php echo esc_url( home_url( '/produits/' . $product['slug'] . '/' ) ); ?>">
 						<div class="badge">
-							<span class="lang-fr"><?php echo esc_html( $agancy_segments[ $product['segment'] ]['fr'] ); ?></span>
-							<span class="lang-en"><?php echo esc_html( $agancy_segments[ $product['segment'] ]['en'] ); ?></span>
+							<span class="lang-fr"><?php echo esc_html( $agnsee_segments[ $product['segment'] ]['fr'] ); ?></span>
+							<span class="lang-en"><?php echo esc_html( $agnsee_segments[ $product['segment'] ]['en'] ); ?></span>
 						</div>
 						<h4 style="margin-top:0.75rem;"><?php echo esc_html( $product['name'] ); ?></h4>
 						<p>
@@ -89,8 +89,8 @@ $agancy_segments = array(
 			</div>
 
 			<p class="form-note" style="margin-top:2rem;">
-				<span class="lang-fr">Agancy agit à titre d'agent manufacturier : aucune commande n'est traitée en ligne. Contactez-nous pour toute demande d'achat ou de distribution.</span>
-				<span class="lang-en">Agancy acts as a manufacturer's representative: no orders are processed online. Contact us for any purchase or distribution inquiry.</span>
+				<span class="lang-fr">Agnsee agit à titre d'agent manufacturier : aucune commande n'est traitée en ligne. Contactez-nous pour toute demande d'achat ou de distribution.</span>
+				<span class="lang-en">Agnsee acts as a manufacturer's representative: no orders are processed online. Contact us for any purchase or distribution inquiry.</span>
 			</p>
 
 		</div>

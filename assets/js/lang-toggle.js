@@ -1,10 +1,10 @@
 /**
- * Agancy — bascule FR/EN via cookie agancy_lang.
+ * Agnsee — bascule FR/EN via cookie agnsee_lang.
  */
 ( function () {
 	'use strict';
 
-	if ( typeof agancyLang === 'undefined' ) {
+	if ( typeof agnseeLang === 'undefined' ) {
 		return;
 	}
 
@@ -16,18 +16,18 @@
 
 		var expires = new Date();
 		expires.setFullYear( expires.getFullYear() + 1 );
-		document.cookie = 'agancy_lang=' + lang + '; expires=' + expires.toUTCString() + '; path=/';
+		document.cookie = 'agnsee_lang=' + lang + '; expires=' + expires.toUTCString() + '; path=/';
 
 		buttons.forEach( function ( btn ) {
 			btn.classList.toggle( 'is-active', btn.getAttribute( 'data-lang-btn' ) === lang );
 		} );
 
 		var formData = new FormData();
-		formData.append( 'action', 'agancy_set_lang' );
-		formData.append( 'nonce', agancyLang.nonce );
+		formData.append( 'action', 'agnsee_set_lang' );
+		formData.append( 'nonce', agnseeLang.nonce );
 		formData.append( 'lang', lang );
 
-		fetch( agancyLang.ajaxUrl, {
+		fetch( agnseeLang.ajaxUrl, {
 			method: 'POST',
 			credentials: 'same-origin',
 			body: formData,
