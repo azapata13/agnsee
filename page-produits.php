@@ -74,7 +74,11 @@ $agnsee_segments = array(
 
 			<div class="grid grid-4" id="products-grid">
 				<?php foreach ( $agnsee_products as $product ) : ?>
+					<?php $agnsee_product_img = agnsee_image_url( 'products/' . $product['slug'] ); ?>
 					<a class="card" data-segment="<?php echo esc_attr( $product['segment'] ); ?>" href="<?php echo esc_url( home_url( '/produits/' . $product['slug'] . '/' ) ); ?>">
+						<?php if ( $agnsee_product_img ) : ?>
+							<img src="<?php echo esc_url( $agnsee_product_img ); ?>" alt="<?php echo esc_attr( $product['name'] ); ?>" style="width:100%;height:140px;object-fit:cover;border-radius:var(--radius-sm);margin-bottom:0.75rem;">
+						<?php endif; ?>
 						<div class="badge">
 							<span class="lang-fr"><?php echo esc_html( $agnsee_segments[ $product['segment'] ]['fr'] ); ?></span>
 							<span class="lang-en"><?php echo esc_html( $agnsee_segments[ $product['segment'] ]['en'] ); ?></span>

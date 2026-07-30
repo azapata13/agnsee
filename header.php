@@ -33,11 +33,18 @@ $agnsee_lang = agnsee_get_lang();
 		<div class="header-inner">
 
 			<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<?php if ( has_custom_logo() ) : ?>
-					<?php the_custom_logo(); ?>
-				<?php else : ?>
-					Agnsee
-				<?php endif; ?>
+				<?php
+				$agnsee_logo_url = agnsee_image_url( 'logo' );
+				if ( has_custom_logo() ) :
+					the_custom_logo();
+				elseif ( $agnsee_logo_url ) :
+					?>
+					<img src="<?php echo esc_url( $agnsee_logo_url ); ?>" alt="Agnsee" style="height:36px;width:auto;">
+					<?php
+				else :
+					echo 'Agnsee';
+				endif;
+				?>
 			</a>
 
 			<nav class="main-nav" aria-label="<?php echo esc_attr( agnsee_t( 'Menu principal', 'Primary menu' ) ); ?>">

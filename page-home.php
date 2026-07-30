@@ -166,9 +166,14 @@ get_header();
 			</div>
 			<div class="grid grid-4" style="align-items:center;">
 				<?php for ( $i = 1; $i <= 4; $i++ ) : ?>
+					<?php $agnsee_partner_logo = agnsee_image_url( 'partners/partner-' . $i ); ?>
 					<div class="card text-center" style="color:var(--color-text-secondary);font-weight:600;">
-						<span class="lang-fr">Partenaire <?php echo esc_html( $i ); ?></span>
-						<span class="lang-en">Partner <?php echo esc_html( $i ); ?></span>
+						<?php if ( $agnsee_partner_logo ) : ?>
+							<img src="<?php echo esc_url( $agnsee_partner_logo ); ?>" alt="<?php echo esc_attr( sprintf( 'Partenaire %d', $i ) ); ?>" style="max-height:36px;width:auto;margin:0 auto;filter:grayscale(1);opacity:0.7;">
+						<?php else : ?>
+							<span class="lang-fr">Partenaire <?php echo esc_html( $i ); ?></span>
+							<span class="lang-en">Partner <?php echo esc_html( $i ); ?></span>
+						<?php endif; ?>
 					</div>
 				<?php endfor; ?>
 			</div>

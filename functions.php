@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'AGANCY_VERSION', '1.0.0' );
-define( 'AGANCY_LANG_COOKIE', 'agnsee_lang' );
-define( 'AGANCY_SALES_EMAIL', get_option( 'admin_email' ) );
+define( 'AGNSEE_VERSION', '1.0.0' );
+define( 'AGNSEE_LANG_COOKIE', 'agnsee_lang' );
+define( 'AGNSEE_SALES_EMAIL', get_option( 'admin_email' ) );
 
 /* ==========================================================================
    1. SETUP DU THÈME
@@ -40,11 +40,11 @@ add_action( 'after_setup_theme', 'agnsee_setup' );
    ========================================================================== */
 function agnsee_enqueue_assets() {
 	wp_enqueue_style( 'agnsee-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', array(), null );
-	wp_enqueue_style( 'agnsee-style', get_stylesheet_uri(), array(), AGANCY_VERSION );
+	wp_enqueue_style( 'agnsee-style', get_stylesheet_uri(), array(), AGNSEE_VERSION );
 
-	wp_enqueue_script( 'agnsee-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), AGANCY_VERSION, true );
-	wp_enqueue_script( 'agnsee-lang-toggle', get_template_directory_uri() . '/assets/js/lang-toggle.js', array(), AGANCY_VERSION, true );
-	wp_enqueue_script( 'agnsee-contact-form', get_template_directory_uri() . '/assets/js/contact-form.js', array(), AGANCY_VERSION, true );
+	wp_enqueue_script( 'agnsee-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), AGNSEE_VERSION, true );
+	wp_enqueue_script( 'agnsee-lang-toggle', get_template_directory_uri() . '/assets/js/lang-toggle.js', array(), AGNSEE_VERSION, true );
+	wp_enqueue_script( 'agnsee-contact-form', get_template_directory_uri() . '/assets/js/contact-form.js', array(), AGNSEE_VERSION, true );
 
 	wp_localize_script( 'agnsee-lang-toggle', 'agnseeLang', array(
 		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
@@ -96,8 +96,8 @@ add_action( 'widgets_init', 'agnsee_widgets_init' );
  * Retourne la langue courante ('fr' ou 'en'). Défaut : fr.
  */
 function agnsee_get_lang() {
-	if ( isset( $_COOKIE[ AGANCY_LANG_COOKIE ] ) && in_array( $_COOKIE[ AGANCY_LANG_COOKIE ], array( 'fr', 'en' ), true ) ) {
-		return sanitize_key( $_COOKIE[ AGANCY_LANG_COOKIE ] );
+	if ( isset( $_COOKIE[ AGNSEE_LANG_COOKIE ] ) && in_array( $_COOKIE[ AGNSEE_LANG_COOKIE ], array( 'fr', 'en' ), true ) ) {
+		return sanitize_key( $_COOKIE[ AGNSEE_LANG_COOKIE ] );
 	}
 	return 'fr';
 }
@@ -128,7 +128,7 @@ function agnsee_ajax_set_lang() {
 		$lang = 'fr';
 	}
 
-	setcookie( AGANCY_LANG_COOKIE, $lang, time() + YEAR_IN_SECONDS, '/' );
+	setcookie( AGNSEE_LANG_COOKIE, $lang, time() + YEAR_IN_SECONDS, '/' );
 
 	wp_send_json_success( array( 'lang' => $lang ) );
 }
@@ -216,7 +216,7 @@ function agnsee_ajax_submit_contact() {
 		$message
 	);
 
-	wp_mail( AGANCY_SALES_EMAIL, $subject, $body );
+	wp_mail( AGNSEE_SALES_EMAIL, $subject, $body );
 
 	wp_send_json_success( array(
 		'message' => agnsee_t( 'Merci ! Votre message a été envoyé, nous vous contacterons rapidement.', 'Thank you! Your message has been sent, we will contact you shortly.' ),
@@ -244,3 +244,25 @@ function agnsee_excerpt_length( $length ) {
 	return 24;
 }
 add_filter( 'excerpt_length', 'agnsee_excerpt_length' );
+
+/* ==========================================================================
+   7. IMAGES — REPLI AUTOMATIQUE
+   ========================================================================== */
+
+/**
+ * Retourne l'URL d'une image du thème si le fichier existe dans
+ * assets/images/{$relative}, sinon false. Essaie plusieurs extensions.
+ *
+ * Permet de déposer les images directement sur le serveur (FTP / File
+ * Manager cPanel) sans toucher au code : dès que le fichier existe,
+ * il s'affiche automatiquement.
+ */
+function agnsee_image_url( $relative, $extensions = array( 'svg', 'png', 'jpg', 'jpeg', 'webp' ) ) {
+	foreach ( $extensions as $ext ) {
+		$path = get_template_directory() . '/assets/images/' . $relative . '.' . $ext;
+		if ( file_exists( $path ) ) {
+			return get_template_directory_uri() . '/assets/images/' . $relative . '.' . $ext;
+		}
+	}
+	return false;
+}

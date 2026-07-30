@@ -16,6 +16,10 @@ get_header();
 				<span class="lang-fr">Extrait d'algues marines destiné aux programmes de culture en horticulture protégée.</span>
 				<span class="lang-en">Marine seaweed extract for growing programs in protected horticulture.</span>
 			</p>
+			<?php $agnsee_product_img = agnsee_image_url( 'products/booster' ); ?>
+			<?php if ( $agnsee_product_img ) : ?>
+				<img src="<?php echo esc_url( $agnsee_product_img ); ?>" alt="Booster" style="max-width:480px;width:100%;border-radius:var(--radius-md);margin:0 auto 1.5rem;">
+			<?php endif; ?>
 			<div class="hero-actions">
 				<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/?produit=Booster' ) ); ?>">
 					<span class="lang-fr">Demander une consultation</span><span class="lang-en">Request a consultation</span>

@@ -16,6 +16,10 @@ get_header();
 				<span class="lang-fr">Système de capteurs sans fil pour le suivi du CO2, de la température et de l'humidité en environnement de culture protégée.</span>
 				<span class="lang-en">Wireless sensor system for monitoring CO2, temperature and humidity in protected-crop environments.</span>
 			</p>
+			<?php $agnsee_product_img = agnsee_image_url( 'products/aranet' ); ?>
+			<?php if ( $agnsee_product_img ) : ?>
+				<img src="<?php echo esc_url( $agnsee_product_img ); ?>" alt="Aranet" style="max-width:480px;width:100%;border-radius:var(--radius-md);margin:0 auto 1.5rem;">
+			<?php endif; ?>
 			<div class="hero-actions">
 				<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/?produit=Aranet' ) ); ?>">
 					<span class="lang-fr">Demander une consultation</span><span class="lang-en">Request a consultation</span>

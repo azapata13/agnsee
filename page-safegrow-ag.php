@@ -16,6 +16,10 @@ get_header();
 				<span class="lang-fr">Nettoyant d'infrastructure d'irrigation à base de HOCl (acide hypochloreux) stabilisé, développé par SafeGrow Solutions Inc.</span>
 				<span class="lang-en">Irrigation infrastructure cleaner based on stabilized HOCl (hypochlorous acid), developed by SafeGrow Solutions Inc.</span>
 			</p>
+			<?php $agnsee_product_img = agnsee_image_url( 'products/safegrow-ag' ); ?>
+			<?php if ( $agnsee_product_img ) : ?>
+				<img src="<?php echo esc_url( $agnsee_product_img ); ?>" alt="SafeGrow AG" style="max-width:480px;width:100%;border-radius:var(--radius-md);margin:0 auto 1.5rem;">
+			<?php endif; ?>
 			<div class="hero-actions">
 				<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/?produit=SafeGrow+AG' ) ); ?>">
 					<span class="lang-fr">Demander une consultation</span><span class="lang-en">Request a consultation</span>
