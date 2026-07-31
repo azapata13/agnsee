@@ -315,6 +315,11 @@ p { color: var(--color-text-secondary); }
   color: #fff;
 }
 
+/* Force le logo en blanc tant qu'on est sur la vidéo (nécessite un PNG/SVG à fond transparent) */
+.site-header.header-transparent:not(.is-scrolled) .site-logo img {
+  filter: brightness(0) invert(1);
+}
+
 .site-header.header-transparent .hamburger span {
   background: #fff;
 }
@@ -740,7 +745,7 @@ p { color: var(--color-text-secondary); }
    ========================================================================== */
 .hero-video {
   position: relative;
-  height: 92vh;
+  height: 100vh;
   min-height: 560px;
   margin-top: calc(-1 * var(--header-height));
   display: flex;
@@ -834,7 +839,7 @@ p { color: var(--color-text-secondary); }
 }
 
 @media (max-width: 600px) {
-  .hero-video { height: 82vh; }
+  .hero-video { height: 100vh; }
   .hero-video-actions { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; }
   .hero-video-actions .btn { width: 100%; justify-content: center; }
 }
