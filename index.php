@@ -19,6 +19,7 @@ get_header();
 			<p>
 				<span class="lang-fr">Aucun contenu trouvé.</span>
 				<span class="lang-en">No content found.</span>
+					<span class="lang-es">No se encontró contenido.</span>
 			</p>
 		<?php endif; ?>
 	</div>
