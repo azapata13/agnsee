@@ -14,12 +14,14 @@ $agnsee_tools = array(
 		'name' => 'SunTracker',
 		'fr'   => "Outil de suivi de l'ensoleillement pour planifier l'éclairage horticole.",
 		'en'   => 'Sunlight tracking tool to help plan horticultural lighting.',
+		'es'   => 'Herramienta de seguimiento solar para planificar la iluminación hortícola.',
 	),
 	array(
 		'slug' => 'calculateur-safegrow-ag',
 		'name' => 'SafeGrow AG / HOCl',
 		'fr'   => 'Calculateur de dosage pour SafeGrow AG.',
 		'en'   => 'Dosing calculator for SafeGrow AG.',
+		'es'   => 'Calculadora de dosificación para SafeGrow AG.',
 	),
 );
 ?>
@@ -28,14 +30,16 @@ $agnsee_tools = array(
 
 	<section class="hero" style="padding-bottom:2rem;">
 		<div class="container">
-			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Accès libre</span><span class="lang-en">Free access</span></div>
+			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Accès libre</span><span class="lang-en">Free access</span><span class="lang-es">Acceso libre</span></div>
 			<h1>
 				<span class="lang-fr">Outils techniques gratuits</span>
 				<span class="lang-en">Free technical tools</span>
+				<span class="lang-es">Herramientas técnicas gratuitas</span>
 			</h1>
 			<p class="hero-lead">
 				<span class="lang-fr">Des outils pratiques pour appuyer vos projets d'horticulture protégée, mis à jour régulièrement.</span>
 				<span class="lang-en">Practical tools to support your protected-horticulture projects, updated regularly.</span>
+				<span class="lang-es">Herramientas prácticas para apoyar tus proyectos de horticultura protegida, actualizadas regularmente.</span>
 			</p>
 		</div>
 	</section>
@@ -52,6 +56,7 @@ $agnsee_tools = array(
 						<p>
 							<span class="lang-fr"><?php echo esc_html( $tool['fr'] ); ?></span>
 							<span class="lang-en"><?php echo esc_html( $tool['en'] ); ?></span>
+							<span class="lang-es"><?php echo esc_html( $tool['es'] ); ?></span>
 						</p>
 					</a>
 				<?php endforeach; ?>
@@ -60,10 +65,11 @@ $agnsee_tools = array(
 					<div class="card-icon">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
 					</div>
-					<h4><span class="lang-fr">À venir</span><span class="lang-en">Coming soon</span></h4>
+					<h4><span class="lang-fr">À venir</span><span class="lang-en">Coming soon</span><span class="lang-es">Próximamente</span></h4>
 					<p>
 						<span class="lang-fr">D'autres outils techniques seront ajoutés à cette section.</span>
 						<span class="lang-en">More technical tools will be added to this section.</span>
+						<span class="lang-es">Más herramientas técnicas se añadirán a esta sección.</span>
 					</p>
 				</div>
 			</div>
