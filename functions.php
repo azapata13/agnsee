@@ -89,24 +89,32 @@ function agnsee_widgets_init() {
 add_action( 'widgets_init', 'agnsee_widgets_init' );
 
 /* ==========================================================================
-   4. BILINGUE FR / EN — COOKIE agnsee_lang
+   4. TRILINGUE FR / EN / ES — COOKIE agnsee_lang
    ========================================================================== */
 
+define( 'AGNSEE_LANGS', array( 'fr', 'en', 'es' ) );
+
 /**
- * Retourne la langue courante ('fr' ou 'en'). Défaut : fr.
+ * Retourne la langue courante ('fr', 'en' ou 'es'). Défaut : fr.
  */
 function agnsee_get_lang() {
-	if ( isset( $_COOKIE[ AGNSEE_LANG_COOKIE ] ) && in_array( $_COOKIE[ AGNSEE_LANG_COOKIE ], array( 'fr', 'en' ), true ) ) {
+	if ( isset( $_COOKIE[ AGNSEE_LANG_COOKIE ] ) && in_array( $_COOKIE[ AGNSEE_LANG_COOKIE ], AGNSEE_LANGS, true ) ) {
 		return sanitize_key( $_COOKIE[ AGNSEE_LANG_COOKIE ] );
 	}
 	return 'fr';
 }
 
 /**
- * Retourne $fr ou $en selon la langue courante. Raccourci pour les templates.
+ * Retourne $fr, $en ou $es selon la langue courante. Raccourci pour les templates.
+ * $es est optionnel : si omis, on retombe sur $en (pour ne pas casser les
+ * anciens appels à 2 arguments).
  */
-function agnsee_t( $fr, $en ) {
-	return 'en' === agnsee_get_lang() ? $en : $fr;
+function agnsee_t( $fr, $en, $es = null ) {
+	$lang = agnsee_get_lang();
+	if ( 'es' === $lang ) {
+		return null !== $es ? $es : $en;
+	}
+	return 'en' === $lang ? $en : $fr;
 }
 
 /**
@@ -124,7 +132,7 @@ function agnsee_ajax_set_lang() {
 	check_ajax_referer( 'agnsee_lang_nonce', 'nonce' );
 
 	$lang = isset( $_POST['lang'] ) ? sanitize_key( wp_unslash( $_POST['lang'] ) ) : 'fr';
-	if ( ! in_array( $lang, array( 'fr', 'en' ), true ) ) {
+	if ( ! in_array( $lang, AGNSEE_LANGS, true ) ) {
 		$lang = 'fr';
 	}
 
@@ -152,7 +160,12 @@ function agnsee_push_to_fluentcrm( $data, $lang, $product_interest ) {
 	if ( ! empty( $product_interest ) ) {
 		$tags[] = 'Produit : ' . $product_interest;
 	}
-	$tags[] = 'en' === $lang ? 'Langue : EN' : 'Langue : FR';
+	$lang_labels = array(
+		'fr' => 'Langue : FR',
+		'en' => 'Langue : EN',
+		'es' => 'Langue : ES',
+	);
+	$tags[] = isset( $lang_labels[ $lang ] ) ? $lang_labels[ $lang ] : 'Langue : FR';
 
 	$contact_api = FluentCrmApi( 'contacts' );
 
@@ -180,7 +193,7 @@ function agnsee_ajax_submit_contact() {
 
 	// Anti-spam (honeypot).
 	if ( ! empty( $_POST['website'] ) ) {
-		wp_send_json_success( array( 'message' => agnsee_t( 'Merci, votre message a été envoyé.', 'Thank you, your message has been sent.' ) ) );
+		wp_send_json_success( array( 'message' => agnsee_t( 'Merci, votre message a été envoyé.', 'Thank you, your message has been sent.', 'Gracias, tu mensaje ha sido enviado.' ) ) );
 	}
 
 	$name    = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
@@ -193,7 +206,7 @@ function agnsee_ajax_submit_contact() {
 
 	if ( empty( $name ) || ! is_email( $email ) || empty( $message ) ) {
 		wp_send_json_error( array(
-			'message' => agnsee_t( 'Veuillez remplir tous les champs requis.', 'Please fill in all required fields.' ),
+			'message' => agnsee_t( 'Veuillez remplir tous les champs requis.', 'Please fill in all required fields.', 'Por favor completa todos los campos requeridos.' ),
 		) );
 	}
 
@@ -204,7 +217,7 @@ function agnsee_ajax_submit_contact() {
 		'country' => $country,
 	), $lang, $product );
 
-	$subject = agnsee_t( 'Nouvelle demande — agnsee.ca', 'New inquiry — agnsee.ca' );
+	$subject = agnsee_t( 'Nouvelle demande — agnsee.ca', 'New inquiry — agnsee.ca', 'Nueva solicitud — agnsee.ca' );
 	$body    = sprintf(
 		"Nom : %s\nCourriel : %s\nEntreprise : %s\nPays : %s\nProduit d'intérêt : %s\nLangue : %s\n\nMessage :\n%s",
 		$name,
@@ -219,7 +232,7 @@ function agnsee_ajax_submit_contact() {
 	wp_mail( AGNSEE_SALES_EMAIL, $subject, $body );
 
 	wp_send_json_success( array(
-		'message' => agnsee_t( 'Merci ! Votre message a été envoyé, nous vous contacterons rapidement.', 'Thank you! Your message has been sent, we will contact you shortly.' ),
+		'message' => agnsee_t( 'Merci ! Votre message a été envoyé, nous vous contacterons rapidement.', 'Thank you! Your message has been sent, we will contact you shortly.', '¡Gracias! Tu mensaje ha sido enviado, te contactaremos pronto.' ),
 	) );
 }
 add_action( 'wp_ajax_agnsee_submit_contact', 'agnsee_ajax_submit_contact' );

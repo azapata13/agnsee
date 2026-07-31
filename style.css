@@ -735,10 +735,11 @@ p { color: var(--color-text-secondary); }
 }
 
 /* ==========================================================================
-   11. BILINGUE FR / EN
+   11. TRILINGUE FR / EN / ES
    ========================================================================== */
-[data-lang="fr"] .lang-en { display: none !important; }
-[data-lang="en"] .lang-fr { display: none !important; }
+[data-lang="fr"] .lang-en, [data-lang="fr"] .lang-es { display: none !important; }
+[data-lang="en"] .lang-fr, [data-lang="en"] .lang-es { display: none !important; }
+[data-lang="es"] .lang-fr, [data-lang="es"] .lang-en { display: none !important; }
 
 /* ==========================================================================
    12b. HERO VIDÉO (style Apple : plein écran, verre translucide)

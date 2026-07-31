@@ -15,11 +15,12 @@
 					<p style="max-width:280px;">
 						<span class="lang-fr">Agent manufacturier représentant des produits techniques pour l'horticulture protégée au Canada.</span>
 						<span class="lang-en">Manufacturer's representative for technical products serving protected horticulture across Canada.</span>
+						<span class="lang-es">Agente manufacturero que representa productos técnicos para la horticultura protegida en Canadá.</span>
 					</p>
 				</div>
 
 				<div class="footer-col">
-					<div class="footer-col-title"><span class="lang-fr">Produits</span><span class="lang-en">Products</span></div>
+					<div class="footer-col-title"><span class="lang-fr">Produits</span><span class="lang-en">Products</span><span class="lang-es">Productos</span></div>
 					<?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
 						<?php dynamic_sidebar( 'footer-2' ); ?>
 					<?php else : ?>
@@ -28,38 +29,38 @@
 							<li><a href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>">Booster</a></li>
 							<li><a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>">Grow Genius</a></li>
 							<li><a href="<?php echo esc_url( home_url( '/produits/aranet/' ) ); ?>">Aranet</a></li>
-							<li><a href="<?php echo esc_url( home_url( '/produits/' ) ); ?>"><span class="lang-fr">Tous les produits</span><span class="lang-en">All products</span></a></li>
+							<li><a href="<?php echo esc_url( home_url( '/produits/' ) ); ?>"><span class="lang-fr">Tous les produits</span><span class="lang-en">All products</span><span class="lang-es">Todos los productos</span></a></li>
 						</ul>
 					<?php endif; ?>
 				</div>
 
 				<div class="footer-col">
-					<div class="footer-col-title"><span class="lang-fr">Entreprise</span><span class="lang-en">Company</span></div>
+					<div class="footer-col-title"><span class="lang-fr">Entreprise</span><span class="lang-en">Company</span><span class="lang-es">Empresa</span></div>
 					<?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
 						<?php dynamic_sidebar( 'footer-3' ); ?>
 					<?php else : ?>
 						<ul>
-							<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><span class="lang-fr">Services</span><span class="lang-en">Services</span></a></li>
-							<li><a href="<?php echo esc_url( home_url( '/outils/' ) ); ?>"><span class="lang-fr">Outils gratuits</span><span class="lang-en">Free tools</span></a></li>
-							<li><a href="<?php echo esc_url( home_url( '/a-propos/' ) ); ?>"><span class="lang-fr">À propos</span><span class="lang-en">About us</span></a></li>
-							<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a></li>
+							<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><span class="lang-fr">Services</span><span class="lang-en">Services</span><span class="lang-es">Servicios</span></a></li>
+							<li><a href="<?php echo esc_url( home_url( '/outils/' ) ); ?>"><span class="lang-fr">Outils gratuits</span><span class="lang-en">Free tools</span><span class="lang-es">Herramientas gratuitas</span></a></li>
+							<li><a href="<?php echo esc_url( home_url( '/a-propos/' ) ); ?>"><span class="lang-fr">À propos</span><span class="lang-en">About us</span><span class="lang-es">Nosotros</span></a></li>
+							<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></li>
 						</ul>
 					<?php endif; ?>
 				</div>
 
 				<div class="footer-col">
-					<div class="footer-col-title"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></div>
+					<div class="footer-col-title"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></div>
 					<?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
 						<?php dynamic_sidebar( 'footer-4' ); ?>
 					<?php else : ?>
 						<ul>
 							<li><a href="mailto:info@agnsee.ca">info@agnsee.ca</a></li>
 							<li>
-								<span class="lang-fr">Canada</span><span class="lang-en">Canada</span>
+								<span class="lang-fr">Canada</span><span class="lang-en">Canada</span><span class="lang-es">Canadá</span>
 							</li>
 							<li>
 								<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-									<span class="lang-fr">Prendre rendez-vous</span><span class="lang-en">Book a meeting</span>
+									<span class="lang-fr">Prendre rendez-vous</span><span class="lang-en">Book a meeting</span><span class="lang-es">Agendar una reunión</span>
 								</a>
 							</li>
 						</ul>
@@ -71,12 +72,13 @@
 			<div class="footer-bottom">
 				<div>
 					&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> Agnsee.
-					<span class="lang-fr">Tous droits réservés.</span><span class="lang-en">All rights reserved.</span>
+					<span class="lang-fr">Tous droits réservés.</span><span class="lang-en">All rights reserved.</span><span class="lang-es">Todos los derechos reservados.</span>
 				</div>
 
-				<div class="lang-toggle" role="group" aria-label="Langue / Language">
+				<div class="lang-toggle" role="group" aria-label="Langue / Language / Idioma">
 					<button type="button" data-lang-btn="fr" class="<?php echo 'fr' === agnsee_get_lang() ? 'is-active' : ''; ?>">FR</button>
 					<button type="button" data-lang-btn="en" class="<?php echo 'en' === agnsee_get_lang() ? 'is-active' : ''; ?>">EN</button>
+					<button type="button" data-lang-btn="es" class="<?php echo 'es' === agnsee_get_lang() ? 'is-active' : ''; ?>">ES</button>
 				</div>
 			</div>
 
