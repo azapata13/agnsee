@@ -50,7 +50,7 @@
 			} )
 			.catch( function () {
 				submitBtn.disabled = false;
-				showMessage( 'Une erreur est survenue. Veuillez réessayer. / An error occurred. Please try again.', true );
+				showMessage( 'Une erreur est survenue. Veuillez réessayer. / An error occurred. Please try again. / Ocurrió un error. Por favor intenta de nuevo.', true );
 			} );
 	} );
 } )();

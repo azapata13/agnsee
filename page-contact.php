@@ -13,14 +13,16 @@ $agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Aranet' );
 
 	<section class="hero" style="padding-bottom:1rem;">
 		<div class="container">
-			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Parlons-en</span><span class="lang-en">Let's talk</span></div>
+			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Parlons-en</span><span class="lang-en">Let's talk</span><span class="lang-es">Hablemos</span></div>
 			<h1>
 				<span class="lang-fr">Contact</span>
 				<span class="lang-en">Contact</span>
+				<span class="lang-es">Contacto</span>
 			</h1>
 			<p class="hero-lead">
 				<span class="lang-fr">Distributeurs et acheteurs institutionnels — écrivez-nous pour toute question technique ou demande de collaboration.</span>
 				<span class="lang-en">Distributors and institutional buyers — reach out for any technical question or partnership inquiry.</span>
+				<span class="lang-es">Distribuidores y compradores institucionales — escríbenos para cualquier pregunta técnica o solicitud de colaboración.</span>
 			</p>
 		</div>
 	</section>
@@ -40,39 +42,39 @@ $agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Aranet' );
 
 						<div class="form-field">
 							<label for="name">
-								<span class="lang-fr">Nom complet</span><span class="lang-en">Full name</span> *
+								<span class="lang-fr">Nom complet</span><span class="lang-en">Full name</span><span class="lang-es">Nombre completo</span> *
 							</label>
 							<input type="text" id="name" name="name" required>
 						</div>
 
 						<div class="form-field">
 							<label for="email">
-								<span class="lang-fr">Courriel</span><span class="lang-en">Email</span> *
+								<span class="lang-fr">Courriel</span><span class="lang-en">Email</span><span class="lang-es">Correo electrónico</span> *
 							</label>
 							<input type="email" id="email" name="email" required>
 						</div>
 
 						<div class="form-field">
 							<label for="company">
-								<span class="lang-fr">Entreprise</span><span class="lang-en">Company</span>
+								<span class="lang-fr">Entreprise</span><span class="lang-en">Company</span><span class="lang-es">Empresa</span>
 							</label>
 							<input type="text" id="company" name="company">
 						</div>
 
 						<div class="form-field">
 							<label for="country">
-								<span class="lang-fr">Pays</span><span class="lang-en">Country</span>
+								<span class="lang-fr">Pays</span><span class="lang-en">Country</span><span class="lang-es">País</span>
 							</label>
 							<input type="text" id="country" name="country">
 						</div>
 
 						<div class="form-field">
 							<label for="product">
-								<span class="lang-fr">Produit d'intérêt</span><span class="lang-en">Product of interest</span>
+								<span class="lang-fr">Produit d'intérêt</span><span class="lang-en">Product of interest</span><span class="lang-es">Producto de interés</span>
 							</label>
 							<select id="product" name="product">
 								<option value="">
-									<?php echo esc_html( agnsee_t( 'Sélectionner...', 'Select...' ) ); ?>
+									<?php echo esc_html( agnsee_t( 'Sélectionner...', 'Select...', 'Seleccionar...' ) ); ?>
 								</option>
 								<?php foreach ( $agnsee_products as $product ) : ?>
 									<option value="<?php echo esc_attr( $product ); ?>" <?php selected( $agnsee_preselect, $product ); ?>>
@@ -84,38 +86,41 @@ $agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Aranet' );
 
 						<div class="form-field">
 							<label for="message">
-								<span class="lang-fr">Message</span><span class="lang-en">Message</span> *
+								<span class="lang-fr">Message</span><span class="lang-en">Message</span><span class="lang-es">Mensaje</span> *
 							</label>
 							<textarea id="message" name="message" required></textarea>
 						</div>
 
 						<button type="submit" class="btn btn-primary" id="contact-submit-btn">
-							<span class="lang-fr">Envoyer</span><span class="lang-en">Send</span>
+							<span class="lang-fr">Envoyer</span><span class="lang-en">Send</span><span class="lang-es">Enviar</span>
 						</button>
 
 						<p class="form-note">
-							<span class="lang-fr">* Champs requis</span><span class="lang-en">* Required fields</span>
+							<span class="lang-fr">* Champs requis</span><span class="lang-en">* Required fields</span><span class="lang-es">* Campos requeridos</span>
 						</p>
 					</form>
 				</div>
 
 				<div>
-					<h2><span class="lang-fr">Coordonnées</span><span class="lang-en">Direct contact</span></h2>
+					<h2><span class="lang-fr">Coordonnées</span><span class="lang-en">Direct contact</span><span class="lang-es">Contacto directo</span></h2>
 					<p><a href="mailto:info@agnsee.ca">info@agnsee.ca</a></p>
 					<hr class="divider">
-					<h3><span class="lang-fr">Pourquoi nous contacter</span><span class="lang-en">Why reach out</span></h3>
+					<h3><span class="lang-fr">Pourquoi nous contacter</span><span class="lang-en">Why reach out</span><span class="lang-es">Por qué contactarnos</span></h3>
 					<ul style="color:var(--color-text-secondary);">
 						<li style="padding:0.5rem 0;border-bottom:1px solid var(--color-border);">
 							<span class="lang-fr">Consultation technique sur nos produits</span>
 							<span class="lang-en">Technical consultation on our products</span>
+							<span class="lang-es">Consultoría técnica sobre nuestros productos</span>
 						</li>
 						<li style="padding:0.5rem 0;border-bottom:1px solid var(--color-border);">
 							<span class="lang-fr">Demande de distribution ou de partenariat</span>
 							<span class="lang-en">Distribution or partnership inquiry</span>
+							<span class="lang-es">Solicitud de distribución o alianza</span>
 						</li>
 						<li style="padding:0.5rem 0;">
 							<span class="lang-fr">Commande sur mesure</span>
 							<span class="lang-en">Custom order request</span>
+							<span class="lang-es">Solicitud de pedido a medida</span>
 						</li>
 					</ul>
 				</div>
