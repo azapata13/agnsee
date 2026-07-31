@@ -315,9 +315,9 @@ p { color: var(--color-text-secondary); }
   color: #fff;
 }
 
-/* Force le logo en blanc tant qu'on est sur la vidéo (nécessite un PNG/SVG à fond transparent) */
+/* Garde les couleurs d'origine du logo sur la vidéo, avec une ombre portée pour rester lisible peu importe le fond */
 .site-header.header-transparent:not(.is-scrolled) .site-logo img {
-  filter: brightness(0) invert(1);
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.55)) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.35));
 }
 
 .site-header.header-transparent .hamburger span {
