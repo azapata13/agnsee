@@ -279,3 +279,56 @@ function agnsee_video_url( $relative, $extensions = array( 'mp4', 'webm' ) ) {
 	}
 	return false;
 }
+
+/* ==========================================================================
+   8. CUSTOMIZER — HERO VIDÉO
+   ========================================================================== */
+
+/**
+ * URL de la vidéo hero : réglable dans Personnaliser > Hero (page d'accueil),
+ * avec une valeur par défaut pointant vers le média déjà uploadé. Se met à
+ * jour sans redéploiement, directement depuis wp-admin.
+ */
+function agnsee_hero_video_url() {
+	$url = get_theme_mod( 'agnsee_hero_video_url', 'https://agnsee.ca/wp-content/uploads/2026/07/agnseehero.mp4' );
+	return $url ? esc_url( $url ) : agnsee_video_url( 'hero' );
+}
+
+function agnsee_hero_poster_url() {
+	$poster_id = get_theme_mod( 'agnsee_hero_poster' );
+	if ( $poster_id ) {
+		$poster = wp_get_attachment_image_url( $poster_id, 'full' );
+		if ( $poster ) {
+			return esc_url( $poster );
+		}
+	}
+	return agnsee_image_url( 'hero/hero-poster' );
+}
+
+function agnsee_customize_register( $wp_customize ) {
+	$wp_customize->add_section( 'agnsee_hero', array(
+		'title'    => __( 'Hero — Page d\'accueil', 'agnsee' ),
+		'priority' => 30,
+	) );
+
+	$wp_customize->add_setting( 'agnsee_hero_video_url', array(
+		'default'           => 'https://agnsee.ca/wp-content/uploads/2026/07/agnseehero.mp4',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_control( 'agnsee_hero_video_url', array(
+		'label'       => __( 'URL de la vidéo hero (.mp4)', 'agnsee' ),
+		'description' => __( 'Colle ici l\'URL du média WordPress (Médiathèque > Copier le lien).', 'agnsee' ),
+		'section'     => 'agnsee_hero',
+		'type'        => 'url',
+	) );
+
+	$wp_customize->add_setting( 'agnsee_hero_poster', array(
+		'sanitize_callback' => 'absint',
+	) );
+	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'agnsee_hero_poster', array(
+		'label'       => __( 'Image de secours (avant chargement de la vidéo)', 'agnsee' ),
+		'section'     => 'agnsee_hero',
+		'mime_type'   => 'image',
+	) ) );
+}
+add_action( 'customize_register', 'agnsee_customize_register' );

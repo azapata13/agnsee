@@ -12,8 +12,8 @@ get_header();
 
 	<!-- Hero -->
 	<?php
-	$agnsee_hero_video = agnsee_video_url( 'hero' );
-	$agnsee_hero_poster = agnsee_image_url( 'hero/hero-poster' );
+	$agnsee_hero_video  = agnsee_hero_video_url();
+	$agnsee_hero_poster = agnsee_hero_poster_url();
 	?>
 	<?php if ( $agnsee_hero_video ) : ?>
 		<section class="hero-video">
