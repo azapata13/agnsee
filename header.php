@@ -33,20 +33,14 @@ $agnsee_transparent_header = is_front_page() && function_exists( 'agnsee_hero_vi
 	<header class="site-header<?php echo $agnsee_transparent_header ? ' header-transparent' : ''; ?>" id="site-header">
 		<div class="header-inner">
 
-			<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<?php
-				$agnsee_logo_url = agnsee_image_url( 'logo' );
-				if ( has_custom_logo() ) :
-					the_custom_logo();
-				elseif ( $agnsee_logo_url ) :
-					?>
-					<img src="<?php echo esc_url( $agnsee_logo_url ); ?>" alt="Agnsee" style="height:36px;width:auto;">
-					<?php
-				else :
-					echo 'Agnsee';
-				endif;
-				?>
-			</a>
+			<?php $agnsee_logo_url = agnsee_get_logo_url(); ?>
+			<?php if ( $agnsee_logo_url ) : ?>
+				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<img src="<?php echo esc_url( $agnsee_logo_url ); ?>" alt="Agnsee" style="height:40px;width:auto;">
+				</a>
+			<?php else : ?>
+				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">Agnsee</a>
+			<?php endif; ?>
 
 			<nav class="main-nav" aria-label="<?php echo esc_attr( agnsee_t( 'Menu principal', 'Primary menu' ) ); ?>">
 				<ul>

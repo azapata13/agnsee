@@ -305,6 +305,28 @@ function agnsee_hero_poster_url() {
 	return agnsee_image_url( 'hero/hero-poster' );
 }
 
+/**
+ * URL du logo Agnsee (fond transparent). Priorité : logo personnalisé WP
+ * (Personnaliser > Identité du site) > URL réglée dans Personnaliser > Hero
+ * (par défaut le média déjà uploadé) > fichier local du thème.
+ */
+function agnsee_get_logo_url() {
+	if ( has_custom_logo() ) {
+		$logo_id  = get_theme_mod( 'custom_logo' );
+		$logo_src = wp_get_attachment_image_src( $logo_id, 'full' );
+		if ( $logo_src ) {
+			return esc_url( $logo_src[0] );
+		}
+	}
+
+	$url = get_theme_mod( 'agnsee_logo_url', 'https://agnsee.ca/wp-content/uploads/2026/07/logo-removebg-preview.png' );
+	if ( $url ) {
+		return esc_url( $url );
+	}
+
+	return agnsee_image_url( 'logo' );
+}
+
 function agnsee_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'agnsee_hero', array(
 		'title'    => __( 'Hero — Page d\'accueil', 'agnsee' ),
@@ -330,5 +352,15 @@ function agnsee_customize_register( $wp_customize ) {
 		'section'     => 'agnsee_hero',
 		'mime_type'   => 'image',
 	) ) );
+
+	$wp_customize->add_setting( 'agnsee_logo_url', array(
+		'default'           => 'https://agnsee.ca/wp-content/uploads/2026/07/logo-removebg-preview.png',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_control( 'agnsee_logo_url', array(
+		'label'       => __( 'URL du logo (fond transparent, prioritaire si aucun logo personnalisé n\'est réglé)', 'agnsee' ),
+		'section'     => 'title_tagline',
+		'type'        => 'url',
+	) );
 }
 add_action( 'customize_register', 'agnsee_customize_register' );

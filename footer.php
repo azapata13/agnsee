@@ -5,19 +5,12 @@
 
 				<div class="footer-col">
 					<div class="site-logo" style="color:#fff;margin-bottom:1rem;">
-						<?php
-						$agnsee_footer_logo = agnsee_image_url( 'logo-inverse' );
-						if ( ! $agnsee_footer_logo ) {
-							$agnsee_footer_logo = agnsee_image_url( 'logo' );
-						}
-						if ( $agnsee_footer_logo ) :
-							?>
-							<img src="<?php echo esc_url( $agnsee_footer_logo ); ?>" alt="Agnsee" style="height:28px;width:auto;">
-							<?php
-						else :
-							echo 'Agnsee';
-						endif;
-						?>
+						<?php $agnsee_footer_logo = agnsee_get_logo_url(); ?>
+						<?php if ( $agnsee_footer_logo ) : ?>
+							<img src="<?php echo esc_url( $agnsee_footer_logo ); ?>" alt="Agnsee" style="height:34px;width:auto;">
+						<?php else : ?>
+							Agnsee
+						<?php endif; ?>
 					</div>
 					<p style="max-width:280px;">
 						<span class="lang-fr">Agent manufacturier représentant des produits techniques pour l'horticulture protégée au Canada.</span>
