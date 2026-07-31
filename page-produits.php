@@ -12,6 +12,7 @@ $agnsee_products = array(
 		'name'    => 'SafeGrow AG',
 		'fr'      => "Nettoyant d'infrastructure d'irrigation à base de HOCl stabilisé.",
 		'en'      => 'Irrigation infrastructure cleaner based on stabilized HOCl.',
+		'es'      => 'Limpiador de infraestructura de irrigación a base de HOCl estabilizado.',
 	),
 	array(
 		'slug'    => 'booster',
@@ -19,6 +20,7 @@ $agnsee_products = array(
 		'name'    => 'Booster',
 		'fr'      => "Extrait d'algues marines pour programmes de culture.",
 		'en'      => 'Marine seaweed extract for growing programs.',
+		'es'      => 'Extracto de algas marinas para programas de cultivo.',
 	),
 	array(
 		'slug'    => 'grow-genius',
@@ -26,6 +28,7 @@ $agnsee_products = array(
 		'name'    => 'Grow Genius',
 		'fr'      => 'Acide monosilicique concentré à 40 %.',
 		'en'      => '40% concentrated monosilicic acid.',
+		'es'      => 'Ácido monosilícico concentrado al 40 %.',
 	),
 	array(
 		'slug'    => 'aranet',
@@ -33,14 +36,15 @@ $agnsee_products = array(
 		'name'    => 'Aranet',
 		'fr'      => 'Système de capteurs CO2, température et humidité.',
 		'en'      => 'CO2, temperature and humidity sensor system.',
+		'es'      => 'Sistema de sensores de CO2, temperatura y humedad.',
 	),
 );
 
 $agnsee_segments = array(
-	'all'           => array( 'fr' => 'Tous', 'en' => 'All' ),
-	'irrigation'    => array( 'fr' => "Traitement d'irrigation", 'en' => 'Irrigation treatment' ),
-	'biostimulants' => array( 'fr' => 'Biostimulants', 'en' => 'Biostimulants' ),
-	'capteurs'      => array( 'fr' => 'Capteurs & données', 'en' => 'Sensors & data' ),
+	'all'           => array( 'fr' => 'Tous', 'en' => 'All', 'es' => 'Todos' ),
+	'irrigation'    => array( 'fr' => "Traitement d'irrigation", 'en' => 'Irrigation treatment', 'es' => 'Tratamiento de irrigación' ),
+	'biostimulants' => array( 'fr' => 'Biostimulants', 'en' => 'Biostimulants', 'es' => 'Bioestimulantes' ),
+	'capteurs'      => array( 'fr' => 'Capteurs & données', 'en' => 'Sensors & data', 'es' => 'Sensores y datos' ),
 );
 ?>
 
@@ -48,14 +52,16 @@ $agnsee_segments = array(
 
 	<section class="hero" style="padding-bottom:2rem;">
 		<div class="container">
-			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Catalogue</span><span class="lang-en">Catalog</span></div>
+			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Catalogue</span><span class="lang-en">Catalog</span><span class="lang-es">Catálogo</span></div>
 			<h1>
 				<span class="lang-fr">Nos produits</span>
 				<span class="lang-en">Our products</span>
+				<span class="lang-es">Nuestros productos</span>
 			</h1>
 			<p class="hero-lead">
 				<span class="lang-fr">Une sélection de produits techniques pour l'horticulture protégée, réservée aux distributeurs et acheteurs institutionnels.</span>
 				<span class="lang-en">A selection of technical products for protected horticulture, reserved for distributors and institutional buyers.</span>
+				<span class="lang-es">Una selección de productos técnicos para la horticultura protegida, reservada a distribuidores y compradores institucionales.</span>
 			</p>
 		</div>
 	</section>
@@ -68,6 +74,7 @@ $agnsee_segments = array(
 					<button type="button" class="btn btn-sm <?php echo 'all' === $key ? 'btn-primary' : 'btn-secondary'; ?>" data-segment-filter="<?php echo esc_attr( $key ); ?>">
 						<span class="lang-fr"><?php echo esc_html( $label['fr'] ); ?></span>
 						<span class="lang-en"><?php echo esc_html( $label['en'] ); ?></span>
+						<span class="lang-es"><?php echo esc_html( $label['es'] ); ?></span>
 					</button>
 				<?php endforeach; ?>
 			</div>
@@ -82,11 +89,13 @@ $agnsee_segments = array(
 						<div class="badge">
 							<span class="lang-fr"><?php echo esc_html( $agnsee_segments[ $product['segment'] ]['fr'] ); ?></span>
 							<span class="lang-en"><?php echo esc_html( $agnsee_segments[ $product['segment'] ]['en'] ); ?></span>
+							<span class="lang-es"><?php echo esc_html( $agnsee_segments[ $product['segment'] ]['es'] ); ?></span>
 						</div>
 						<h4 style="margin-top:0.75rem;"><?php echo esc_html( $product['name'] ); ?></h4>
 						<p>
 							<span class="lang-fr"><?php echo esc_html( $product['fr'] ); ?></span>
 							<span class="lang-en"><?php echo esc_html( $product['en'] ); ?></span>
+							<span class="lang-es"><?php echo esc_html( $product['es'] ); ?></span>
 						</p>
 					</a>
 				<?php endforeach; ?>
@@ -95,6 +104,7 @@ $agnsee_segments = array(
 			<p class="form-note" style="margin-top:2rem;">
 				<span class="lang-fr">Agnsee agit à titre d'agent manufacturier : aucune commande n'est traitée en ligne. Contactez-nous pour toute demande d'achat ou de distribution.</span>
 				<span class="lang-en">Agnsee acts as a manufacturer's representative: no orders are processed online. Contact us for any purchase or distribution inquiry.</span>
+				<span class="lang-es">Agnsee actúa como agente manufacturero: no se procesan pedidos en línea. Contáctanos para cualquier solicitud de compra o distribución.</span>
 			</p>
 
 		</div>
