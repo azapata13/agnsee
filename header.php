@@ -3,6 +3,7 @@
  * En-tête du thème Agnsee — nav sticky, toggle FR/EN, menu mobile.
  */
 $agnsee_lang = agnsee_get_lang();
+$agnsee_transparent_header = is_front_page() && function_exists( 'agnsee_hero_video_url' ) && agnsee_hero_video_url();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -13,7 +14,7 @@ $agnsee_lang = agnsee_get_lang();
 <?php wp_head(); ?>
 <style data-no-optimize="1">
 /* Critique : évite le FOUC du header sticky (inline pour contourner le cache CSS LiteSpeed) */
-.site-header{position:sticky;top:0;z-index:999;height:76px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px)}
+.site-header{position:sticky;top:0;z-index:999;height:76px}
 .header-inner{max-width:1180px;margin:0 auto;padding:0 1.5rem;height:100%;display:flex;align-items:center;justify-content:space-between}
 [data-lang="fr"] .lang-en{display:none}
 [data-lang="en"] .lang-fr{display:none}
@@ -29,7 +30,7 @@ $agnsee_lang = agnsee_get_lang();
 
 <div id="page" class="site">
 
-	<header class="site-header" id="site-header">
+	<header class="site-header<?php echo $agnsee_transparent_header ? ' header-transparent' : ''; ?>" id="site-header">
 		<div class="header-inner">
 
 			<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">

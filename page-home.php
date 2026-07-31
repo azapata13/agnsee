@@ -20,7 +20,7 @@ get_header();
 			<video
 				class="hero-video-bg"
 				data-no-optimize="1"
-				data-src="<?php echo esc_url( $agnsee_hero_video ); ?>"
+				src="<?php echo esc_url( $agnsee_hero_video ); ?>"
 				<?php echo $agnsee_hero_poster ? 'poster="' . esc_url( $agnsee_hero_poster ) . '"' : ''; ?>
 				muted
 				autoplay
@@ -43,7 +43,7 @@ get_header();
 					<span class="lang-en">We represent carefully selected technical products for greenhouses and indoor growing, connecting manufacturers with distributors and institutional buyers.</span>
 				</p>
 				<div class="hero-video-actions">
-					<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
+					<a class="btn btn-hero-solid" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
 						<span class="lang-fr">Voir nos produits</span><span class="lang-en">View our products</span>
 					</a>
 					<a class="btn btn-glass" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
@@ -52,15 +52,6 @@ get_header();
 				</div>
 			</div>
 		</section>
-		<script data-no-optimize="1">
-			( function () {
-				var video = document.querySelector( '.hero-video-bg[data-src]' );
-				if ( video ) {
-					video.src = video.getAttribute( 'data-src' );
-					video.load();
-				}
-			} )();
-		</script>
 	<?php else : ?>
 		<section class="hero">
 			<div class="container">
