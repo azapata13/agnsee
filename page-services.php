@@ -10,14 +10,16 @@ get_header();
 
 	<section class="hero" style="padding-bottom:2rem;">
 		<div class="container">
-			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Accompagnement</span><span class="lang-en">Support</span></div>
+			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Accompagnement</span><span class="lang-en">Support</span><span class="lang-es">Acompañamiento</span></div>
 			<h1>
 				<span class="lang-fr">Services</span>
 				<span class="lang-en">Services</span>
+				<span class="lang-es">Servicios</span>
 			</h1>
 			<p class="hero-lead">
 				<span class="lang-fr">Un accompagnement technique complet, du plan d'éclairage à la mise en service, pour les distributeurs et acheteurs institutionnels.</span>
 				<span class="lang-en">Full technical support, from lighting plans to commissioning, for distributors and institutional buyers.</span>
+				<span class="lang-es">Un acompañamiento técnico completo, desde el plan de iluminación hasta la puesta en marcha, para distribuidores y compradores institucionales.</span>
 			</p>
 		</div>
 	</section>
@@ -33,10 +35,12 @@ get_header();
 					<h3>
 						<span class="lang-fr">Consultation Light Plan</span>
 						<span class="lang-en">Light Plan consultation</span>
+						<span class="lang-es">Consultoría Light Plan</span>
 					</h3>
 					<p>
 						<span class="lang-fr">Une analyse technique de vos besoins en éclairage horticole pour orienter vos choix d'équipement.</span>
 						<span class="lang-en">A technical analysis of your horticultural lighting needs to guide your equipment choices.</span>
+						<span class="lang-es">Un análisis técnico de tus necesidades de iluminación hortícola para guiar tus decisiones de equipamiento.</span>
 					</p>
 				</div>
 
@@ -47,10 +51,12 @@ get_header();
 					<h3>
 						<span class="lang-fr">Support technique</span>
 						<span class="lang-en">Technical support</span>
+						<span class="lang-es">Soporte técnico</span>
 					</h3>
 					<p>
 						<span class="lang-fr">Un accompagnement direct sur le dosage et l'installation de nos produits, en collaboration avec les fabricants représentés.</span>
 						<span class="lang-en">Direct support on dosing and installation of our products, in collaboration with the manufacturers we represent.</span>
+						<span class="lang-es">Acompañamiento directo en la dosificación e instalación de nuestros productos, en colaboración con los fabricantes que representamos.</span>
 					</p>
 				</div>
 
@@ -61,13 +67,15 @@ get_header();
 					<h3>
 						<span class="lang-fr">Partenariats Gensea</span>
 						<span class="lang-en">Gensea partnerships</span>
+						<span class="lang-es">Alianzas con Gensea</span>
 					</h3>
 					<p>
 						<span class="lang-fr">Des partenariats à venir avec Gensea pour élargir notre offre technique.</span>
 						<span class="lang-en">Upcoming partnerships with Gensea to expand our technical offering.</span>
+						<span class="lang-es">Próximas alianzas con Gensea para ampliar nuestra oferta técnica.</span>
 					</p>
 					<span class="badge" style="margin-top:0.75rem;display:inline-block;">
-						<span class="lang-fr">À venir</span><span class="lang-en">Coming soon</span>
+						<span class="lang-fr">À venir</span><span class="lang-en">Coming soon</span><span class="lang-es">Próximamente</span>
 					</span>
 				</div>
 
@@ -80,13 +88,15 @@ get_header();
 			<h2>
 				<span class="lang-fr">Planifions votre prochaine étape</span>
 				<span class="lang-en">Let's plan your next step</span>
+				<span class="lang-es">Planifiquemos tu próximo paso</span>
 			</h2>
 			<p style="max-width:560px;margin:0 auto 1.5rem;">
 				<span class="lang-fr">Prenez rendez-vous avec notre équipe pour discuter de vos besoins techniques.</span>
 				<span class="lang-en">Book a meeting with our team to discuss your technical needs.</span>
+				<span class="lang-es">Agenda una reunión con nuestro equipo para hablar de tus necesidades técnicas.</span>
 			</p>
 			<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-				<span class="lang-fr">Prendre rendez-vous</span><span class="lang-en">Book a meeting</span>
+				<span class="lang-fr">Prendre rendez-vous</span><span class="lang-en">Book a meeting</span><span class="lang-es">Agendar una reunión</span>
 			</a>
 		</div>
 	</section>

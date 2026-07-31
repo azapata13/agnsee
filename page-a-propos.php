@@ -10,14 +10,16 @@ get_header();
 
 	<section class="hero" style="padding-bottom:2rem;">
 		<div class="container">
-			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Qui nous sommes</span><span class="lang-en">Who we are</span></div>
+			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Qui nous sommes</span><span class="lang-en">Who we are</span><span class="lang-es">Quiénes somos</span></div>
 			<h1>
 				<span class="lang-fr">À propos d'Agnsee</span>
 				<span class="lang-en">About Agnsee</span>
+				<span class="lang-es">Acerca de Agnsee</span>
 			</h1>
 			<p class="hero-lead">
 				<span class="lang-fr">Agnsee est une agence manufacturière canadienne dédiée à l'horticulture protégée.</span>
 				<span class="lang-en">Agnsee is a Canadian manufacturer's representative agency dedicated to protected horticulture.</span>
+				<span class="lang-es">Agnsee es una agencia manufacturera canadiense dedicada a la horticultura protegida.</span>
 			</p>
 		</div>
 	</section>
@@ -26,17 +28,19 @@ get_header();
 		<div class="container">
 			<div class="grid grid-2">
 				<div>
-					<h2><span class="lang-fr">Notre mission</span><span class="lang-en">Our mission</span></h2>
+					<h2><span class="lang-fr">Notre mission</span><span class="lang-en">Our mission</span><span class="lang-es">Nuestra misión</span></h2>
 					<p>
 						<span class="lang-fr">Connecter les fabricants de produits techniques aux distributeurs et acheteurs institutionnels du secteur de l'horticulture protégée, en apportant une expertise technique locale et un support terrain fiable.</span>
 						<span class="lang-en">Connecting technical product manufacturers with distributors and institutional buyers in the protected horticulture sector, bringing local technical expertise and reliable field support.</span>
+						<span class="lang-es">Conectar a fabricantes de productos técnicos con distribuidores y compradores institucionales del sector de la horticultura protegida, aportando experiencia técnica local y soporte confiable en campo.</span>
 					</p>
 				</div>
 				<div>
-					<h2><span class="lang-fr">Le modèle agent manufacturier</span><span class="lang-en">The manufacturer's rep model</span></h2>
+					<h2><span class="lang-fr">Le modèle agent manufacturier</span><span class="lang-en">The manufacturer's rep model</span><span class="lang-es">El modelo de agente manufacturero</span></h2>
 					<p>
 						<span class="lang-fr">En tant qu'agent manufacturier, Agnsee représente des fabricants sélectionnés sans jamais devenir propriétaire des produits vendus. Nous facilitons la mise en relation, le support technique et la distribution — sans commerce en ligne ni transaction directe.</span>
 						<span class="lang-en">As a manufacturer's representative, Agnsee represents selected manufacturers without ever taking ownership of the products sold. We facilitate introductions, technical support and distribution — with no online commerce or direct transactions.</span>
+						<span class="lang-es">Como agente manufacturero, Agnsee representa a fabricantes seleccionados sin nunca tomar posesión de los productos vendidos. Facilitamos la conexión, el soporte técnico y la distribución — sin comercio en línea ni transacciones directas.</span>
 					</p>
 				</div>
 			</div>
@@ -48,27 +52,31 @@ get_header();
 			<h2 class="text-center" style="margin-bottom:2rem;">
 				<span class="lang-fr">Nos valeurs</span>
 				<span class="lang-en">Our values</span>
+				<span class="lang-es">Nuestros valores</span>
 			</h2>
 			<div class="grid grid-3">
 				<div class="card">
-					<h4><span class="lang-fr">Rigueur technique</span><span class="lang-en">Technical rigor</span></h4>
+					<h4><span class="lang-fr">Rigueur technique</span><span class="lang-en">Technical rigor</span><span class="lang-es">Rigor técnico</span></h4>
 					<p>
 						<span class="lang-fr">Une sélection de produits fondée sur des critères techniques précis, sans compromis.</span>
 						<span class="lang-en">A product selection based on precise technical criteria, without compromise.</span>
+						<span class="lang-es">Una selección de productos basada en criterios técnicos precisos, sin compromisos.</span>
 					</p>
 				</div>
 				<div class="card">
-					<h4><span class="lang-fr">Transparence</span><span class="lang-en">Transparency</span></h4>
+					<h4><span class="lang-fr">Transparence</span><span class="lang-en">Transparency</span><span class="lang-es">Transparencia</span></h4>
 					<p>
 						<span class="lang-fr">Aucune allégation exagérée — uniquement des faits vérifiables sur nos produits.</span>
 						<span class="lang-en">No exaggerated claims — only verifiable facts about our products.</span>
+						<span class="lang-es">Sin afirmaciones exageradas — solo hechos verificables sobre nuestros productos.</span>
 					</p>
 				</div>
 				<div class="card">
-					<h4><span class="lang-fr">Proximité</span><span class="lang-en">Proximity</span></h4>
+					<h4><span class="lang-fr">Proximité</span><span class="lang-en">Proximity</span><span class="lang-es">Cercanía</span></h4>
 					<p>
 						<span class="lang-fr">Un support terrain direct auprès de nos partenaires distributeurs à travers le Canada.</span>
 						<span class="lang-en">Direct field support for our distribution partners across Canada.</span>
+						<span class="lang-es">Soporte directo en campo para nuestros socios distribuidores en todo Canadá.</span>
 					</p>
 				</div>
 			</div>
@@ -80,9 +88,10 @@ get_header();
 			<h2>
 				<span class="lang-fr">Envie de collaborer avec nous ?</span>
 				<span class="lang-en">Interested in working with us?</span>
+				<span class="lang-es">¿Interesado en colaborar con nosotros?</span>
 			</h2>
 			<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-				<span class="lang-fr">Nous contacter</span><span class="lang-en">Contact us</span>
+				<span class="lang-fr">Nous contacter</span><span class="lang-en">Contact us</span><span class="lang-es">Contáctanos</span>
 			</a>
 		</div>
 	</section>
