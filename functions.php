@@ -39,7 +39,7 @@ add_action( 'after_setup_theme', 'agnsee_setup' );
    2. ASSETS
    ========================================================================== */
 function agnsee_enqueue_assets() {
-	wp_enqueue_style( 'agnsee-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', array(), null );
+	wp_enqueue_style( 'agnsee-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap', array(), null );
 	wp_enqueue_style( 'agnsee-style', get_stylesheet_uri(), array(), AGNSEE_VERSION );
 
 	wp_enqueue_script( 'agnsee-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), AGNSEE_VERSION, true );
@@ -262,6 +262,19 @@ function agnsee_image_url( $relative, $extensions = array( 'svg', 'png', 'jpg', 
 		$path = get_template_directory() . '/assets/images/' . $relative . '.' . $ext;
 		if ( file_exists( $path ) ) {
 			return get_template_directory_uri() . '/assets/images/' . $relative . '.' . $ext;
+		}
+	}
+	return false;
+}
+
+/**
+ * Même principe que agnsee_image_url() mais pour les vidéos (assets/video/).
+ */
+function agnsee_video_url( $relative, $extensions = array( 'mp4', 'webm' ) ) {
+	foreach ( $extensions as $ext ) {
+		$path = get_template_directory() . '/assets/video/' . $relative . '.' . $ext;
+		if ( file_exists( $path ) ) {
+			return get_template_directory_uri() . '/assets/video/' . $relative . '.' . $ext;
 		}
 	}
 	return false;

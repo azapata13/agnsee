@@ -11,30 +11,82 @@ get_header();
 <main id="main-content" class="site-main">
 
 	<!-- Hero -->
-	<section class="hero">
-		<div class="container">
-			<div class="eyebrow hero-eyebrow">
-				<span class="lang-fr">Agent manufacturier</span>
-				<span class="lang-en">Manufacturer's representative</span>
+	<?php
+	$agnsee_hero_video = agnsee_video_url( 'hero' );
+	$agnsee_hero_poster = agnsee_image_url( 'hero/hero-poster' );
+	?>
+	<?php if ( $agnsee_hero_video ) : ?>
+		<section class="hero-video">
+			<video
+				class="hero-video-bg"
+				data-no-optimize="1"
+				data-src="<?php echo esc_url( $agnsee_hero_video ); ?>"
+				<?php echo $agnsee_hero_poster ? 'poster="' . esc_url( $agnsee_hero_poster ) . '"' : ''; ?>
+				muted
+				autoplay
+				loop
+				playsinline
+				preload="auto"
+			></video>
+			<div class="hero-video-overlay"></div>
+			<div class="hero-video-content">
+				<div class="hero-video-eyebrow">
+					<span class="lang-fr">Agent manufacturier</span>
+					<span class="lang-en">Manufacturer's representative</span>
+				</div>
+				<h1 class="hero-video-title">
+					<span class="lang-fr">L'horticulture protégée, propulsée par la bonne technologie</span>
+					<span class="lang-en">Protected horticulture, powered by the right technology</span>
+				</h1>
+				<p class="hero-video-lead">
+					<span class="lang-fr">Nous représentons des produits techniques sélectionnés pour les serres et la culture intérieure, et connectons les fabricants aux distributeurs et acheteurs institutionnels.</span>
+					<span class="lang-en">We represent carefully selected technical products for greenhouses and indoor growing, connecting manufacturers with distributors and institutional buyers.</span>
+				</p>
+				<div class="hero-video-actions">
+					<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
+						<span class="lang-fr">Voir nos produits</span><span class="lang-en">View our products</span>
+					</a>
+					<a class="btn btn-glass" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+						<span class="lang-fr">Nous contacter</span><span class="lang-en">Contact us</span>
+					</a>
+				</div>
 			</div>
-			<h1>
-				<span class="lang-fr">Agent manufacturier pour l'horticulture protégée</span>
-				<span class="lang-en">Manufacturer's representative for protected horticulture</span>
-			</h1>
-			<p class="hero-lead">
-				<span class="lang-fr">Nous représentons des produits techniques sélectionnés pour les serres et la culture intérieure, et connectons les fabricants aux distributeurs et acheteurs institutionnels.</span>
-				<span class="lang-en">We represent carefully selected technical products for greenhouses and indoor growing, connecting manufacturers with distributors and institutional buyers.</span>
-			</p>
-			<div class="hero-actions">
-				<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
-					<span class="lang-fr">Voir nos produits</span><span class="lang-en">View our products</span>
-				</a>
-				<a class="btn btn-secondary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-					<span class="lang-fr">Nous contacter</span><span class="lang-en">Contact us</span>
-				</a>
+		</section>
+		<script data-no-optimize="1">
+			( function () {
+				var video = document.querySelector( '.hero-video-bg[data-src]' );
+				if ( video ) {
+					video.src = video.getAttribute( 'data-src' );
+					video.load();
+				}
+			} )();
+		</script>
+	<?php else : ?>
+		<section class="hero">
+			<div class="container">
+				<div class="eyebrow hero-eyebrow">
+					<span class="lang-fr">Agent manufacturier</span>
+					<span class="lang-en">Manufacturer's representative</span>
+				</div>
+				<h1>
+					<span class="lang-fr">Agent manufacturier pour l'horticulture protégée</span>
+					<span class="lang-en">Manufacturer's representative for protected horticulture</span>
+				</h1>
+				<p class="hero-lead">
+					<span class="lang-fr">Nous représentons des produits techniques sélectionnés pour les serres et la culture intérieure, et connectons les fabricants aux distributeurs et acheteurs institutionnels.</span>
+					<span class="lang-en">We represent carefully selected technical products for greenhouses and indoor growing, connecting manufacturers with distributors and institutional buyers.</span>
+				</p>
+				<div class="hero-actions">
+					<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
+						<span class="lang-fr">Voir nos produits</span><span class="lang-en">View our products</span>
+					</a>
+					<a class="btn btn-secondary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+						<span class="lang-fr">Nous contacter</span><span class="lang-en">Contact us</span>
+					</a>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	<?php endif; ?>
 
 	<!-- Notre rôle -->
 	<section class="section section-alt">
