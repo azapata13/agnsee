@@ -90,10 +90,8 @@ get_header();
 		<div class="container">
 			<div class="grid grid-3">
 
-				<div class="card">
-					<div class="card-icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-					</div>
+				<div class="role-card">
+					<span class="role-number">01</span>
 					<h3>
 						<span class="lang-fr">Sourcing exclusif</span>
 						<span class="lang-en">Exclusive sourcing</span>
@@ -106,10 +104,8 @@ get_header();
 					</p>
 				</div>
 
-				<div class="card">
-					<div class="card-icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5.5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8.5V3"/></svg>
-					</div>
+				<div class="role-card">
+					<span class="role-number">02</span>
 					<h3>
 						<span class="lang-fr">Expertise technique</span>
 						<span class="lang-en">Technical expertise</span>
@@ -122,10 +118,8 @@ get_header();
 					</p>
 				</div>
 
-				<div class="card">
-					<div class="card-icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a9 9 0 0 1 18 0"/><path d="M21 12v6a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M3 12v6a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3Z"/></svg>
-					</div>
+				<div class="role-card">
+					<span class="role-number">03</span>
 					<h3>
 						<span class="lang-fr">Support terrain</span>
 						<span class="lang-en">Field support</span>
@@ -143,60 +137,207 @@ get_header();
 	</section>
 
 	<!-- Produits en vedette -->
-	<section class="section">
-		<div class="container">
-			<div class="eyebrow"><span class="lang-fr">Produits</span><span class="lang-en">Products</span><span class="lang-es">Productos</span></div>
-			<h2 style="margin-bottom:2rem;">
+	<?php $agnsee_brands_video = 'https://agnsee.ca/wp-content/uploads/2026/08/Video-Project-2.mp4'; ?>
+	<style>
+	#hort-brands {
+	  padding: 100px 0;
+	  background: #fff;
+	  border-top: 1px solid #f0f0f0;
+	}
+	.hort-brands__head { text-align: center; margin-bottom: 72px; }
+	.hort-brands__eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(0,0,0,.38); margin-bottom: 14px; }
+	.hort-brands__title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: #0d0d0d; line-height: 1.18; margin-bottom: 14px; }
+	.hort-brands__sub { font-size: 16px; color: #666; max-width: 520px; margin: 0 auto; line-height: 1.65; }
+	.hort-brands__layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+	.hort-brands__sticky { position: sticky; top: 100px; height: 480px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.1); }
+	.hort-brands__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+	.hort-brands__items { padding: 15vh 0; display: flex; flex-direction: column; gap: 28vh; }
+	.hort-brands__item { opacity: .32; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+	.hort-brands__item.is-active { opacity: 1; transform: translateY(0); }
+	.hort-brands__item-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(0,0,0,.35); margin-bottom: 12px; }
+	.hort-brands__item-name { font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: #0d0d0d; line-height: 1.15; margin-bottom: 14px; }
+	.hort-brands__item-desc { font-size: 15px; color: #555; line-height: 1.7; max-width: 440px; margin-bottom: 24px; }
+	.hort-brands__item-link { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: #111; text-decoration: none; border-bottom: 1.5px solid rgba(0,0,0,.18); padding-bottom: 2px; transition: border-color .2s, gap .2s; }
+	.hort-brands__item-link:hover { border-color: #111; gap: 10px; }
+	.hort-brands__m-video { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,.1); margin-bottom: 8px; }
+	@media (max-width: 800px) {
+	  .hort-brands__layout { display: none; }
+	  .hort-brands__mobile { display: flex; flex-direction: column; gap: 48px; padding: 0 20px; }
+	  .hort-brands__m-item { display: flex; flex-direction: column; gap: 20px; }
+	  .hort-brands__m-name { font-size: 22px; font-weight: 800; color: #0d0d0d; margin-bottom: 8px; line-height: 1.2; }
+	  .hort-brands__m-desc { font-size: 14px; color: #555; line-height: 1.65; margin-bottom: 16px; }
+	}
+	@media (min-width: 801px) { .hort-brands__mobile { display: none; } }
+	</style>
+
+	<section id="hort-brands">
+		<div class="hort-brands__head container">
+			<span class="hort-brands__eyebrow">
+				<span class="lang-fr">Produits</span><span class="lang-en">Products</span><span class="lang-es">Productos</span>
+			</span>
+			<h2 class="hort-brands__title">
 				<span class="lang-fr">Produits en vedette</span>
 				<span class="lang-en">Featured products</span>
 				<span class="lang-es">Productos destacados</span>
 			</h2>
+			<p class="hort-brands__sub">
+				<span class="lang-fr">Des produits techniques sélectionnés pour l'horticulture protégée, représentés en exclusivité au Canada.</span>
+				<span class="lang-en">Technical products selected for protected horticulture, exclusively represented across Canada.</span>
+				<span class="lang-es">Productos técnicos seleccionados para la horticultura protegida, representados en exclusiva en Canadá.</span>
+			</p>
+		</div>
 
-			<div class="grid grid-4">
+		<!-- Desktop -->
+		<div class="hort-brands__layout">
+			<div class="hort-brands__sticky" id="hort-brands-sticky">
+				<video class="hort-brands__img is-active" data-no-optimize="1" src="<?php echo esc_url( $agnsee_brands_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
+			</div>
 
-				<a class="card" href="<?php echo esc_url( home_url( '/produits/safegrow-ag/' ) ); ?>">
-					<div class="badge"><span class="lang-fr">Traitement d'irrigation</span><span class="lang-en">Irrigation treatment</span><span class="lang-es">Tratamiento de irrigación</span></div>
-					<h4 style="margin-top:0.75rem;">SafeGrow AG</h4>
-					<p>
+			<div class="hort-brands__items" id="hort-brands-items">
+
+				<div class="hort-brands__item is-active" data-brand="0">
+					<span class="hort-brands__item-tag"><span class="lang-fr">Traitement d'irrigation</span><span class="lang-en">Irrigation treatment</span><span class="lang-es">Tratamiento de irrigación</span></span>
+					<h3 class="hort-brands__item-name">SafeGrow AG</h3>
+					<p class="hort-brands__item-desc">
 						<span class="lang-fr">Nettoyant d'infrastructure d'irrigation à base de HOCl stabilisé.</span>
 						<span class="lang-en">Irrigation infrastructure cleaner based on stabilized HOCl.</span>
 						<span class="lang-es">Limpiador de infraestructura de irrigación a base de HOCl estabilizado.</span>
 					</p>
-				</a>
+					<a href="<?php echo esc_url( home_url( '/produits/safegrow-ag/' ) ); ?>" class="hort-brands__item-link">
+						<span class="lang-fr">Découvrir SafeGrow AG</span><span class="lang-en">Discover SafeGrow AG</span><span class="lang-es">Descubrir SafeGrow AG</span>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+					</a>
+				</div>
 
-				<a class="card" href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>">
-					<div class="badge"><span class="lang-fr">Extrait d'algues</span><span class="lang-en">Seaweed extract</span><span class="lang-es">Extracto de algas</span></div>
-					<h4 style="margin-top:0.75rem;">Booster</h4>
-					<p>
+				<div class="hort-brands__item" data-brand="1">
+					<span class="hort-brands__item-tag"><span class="lang-fr">Extrait d'algues</span><span class="lang-en">Seaweed extract</span><span class="lang-es">Extracto de algas</span></span>
+					<h3 class="hort-brands__item-name">Booster</h3>
+					<p class="hort-brands__item-desc">
 						<span class="lang-fr">Extrait d'algues marines pour programmes de culture.</span>
 						<span class="lang-en">Marine seaweed extract for growing programs.</span>
 						<span class="lang-es">Extracto de algas marinas para programas de cultivo.</span>
 					</p>
-				</a>
+					<a href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>" class="hort-brands__item-link">
+						<span class="lang-fr">Découvrir Booster</span><span class="lang-en">Discover Booster</span><span class="lang-es">Descubrir Booster</span>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+					</a>
+				</div>
 
-				<a class="card" href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>">
-					<div class="badge"><span class="lang-fr">Acide monosilicique</span><span class="lang-en">Monosilicic acid</span><span class="lang-es">Ácido monosilícico</span></div>
-					<h4 style="margin-top:0.75rem;">Grow Genius</h4>
-					<p>
+				<div class="hort-brands__item" data-brand="2">
+					<span class="hort-brands__item-tag"><span class="lang-fr">Acide monosilicique</span><span class="lang-en">Monosilicic acid</span><span class="lang-es">Ácido monosilícico</span></span>
+					<h3 class="hort-brands__item-name">Grow Genius</h3>
+					<p class="hort-brands__item-desc">
 						<span class="lang-fr">Acide monosilicique concentré à 40 %.</span>
 						<span class="lang-en">40% concentrated monosilicic acid.</span>
 						<span class="lang-es">Ácido monosilícico concentrado al 40 %.</span>
 					</p>
-				</a>
+					<a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>" class="hort-brands__item-link">
+						<span class="lang-fr">Découvrir Grow Genius</span><span class="lang-en">Discover Grow Genius</span><span class="lang-es">Descubrir Grow Genius</span>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+					</a>
+				</div>
 
-				<a class="card" href="<?php echo esc_url( home_url( '/produits/aranet/' ) ); ?>">
-					<div class="badge"><span class="lang-fr">Capteurs</span><span class="lang-en">Sensors</span><span class="lang-es">Sensores</span></div>
-					<h4 style="margin-top:0.75rem;">Aranet</h4>
-					<p>
+				<div class="hort-brands__item" data-brand="3">
+					<span class="hort-brands__item-tag"><span class="lang-fr">Capteurs</span><span class="lang-en">Sensors</span><span class="lang-es">Sensores</span></span>
+					<h3 class="hort-brands__item-name">Aranet</h3>
+					<p class="hort-brands__item-desc">
 						<span class="lang-fr">Système de capteurs CO2, température et humidité.</span>
 						<span class="lang-en">CO2, temperature and humidity sensor system.</span>
 						<span class="lang-es">Sistema de sensores de CO2, temperatura y humedad.</span>
 					</p>
-				</a>
+					<a href="<?php echo esc_url( home_url( '/produits/aranet/' ) ); ?>" class="hort-brands__item-link">
+						<span class="lang-fr">Découvrir Aranet</span><span class="lang-en">Discover Aranet</span><span class="lang-es">Descubrir Aranet</span>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+					</a>
+				</div>
 
 			</div>
 		</div>
+
+		<!-- Mobile -->
+		<div class="hort-brands__mobile">
+
+			<video class="hort-brands__m-video" data-no-optimize="1" src="<?php echo esc_url( $agnsee_brands_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
+
+			<div class="hort-brands__m-item">
+				<div>
+					<span class="hort-brands__item-tag"><span class="lang-fr">Traitement d'irrigation</span><span class="lang-en">Irrigation treatment</span><span class="lang-es">Tratamiento de irrigación</span></span>
+					<h3 class="hort-brands__m-name">SafeGrow AG</h3>
+					<p class="hort-brands__m-desc">
+						<span class="lang-fr">Nettoyant d'infrastructure d'irrigation à base de HOCl stabilisé.</span>
+						<span class="lang-en">Irrigation infrastructure cleaner based on stabilized HOCl.</span>
+						<span class="lang-es">Limpiador de infraestructura de irrigación a base de HOCl estabilizado.</span>
+					</p>
+					<a href="<?php echo esc_url( home_url( '/produits/safegrow-ag/' ) ); ?>" class="hort-brands__item-link">
+						<span class="lang-fr">Découvrir SafeGrow AG</span><span class="lang-en">Discover SafeGrow AG</span><span class="lang-es">Descubrir SafeGrow AG</span> →
+					</a>
+				</div>
+			</div>
+
+			<div class="hort-brands__m-item">
+				<div>
+					<span class="hort-brands__item-tag"><span class="lang-fr">Extrait d'algues</span><span class="lang-en">Seaweed extract</span><span class="lang-es">Extracto de algas</span></span>
+					<h3 class="hort-brands__m-name">Booster</h3>
+					<p class="hort-brands__m-desc">
+						<span class="lang-fr">Extrait d'algues marines pour programmes de culture.</span>
+						<span class="lang-en">Marine seaweed extract for growing programs.</span>
+						<span class="lang-es">Extracto de algas marinas para programas de cultivo.</span>
+					</p>
+					<a href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>" class="hort-brands__item-link">
+						<span class="lang-fr">Découvrir Booster</span><span class="lang-en">Discover Booster</span><span class="lang-es">Descubrir Booster</span> →
+					</a>
+				</div>
+			</div>
+
+			<div class="hort-brands__m-item">
+				<div>
+					<span class="hort-brands__item-tag"><span class="lang-fr">Acide monosilicique</span><span class="lang-en">Monosilicic acid</span><span class="lang-es">Ácido monosilícico</span></span>
+					<h3 class="hort-brands__m-name">Grow Genius</h3>
+					<p class="hort-brands__m-desc">
+						<span class="lang-fr">Acide monosilicique concentré à 40 %.</span>
+						<span class="lang-en">40% concentrated monosilicic acid.</span>
+						<span class="lang-es">Ácido monosilícico concentrado al 40 %.</span>
+					</p>
+					<a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>" class="hort-brands__item-link">
+						<span class="lang-fr">Découvrir Grow Genius</span><span class="lang-en">Discover Grow Genius</span><span class="lang-es">Descubrir Grow Genius</span> →
+					</a>
+				</div>
+			</div>
+
+			<div class="hort-brands__m-item">
+				<div>
+					<span class="hort-brands__item-tag"><span class="lang-fr">Capteurs</span><span class="lang-en">Sensors</span><span class="lang-es">Sensores</span></span>
+					<h3 class="hort-brands__m-name">Aranet</h3>
+					<p class="hort-brands__m-desc">
+						<span class="lang-fr">Système de capteurs CO2, température et humidité.</span>
+						<span class="lang-en">CO2, temperature and humidity sensor system.</span>
+						<span class="lang-es">Sistema de sensores de CO2, temperatura y humedad.</span>
+					</p>
+					<a href="<?php echo esc_url( home_url( '/produits/aranet/' ) ); ?>" class="hort-brands__item-link">
+						<span class="lang-fr">Découvrir Aranet</span><span class="lang-en">Discover Aranet</span><span class="lang-es">Descubrir Aranet</span> →
+					</a>
+				</div>
+			</div>
+
+		</div>
 	</section>
+
+	<script data-no-optimize="1">
+	(function() {
+		var items = document.querySelectorAll('#hort-brands-items .hort-brands__item');
+		if (!items.length) return;
+		function setActive(idx) {
+			items.forEach(function(el) { el.classList.remove('is-active'); });
+			if (items[idx]) items[idx].classList.add('is-active');
+		}
+		var observer = new IntersectionObserver(function(entries) {
+			entries.forEach(function(entry) {
+				if (entry.isIntersecting) setActive(parseInt(entry.target.getAttribute('data-brand'), 10));
+			});
+		}, { threshold: 0.5 });
+		items.forEach(function(el) { observer.observe(el); });
+	})();
+	</script>
 
 	<!-- Teaser outils -->
 	<section class="section section-alt">
