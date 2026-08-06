@@ -87,10 +87,8 @@ get_header();
 
 	<!-- Notre rôle -->
 	<?php $agnsee_role_video = 'https://agnsee.ca/wp-content/uploads/2026/08/Video-Project-2.mp4'; ?>
-	<section class="role-section">
-		<video class="role-video-bg" data-no-optimize="1" src="<?php echo esc_url( $agnsee_role_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
-		<div class="role-overlay"></div>
-		<div class="container role-content">
+	<section class="section section-alt">
+		<div class="container">
 			<div class="grid grid-3">
 
 				<div class="role-card">
@@ -136,6 +134,8 @@ get_header();
 				</div>
 
 			</div>
+
+			<video class="role-video-small" data-no-optimize="1" src="<?php echo esc_url( $agnsee_role_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
 		</div>
 	</section>
 
@@ -160,7 +160,8 @@ get_header();
 	.hort-brands__sub { font-size: 16px; color: #666; max-width: 520px; margin: 0 auto; line-height: 1.65; }
 	.hort-brands__layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 	.hort-brands__sticky { position: sticky; top: 100px; height: 480px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.1); }
-	.hort-brands__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+	.hort-brands__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; opacity: 0; transition: opacity .5s ease; }
+	.hort-brands__img.is-active { opacity: 1; z-index: 1; }
 	.hort-brands__items { padding: 15vh 0; display: flex; flex-direction: column; gap: 28vh; }
 	.hort-brands__item { opacity: .32; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
 	.hort-brands__item.is-active { opacity: 1; transform: translateY(0); }
@@ -345,17 +346,17 @@ get_header();
 		if (!items.length || !media.length) return;
 		function setActive(idx) {
 			items.forEach(function(el) { el.classList.remove('is-active'); });
-			media.forEach(function(el) { el.style.zIndex = '0'; el.classList.remove('is-active'); });
+			media.forEach(function(el) { el.classList.remove('is-active'); });
 			if (items[idx]) items[idx].classList.add('is-active');
 			var activeMedia = document.querySelector('#hort-brands-sticky [data-brand-img="' + idx + '"]');
 			if (activeMedia) {
-				activeMedia.style.zIndex = '1';
 				activeMedia.classList.add('is-active');
 				if (activeMedia.tagName === 'VIDEO' && activeMedia.paused) {
 					activeMedia.play().catch(function () {});
 				}
 			}
 		}
+		setActive(0);
 		var observer = new IntersectionObserver(function(entries) {
 			entries.forEach(function(entry) {
 				if (entry.isIntersecting) setActive(parseInt(entry.target.getAttribute('data-brand'), 10));
