@@ -30,21 +30,12 @@ $agnsee_products = array(
 		'en'      => '40% concentrated monosilicic acid.',
 		'es'      => 'Ácido monosilícico concentrado al 40 %.',
 	),
-	array(
-		'slug'    => 'aranet',
-		'segment' => 'capteurs',
-		'name'    => 'Aranet',
-		'fr'      => 'Système de capteurs CO2, température et humidité.',
-		'en'      => 'CO2, temperature and humidity sensor system.',
-		'es'      => 'Sistema de sensores de CO2, temperatura y humedad.',
-	),
 );
 
 $agnsee_segments = array(
 	'all'           => array( 'fr' => 'Tous', 'en' => 'All', 'es' => 'Todos' ),
 	'irrigation'    => array( 'fr' => "Traitement d'irrigation", 'en' => 'Irrigation treatment', 'es' => 'Tratamiento de irrigación' ),
 	'biostimulants' => array( 'fr' => 'Biostimulants', 'en' => 'Biostimulants', 'es' => 'Bioestimulantes' ),
-	'capteurs'      => array( 'fr' => 'Capteurs & données', 'en' => 'Sensors & data', 'es' => 'Sensores y datos' ),
 );
 ?>
 

@@ -144,7 +144,6 @@ get_header();
 	$agnsee_brands_photos = array(
 		0 => 'https://agnsee.ca/wp-content/uploads/2026/08/Capture-decran-le-2026-07-27-a-18.48.07.png',
 		2 => 'https://agnsee.ca/wp-content/uploads/2026/08/Grow-Genius-Mono-Silicic-Acid-40-—-500-ml_2.png',
-		3 => 'https://agnsee.ca/wp-content/uploads/2026/08/Aranet-PRO-Plus-Base-Station-—-Wireless-Gateway-Data-Server_2.png',
 	);
 	// Booster (index 1) n'a pas encore de photo : repli neutre en attendant.
 	?>
@@ -205,7 +204,6 @@ get_header();
 				<img class="hort-brands__img is-active" data-brand-img="0" src="<?php echo esc_url( $agnsee_brands_photos[0] ); ?>" alt="SafeGrow AG">
 				<div class="hort-brands__img hort-brands__img-placeholder" data-brand-img="1">Booster</div>
 				<img class="hort-brands__img" data-brand-img="2" src="<?php echo esc_url( $agnsee_brands_photos[2] ); ?>" alt="Grow Genius">
-				<img class="hort-brands__img" data-brand-img="3" src="<?php echo esc_url( $agnsee_brands_photos[3] ); ?>" alt="Aranet">
 			</div>
 
 			<div class="hort-brands__items" id="hort-brands-items">
@@ -248,20 +246,6 @@ get_header();
 					</p>
 					<a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Grow Genius</span><span class="lang-en">Discover Grow Genius</span><span class="lang-es">Descubrir Grow Genius</span>
-						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-					</a>
-				</div>
-
-				<div class="hort-brands__item" data-brand="3">
-					<span class="hort-brands__item-tag"><span class="lang-fr">Capteurs</span><span class="lang-en">Sensors</span><span class="lang-es">Sensores</span></span>
-					<h3 class="hort-brands__item-name">Aranet</h3>
-					<p class="hort-brands__item-desc">
-						<span class="lang-fr">Système de capteurs CO2, température et humidité.</span>
-						<span class="lang-en">CO2, temperature and humidity sensor system.</span>
-						<span class="lang-es">Sistema de sensores de CO2, temperatura y humedad.</span>
-					</p>
-					<a href="<?php echo esc_url( home_url( '/produits/aranet/' ) ); ?>" class="hort-brands__item-link">
-						<span class="lang-fr">Découvrir Aranet</span><span class="lang-en">Discover Aranet</span><span class="lang-es">Descubrir Aranet</span>
 						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
 					</a>
 				</div>
@@ -316,22 +300,6 @@ get_header();
 					</p>
 					<a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Grow Genius</span><span class="lang-en">Discover Grow Genius</span><span class="lang-es">Descubrir Grow Genius</span> →
-					</a>
-				</div>
-			</div>
-
-			<div class="hort-brands__m-item">
-				<img class="hort-brands__m-img" src="<?php echo esc_url( $agnsee_brands_photos[3] ); ?>" alt="Aranet">
-				<div>
-					<span class="hort-brands__item-tag"><span class="lang-fr">Capteurs</span><span class="lang-en">Sensors</span><span class="lang-es">Sensores</span></span>
-					<h3 class="hort-brands__m-name">Aranet</h3>
-					<p class="hort-brands__m-desc">
-						<span class="lang-fr">Système de capteurs CO2, température et humidité.</span>
-						<span class="lang-en">CO2, temperature and humidity sensor system.</span>
-						<span class="lang-es">Sistema de sensores de CO2, temperatura y humedad.</span>
-					</p>
-					<a href="<?php echo esc_url( home_url( '/produits/aranet/' ) ); ?>" class="hort-brands__item-link">
-						<span class="lang-fr">Découvrir Aranet</span><span class="lang-en">Discover Aranet</span><span class="lang-es">Descubrir Aranet</span> →
 					</a>
 				</div>
 			</div>

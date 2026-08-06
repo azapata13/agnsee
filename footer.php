@@ -28,7 +28,6 @@
 							<li><a href="<?php echo esc_url( home_url( '/produits/safegrow-ag/' ) ); ?>">SafeGrow AG</a></li>
 							<li><a href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>">Booster</a></li>
 							<li><a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>">Grow Genius</a></li>
-							<li><a href="<?php echo esc_url( home_url( '/produits/aranet/' ) ); ?>">Aranet</a></li>
 							<li><a href="<?php echo esc_url( home_url( '/produits/' ) ); ?>"><span class="lang-fr">Tous les produits</span><span class="lang-en">All products</span><span class="lang-es">Todos los productos</span></a></li>
 						</ul>
 					<?php endif; ?>

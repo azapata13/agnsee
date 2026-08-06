@@ -64,7 +64,6 @@ $agnsee_transparent_header = is_front_page() && function_exists( 'agnsee_hero_vi
 								<a class="mega-link" href="<?php echo esc_url( home_url( '/produits/safegrow-ag/' ) ); ?>">SafeGrow AG</a>
 								<a class="mega-link" href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>">Booster</a>
 								<a class="mega-link" href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>">Grow Genius</a>
-								<a class="mega-link" href="<?php echo esc_url( home_url( '/produits/aranet/' ) ); ?>">Aranet</a>
 							</div>
 							<div class="mega-menu-col">
 								<div class="mega-menu-col-title">
@@ -133,7 +132,6 @@ $agnsee_transparent_header = is_front_page() && function_exists( 'agnsee_hero_vi
 						<a href="<?php echo esc_url( home_url( '/produits/safegrow-ag/' ) ); ?>">SafeGrow AG</a>
 						<a href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>">Booster</a>
 						<a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>">Grow Genius</a>
-						<a href="<?php echo esc_url( home_url( '/produits/aranet/' ) ); ?>">Aranet</a>
 					</div>
 				</li>
 				<li><a href="<?php echo esc_url( home_url( '/outils/' ) ); ?>"><span class="lang-fr">Outils</span><span class="lang-en">Tools</span><span class="lang-es">Herramientas</span></a></li>
