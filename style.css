@@ -270,12 +270,13 @@ p { color: var(--color-text-secondary); }
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
-  background: var(--color-accent-light);
-  color: var(--color-accent);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
   margin-bottom: var(--space-sm);
 }
 
-.card-icon svg { width: 22px; height: 22px; }
+.card-icon svg { width: 20px; height: 20px; stroke-width: 1.75; }
 
 /* ==========================================================================
    7. HEADER / NAVIGATION
