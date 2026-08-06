@@ -87,7 +87,8 @@ body {
 
 img,
 picture,
-svg {
+svg,
+video {
   max-width: 100%;
   display: block;
 }
@@ -286,13 +287,17 @@ p { color: var(--color-text-secondary); }
 .role-video-small {
   display: block;
   width: 100%;
-  max-width: 640px;
+  max-width: 480px;
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   margin: var(--space-lg) auto 0;
+}
+
+@media (max-width: 600px) {
+  .role-video-small { max-width: 100%; }
 }
 
 .role-number {
