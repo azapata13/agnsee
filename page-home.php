@@ -137,7 +137,15 @@ get_header();
 	</section>
 
 	<!-- Produits en vedette -->
-	<?php $agnsee_brands_video = 'https://agnsee.ca/wp-content/uploads/2026/08/Video-Project-2.mp4'; ?>
+	<?php
+	$agnsee_brands_video = 'https://agnsee.ca/wp-content/uploads/2026/08/Video-Project-2.mp4';
+	$agnsee_brands_photos = array(
+		0 => 'https://agnsee.ca/wp-content/uploads/2026/08/Capture-decran-le-2026-07-27-a-18.48.07.png',
+		2 => 'https://agnsee.ca/wp-content/uploads/2026/08/Grow-Genius-Mono-Silicic-Acid-40-—-500-ml_2.png',
+		3 => 'https://agnsee.ca/wp-content/uploads/2026/08/Aranet-PRO-Plus-Base-Station-—-Wireless-Gateway-Data-Server_2.png',
+	);
+	// Booster (index 1) n'a pas encore de photo : la vidéo comble l'absence.
+	?>
 	<style>
 	#hort-brands {
 	  padding: 100px 0;
@@ -159,7 +167,7 @@ get_header();
 	.hort-brands__item-desc { font-size: 15px; color: #555; line-height: 1.7; max-width: 440px; margin-bottom: 24px; }
 	.hort-brands__item-link { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: #111; text-decoration: none; border-bottom: 1.5px solid rgba(0,0,0,.18); padding-bottom: 2px; transition: border-color .2s, gap .2s; }
 	.hort-brands__item-link:hover { border-color: #111; gap: 10px; }
-	.hort-brands__m-video { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,.1); margin-bottom: 8px; }
+	.hort-brands__m-video, .hort-brands__m-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,.1); margin-bottom: 8px; }
 	@media (max-width: 800px) {
 	  .hort-brands__layout { display: none; }
 	  .hort-brands__mobile { display: flex; flex-direction: column; gap: 48px; padding: 0 20px; }
@@ -190,7 +198,10 @@ get_header();
 		<!-- Desktop -->
 		<div class="hort-brands__layout">
 			<div class="hort-brands__sticky" id="hort-brands-sticky">
-				<video class="hort-brands__img is-active" data-no-optimize="1" src="<?php echo esc_url( $agnsee_brands_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
+				<img class="hort-brands__img is-active" data-brand-img="0" src="<?php echo esc_url( $agnsee_brands_photos[0] ); ?>" alt="SafeGrow AG">
+				<video class="hort-brands__img" data-brand-img="1" data-no-optimize="1" src="<?php echo esc_url( $agnsee_brands_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
+				<img class="hort-brands__img" data-brand-img="2" src="<?php echo esc_url( $agnsee_brands_photos[2] ); ?>" alt="Grow Genius">
+				<img class="hort-brands__img" data-brand-img="3" src="<?php echo esc_url( $agnsee_brands_photos[3] ); ?>" alt="Aranet">
 			</div>
 
 			<div class="hort-brands__items" id="hort-brands-items">
@@ -257,9 +268,8 @@ get_header();
 		<!-- Mobile -->
 		<div class="hort-brands__mobile">
 
-			<video class="hort-brands__m-video" data-no-optimize="1" src="<?php echo esc_url( $agnsee_brands_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
-
 			<div class="hort-brands__m-item">
+				<img class="hort-brands__m-img" src="<?php echo esc_url( $agnsee_brands_photos[0] ); ?>" alt="SafeGrow AG">
 				<div>
 					<span class="hort-brands__item-tag"><span class="lang-fr">Traitement d'irrigation</span><span class="lang-en">Irrigation treatment</span><span class="lang-es">Tratamiento de irrigación</span></span>
 					<h3 class="hort-brands__m-name">SafeGrow AG</h3>
@@ -275,6 +285,7 @@ get_header();
 			</div>
 
 			<div class="hort-brands__m-item">
+				<video class="hort-brands__m-video" data-no-optimize="1" src="<?php echo esc_url( $agnsee_brands_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
 				<div>
 					<span class="hort-brands__item-tag"><span class="lang-fr">Extrait d'algues</span><span class="lang-en">Seaweed extract</span><span class="lang-es">Extracto de algas</span></span>
 					<h3 class="hort-brands__m-name">Booster</h3>
@@ -290,6 +301,7 @@ get_header();
 			</div>
 
 			<div class="hort-brands__m-item">
+				<img class="hort-brands__m-img" src="<?php echo esc_url( $agnsee_brands_photos[2] ); ?>" alt="Grow Genius">
 				<div>
 					<span class="hort-brands__item-tag"><span class="lang-fr">Acide monosilicique</span><span class="lang-en">Monosilicic acid</span><span class="lang-es">Ácido monosilícico</span></span>
 					<h3 class="hort-brands__m-name">Grow Genius</h3>
@@ -305,6 +317,7 @@ get_header();
 			</div>
 
 			<div class="hort-brands__m-item">
+				<img class="hort-brands__m-img" src="<?php echo esc_url( $agnsee_brands_photos[3] ); ?>" alt="Aranet">
 				<div>
 					<span class="hort-brands__item-tag"><span class="lang-fr">Capteurs</span><span class="lang-en">Sensors</span><span class="lang-es">Sensores</span></span>
 					<h3 class="hort-brands__m-name">Aranet</h3>
@@ -325,10 +338,20 @@ get_header();
 	<script data-no-optimize="1">
 	(function() {
 		var items = document.querySelectorAll('#hort-brands-items .hort-brands__item');
-		if (!items.length) return;
+		var media = document.querySelectorAll('#hort-brands-sticky [data-brand-img]');
+		if (!items.length || !media.length) return;
 		function setActive(idx) {
 			items.forEach(function(el) { el.classList.remove('is-active'); });
+			media.forEach(function(el) { el.style.zIndex = '0'; el.classList.remove('is-active'); });
 			if (items[idx]) items[idx].classList.add('is-active');
+			var activeMedia = document.querySelector('#hort-brands-sticky [data-brand-img="' + idx + '"]');
+			if (activeMedia) {
+				activeMedia.style.zIndex = '1';
+				activeMedia.classList.add('is-active');
+				if (activeMedia.tagName === 'VIDEO' && activeMedia.paused) {
+					activeMedia.play().catch(function () {});
+				}
+			}
 		}
 		var observer = new IntersectionObserver(function(entries) {
 			entries.forEach(function(entry) {
