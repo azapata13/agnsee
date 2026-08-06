@@ -86,8 +86,11 @@ get_header();
 	<?php endif; ?>
 
 	<!-- Notre rôle -->
-	<section class="section section-alt">
-		<div class="container">
+	<?php $agnsee_role_video = 'https://agnsee.ca/wp-content/uploads/2026/08/Video-Project-2.mp4'; ?>
+	<section class="role-section">
+		<video class="role-video-bg" data-no-optimize="1" src="<?php echo esc_url( $agnsee_role_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
+		<div class="role-overlay"></div>
+		<div class="container role-content">
 			<div class="grid grid-3">
 
 				<div class="role-card">
@@ -138,13 +141,12 @@ get_header();
 
 	<!-- Produits en vedette -->
 	<?php
-	$agnsee_brands_video = 'https://agnsee.ca/wp-content/uploads/2026/08/Video-Project-2.mp4';
 	$agnsee_brands_photos = array(
 		0 => 'https://agnsee.ca/wp-content/uploads/2026/08/Capture-decran-le-2026-07-27-a-18.48.07.png',
 		2 => 'https://agnsee.ca/wp-content/uploads/2026/08/Grow-Genius-Mono-Silicic-Acid-40-—-500-ml_2.png',
 		3 => 'https://agnsee.ca/wp-content/uploads/2026/08/Aranet-PRO-Plus-Base-Station-—-Wireless-Gateway-Data-Server_2.png',
 	);
-	// Booster (index 1) n'a pas encore de photo : la vidéo comble l'absence.
+	// Booster (index 1) n'a pas encore de photo : repli neutre en attendant.
 	?>
 	<style>
 	#hort-brands {
@@ -168,6 +170,7 @@ get_header();
 	.hort-brands__item-link { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: #111; text-decoration: none; border-bottom: 1.5px solid rgba(0,0,0,.18); padding-bottom: 2px; transition: border-color .2s, gap .2s; }
 	.hort-brands__item-link:hover { border-color: #111; gap: 10px; }
 	.hort-brands__m-video, .hort-brands__m-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,.1); margin-bottom: 8px; }
+	.hort-brands__img-placeholder, .hort-brands__m-img-placeholder { display: flex; align-items: center; justify-content: center; background: #f1f2f3; color: rgba(0,0,0,.3); font-size: 15px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 	@media (max-width: 800px) {
 	  .hort-brands__layout { display: none; }
 	  .hort-brands__mobile { display: flex; flex-direction: column; gap: 48px; padding: 0 20px; }
@@ -199,7 +202,7 @@ get_header();
 		<div class="hort-brands__layout">
 			<div class="hort-brands__sticky" id="hort-brands-sticky">
 				<img class="hort-brands__img is-active" data-brand-img="0" src="<?php echo esc_url( $agnsee_brands_photos[0] ); ?>" alt="SafeGrow AG">
-				<video class="hort-brands__img" data-brand-img="1" data-no-optimize="1" src="<?php echo esc_url( $agnsee_brands_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
+				<div class="hort-brands__img hort-brands__img-placeholder" data-brand-img="1">Booster</div>
 				<img class="hort-brands__img" data-brand-img="2" src="<?php echo esc_url( $agnsee_brands_photos[2] ); ?>" alt="Grow Genius">
 				<img class="hort-brands__img" data-brand-img="3" src="<?php echo esc_url( $agnsee_brands_photos[3] ); ?>" alt="Aranet">
 			</div>
@@ -285,7 +288,7 @@ get_header();
 			</div>
 
 			<div class="hort-brands__m-item">
-				<video class="hort-brands__m-video" data-no-optimize="1" src="<?php echo esc_url( $agnsee_brands_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
+				<div class="hort-brands__m-img hort-brands__m-img-placeholder">Booster</div>
 				<div>
 					<span class="hort-brands__item-tag"><span class="lang-fr">Extrait d'algues</span><span class="lang-en">Seaweed extract</span><span class="lang-es">Extracto de algas</span></span>
 					<h3 class="hort-brands__m-name">Booster</h3>

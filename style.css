@@ -278,16 +278,46 @@ p { color: var(--color-text-secondary); }
 
 .card-icon svg { width: 20px; height: 20px; stroke-width: 1.75; }
 
+.role-section {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-2xl) 0;
+}
+
+.role-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.role-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(10, 14, 12, 0.74);
+}
+
+.role-content {
+  position: relative;
+  z-index: 2;
+}
+
 .role-card {
   padding-top: 1.75rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
+
+.role-card h3 { color: #fff; }
+.role-card p, .role-card p span { color: rgba(255, 255, 255, 0.8); }
 
 .role-number {
   display: block;
   font-size: var(--fs-sm);
   font-weight: 700;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.04em;
   margin-bottom: 0.85rem;
 }
