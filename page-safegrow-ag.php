@@ -38,9 +38,9 @@ get_header();
 				<div>
 					<h2><span class="lang-fr">Description</span><span class="lang-en">Description</span><span class="lang-es">Descripción</span></h2>
 					<p>
-						<span class="lang-fr">SafeGrow AG est un nettoyant destiné exclusivement à l'entretien des infrastructures d'irrigation — lignes, goutteurs, réservoirs — dans les environnements de culture protégée. Sa formulation à base de HOCl stabilisé cible l'accumulation biologique et minérale à l'intérieur des systèmes d'irrigation.</span>
-						<span class="lang-en">SafeGrow AG is a cleaner intended exclusively for the maintenance of irrigation infrastructure — lines, drippers, tanks — in protected-crop environments. Its stabilized HOCl-based formulation targets biological and mineral buildup inside irrigation systems.</span>
-						<span class="lang-es">SafeGrow AG es un limpiador destinado exclusivamente al mantenimiento de infraestructuras de irrigación — líneas, goteros, tanques — en entornos de cultivo protegido. Su fórmula a base de HOCl estabilizado ataca la acumulación biológica y mineral dentro de los sistemas de irrigación.</span>
+						<span class="lang-fr">SafeGrow AG est un nettoyant destiné exclusivement à l'entretien des infrastructures d'irrigation — lignes, goutteurs, réservoirs — dans les environnements de culture protégée. Sa formulation à base de HOCl stabilisé cible l'accumulation de dépôts minéraux et de résidus nutritifs à l'intérieur des systèmes d'irrigation.</span>
+						<span class="lang-en">SafeGrow AG is a cleaner intended exclusively for the maintenance of irrigation infrastructure — lines, drippers, tanks — in protected-crop environments. Its stabilized HOCl-based formulation targets mineral and nutrient buildup inside irrigation systems.</span>
+						<span class="lang-es">SafeGrow AG es un limpiador destinado exclusivamente al mantenimiento de infraestructuras de irrigación — líneas, goteros, tanques — en entornos de cultivo protegido. Su fórmula a base de HOCl estabilizado ataca la acumulación de depósitos minerales y residuos nutritivos dentro de los sistemas de irrigación.</span>
 					</p>
 					<p class="form-note">
 						<span class="lang-fr">SafeGrow AG est un produit d'entretien d'infrastructure. Il n'est associé à aucune allégation de rendement ou de santé des plantes.</span>
