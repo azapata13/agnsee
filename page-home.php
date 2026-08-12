@@ -357,7 +357,7 @@ get_header();
 	</section>
 
 	<!-- Logos partenaires -->
-	<?php $agnsee_hort_americas_logo = agnsee_image_url( 'partners/hort-americas' ); ?>
+	<?php $agnsee_hort_americas_logo = 'https://agnsee.ca/wp-content/uploads/2026/08/Capture-decran-le-2026-08-12-a-12.49.14.png'; ?>
 	<style>
 	.partners-marquee { overflow: hidden; width: 100%; padding: 1.5rem 0; }
 	.partners-track { display: flex; align-items: center; width: max-content; gap: 4rem; animation: agnsee-partners-scroll 22s linear infinite; }
