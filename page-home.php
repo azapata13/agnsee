@@ -142,10 +142,10 @@ get_header();
 	<!-- Produits en vedette -->
 	<?php
 	$agnsee_brands_photos = array(
-		0 => 'https://agnsee.ca/wp-content/uploads/2026/08/Capture-decran-le-2026-07-27-a-18.48.07.png',
+		0 => 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-AG-Group-Packaging-4L-1000L-August-72026.png',
+		1 => 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-Booster-4Litre-July-2026-1.png',
 		2 => 'https://agnsee.ca/wp-content/uploads/2026/08/Grow-Genius-Mono-Silicic-Acid-40-—-500-ml_2.png',
 	);
-	// Booster (index 1) n'a pas encore de photo : repli neutre en attendant.
 	?>
 	<style>
 	#hort-brands {
@@ -202,7 +202,7 @@ get_header();
 		<div class="hort-brands__layout">
 			<div class="hort-brands__sticky" id="hort-brands-sticky">
 				<img class="hort-brands__img is-active" data-brand-img="0" src="<?php echo esc_url( $agnsee_brands_photos[0] ); ?>" alt="SafeGrow AG">
-				<div class="hort-brands__img hort-brands__img-placeholder" data-brand-img="1">Booster</div>
+				<img class="hort-brands__img" data-brand-img="1" src="<?php echo esc_url( $agnsee_brands_photos[1] ); ?>" alt="Booster">
 				<img class="hort-brands__img" data-brand-img="2" src="<?php echo esc_url( $agnsee_brands_photos[2] ); ?>" alt="Grow Genius">
 			</div>
 
@@ -273,7 +273,7 @@ get_header();
 			</div>
 
 			<div class="hort-brands__m-item">
-				<div class="hort-brands__m-img hort-brands__m-img-placeholder">Booster</div>
+				<img class="hort-brands__m-img" src="<?php echo esc_url( $agnsee_brands_photos[1] ); ?>" alt="Booster">
 				<div>
 					<span class="hort-brands__item-tag"><span class="lang-fr">Extrait d'algues</span><span class="lang-en">Seaweed extract</span><span class="lang-es">Extracto de algas</span></span>
 					<h3 class="hort-brands__m-name">Booster</h3>
@@ -357,23 +357,39 @@ get_header();
 	</section>
 
 	<!-- Logos partenaires -->
+	<?php $agnsee_hort_americas_logo = agnsee_image_url( 'partners/hort-americas' ); ?>
+	<style>
+	.partners-marquee { overflow: hidden; width: 100%; padding: 1.5rem 0; }
+	.partners-track { display: flex; align-items: center; width: max-content; gap: 4rem; animation: agnsee-partners-scroll 22s linear infinite; }
+	.partners-logo { display: flex; align-items: center; justify-content: center; height: 40px; white-space: nowrap; }
+	.partners-logo img { height: 32px; width: auto; filter: grayscale(1); opacity: 0.7; }
+	.partners-logo span { font-weight: 700; color: var(--color-text-secondary); font-size: var(--fs-lg); letter-spacing: 0.01em; }
+	@keyframes agnsee-partners-scroll {
+	  from { transform: translateX(-50%); }
+	  to { transform: translateX(0%); }
+	}
+	@media (prefers-reduced-motion: reduce) {
+	  .partners-track { animation: none; }
+	}
+	</style>
 	<section class="section">
 		<div class="container">
 			<div class="eyebrow text-center" style="display:block;">
 				<span class="lang-fr">Distribué par</span><span class="lang-en">Distributed by</span><span class="lang-es">Distribuido por</span>
 			</div>
-			<div class="grid grid-4" style="align-items:center;">
-				<?php for ( $i = 1; $i <= 4; $i++ ) : ?>
-					<?php $agnsee_partner_logo = agnsee_image_url( 'partners/partner-' . $i ); ?>
-					<div class="card text-center" style="color:var(--color-text-secondary);font-weight:600;">
-						<?php if ( $agnsee_partner_logo ) : ?>
-							<img src="<?php echo esc_url( $agnsee_partner_logo ); ?>" alt="<?php echo esc_attr( sprintf( 'Partenaire %d', $i ) ); ?>" style="max-height:36px;width:auto;margin:0 auto;filter:grayscale(1);opacity:0.7;">
-						<?php else : ?>
-							<span class="lang-fr">Partenaire <?php echo esc_html( $i ); ?></span>
-							<span class="lang-en">Partner <?php echo esc_html( $i ); ?></span>
-							<span class="lang-es">Socio <?php echo esc_html( $i ); ?></span>
-						<?php endif; ?>
-					</div>
+		</div>
+		<div class="partners-marquee">
+			<div class="partners-track">
+				<?php for ( $agnsee_p = 0; $agnsee_p < 2; $agnsee_p++ ) : ?>
+					<?php for ( $agnsee_i = 0; $agnsee_i < 6; $agnsee_i++ ) : ?>
+						<div class="partners-logo">
+							<?php if ( $agnsee_hort_americas_logo ) : ?>
+								<img src="<?php echo esc_url( $agnsee_hort_americas_logo ); ?>" alt="Hort Americas">
+							<?php else : ?>
+								<span>Hort Americas</span>
+							<?php endif; ?>
+						</div>
+					<?php endfor; ?>
 				<?php endfor; ?>
 			</div>
 		</div>
