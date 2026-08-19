@@ -6,7 +6,7 @@
 get_header();
 
 $agnsee_preselect = isset( $_GET['produit'] ) ? sanitize_text_field( wp_unslash( $_GET['produit'] ) ) : '';
-$agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius' );
+$agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Safe Disinfectant' );
 ?>
 
 <main id="main-content" class="site-main">

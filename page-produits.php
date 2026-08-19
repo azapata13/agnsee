@@ -30,12 +30,21 @@ $agnsee_products = array(
 		'en'      => '40% concentrated monosilicic acid.',
 		'es'      => 'Ácido monosilícico concentrado al 40 %.',
 	),
+	array(
+		'slug'    => 'safe-disinfectant',
+		'segment' => 'disinfection',
+		'name'    => 'Safe Disinfectant',
+		'fr'      => "Désinfectant à base de HOCl stabilisé, prêt à l'emploi.",
+		'en'      => 'Ready-to-use stabilized HOCl-based disinfectant.',
+		'es'      => 'Desinfectante a base de HOCl estabilizado, listo para usar.',
+	),
 );
 
 $agnsee_segments = array(
 	'all'           => array( 'fr' => 'Tous', 'en' => 'All', 'es' => 'Todos' ),
 	'irrigation'    => array( 'fr' => "Traitement d'irrigation", 'en' => 'Irrigation treatment', 'es' => 'Tratamiento de irrigación' ),
 	'biostimulants' => array( 'fr' => 'Biostimulants', 'en' => 'Biostimulants', 'es' => 'Bioestimulantes' ),
+	'disinfection'  => array( 'fr' => 'Désinfection & assainissement', 'en' => 'Disinfection & sanitation', 'es' => 'Desinfección y saneamiento' ),
 );
 ?>
 

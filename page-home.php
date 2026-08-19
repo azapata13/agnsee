@@ -253,14 +253,14 @@ get_header();
 				</div>
 
 				<div class="hort-brands__item" data-brand="3">
-					<span class="hort-brands__item-tag"><span class="lang-fr">Désinfectant</span><span class="lang-en">Disinfectant</span><span class="lang-es">Desinfectante</span></span>
+					<span class="hort-brands__item-tag"><span class="lang-fr">Désinfection & assainissement</span><span class="lang-en">Disinfection & sanitation</span><span class="lang-es">Desinfección y saneamiento</span></span>
 					<h3 class="hort-brands__item-name">Safe Disinfectant</h3>
 					<p class="hort-brands__item-desc">
-						<span class="lang-fr">Désinfectant sécuritaire pour la culture protégée.</span>
-						<span class="lang-en">Safe disinfectant for protected-crop growing.</span>
-						<span class="lang-es">Desinfectante seguro para el cultivo protegido.</span>
+						<span class="lang-fr">Désinfectant à base de HOCl stabilisé, prêt à l'emploi, pour la transformation alimentaire, l'agriculture et le traitement de l'eau.</span>
+						<span class="lang-en">Ready-to-use stabilized HOCl-based disinfectant for food processing, agriculture and water treatment.</span>
+						<span class="lang-es">Desinfectante a base de HOCl estabilizado, listo para usar, para procesamiento de alimentos, agricultura y tratamiento de agua.</span>
 					</p>
-					<a href="<?php echo esc_url( home_url( '/produits/' ) ); ?>" class="hort-brands__item-link">
+					<a href="<?php echo esc_url( home_url( '/produits/safe-disinfectant/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Safe Disinfectant</span><span class="lang-en">Discover Safe Disinfectant</span><span class="lang-es">Descubrir Safe Disinfectant</span>
 						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
 					</a>
@@ -323,14 +323,14 @@ get_header();
 			<div class="hort-brands__m-item">
 				<img class="hort-brands__m-img" src="<?php echo esc_url( $agnsee_brands_photos[3] ); ?>" alt="Safe Disinfectant">
 				<div>
-					<span class="hort-brands__item-tag"><span class="lang-fr">Désinfectant</span><span class="lang-en">Disinfectant</span><span class="lang-es">Desinfectante</span></span>
+					<span class="hort-brands__item-tag"><span class="lang-fr">Désinfection & assainissement</span><span class="lang-en">Disinfection & sanitation</span><span class="lang-es">Desinfección y saneamiento</span></span>
 					<h3 class="hort-brands__m-name">Safe Disinfectant</h3>
 					<p class="hort-brands__m-desc">
-						<span class="lang-fr">Désinfectant sécuritaire pour la culture protégée.</span>
-						<span class="lang-en">Safe disinfectant for protected-crop growing.</span>
-						<span class="lang-es">Desinfectante seguro para el cultivo protegido.</span>
+						<span class="lang-fr">Désinfectant à base de HOCl stabilisé, prêt à l'emploi, pour la transformation alimentaire, l'agriculture et le traitement de l'eau.</span>
+						<span class="lang-en">Ready-to-use stabilized HOCl-based disinfectant for food processing, agriculture and water treatment.</span>
+						<span class="lang-es">Desinfectante a base de HOCl estabilizado, listo para usar, para procesamiento de alimentos, agricultura y tratamiento de agua.</span>
 					</p>
-					<a href="<?php echo esc_url( home_url( '/produits/' ) ); ?>" class="hort-brands__item-link">
+					<a href="<?php echo esc_url( home_url( '/produits/safe-disinfectant/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Safe Disinfectant</span><span class="lang-en">Discover Safe Disinfectant</span><span class="lang-es">Descubrir Safe Disinfectant</span> →
 					</a>
 				</div>
