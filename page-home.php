@@ -142,7 +142,7 @@ get_header();
 	<!-- Produits en vedette -->
 	<?php
 	$agnsee_brands_photos = array(
-		0 => 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-AG-Group-Packaging-4L-1000L-August-72026.png',
+		0 => 'https://agnsee.ca/wp-content/uploads/2026/08/safe-disinfectantGOOD.png',
 		1 => 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-Booster-4Litre-July-2026-1.png',
 		2 => 'https://agnsee.ca/wp-content/uploads/2026/08/Grow-Genius-Mono-Silicic-Acid-40-—-500-ml_2.png',
 	);
