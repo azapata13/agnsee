@@ -34,9 +34,9 @@ $agnsee_products = array(
 		'slug'    => 'safe-disinfectant',
 		'segment' => 'disinfection',
 		'name'    => 'Safe Disinfectant',
-		'fr'      => "Désinfectant à base de HOCl stabilisé, prêt à l'emploi.",
-		'en'      => 'Ready-to-use stabilized HOCl-based disinfectant.',
-		'es'      => 'Desinfectante a base de HOCl estabilizado, listo para usar.',
+		'fr'      => 'Désinfectant homologué par Santé Canada, acide hypochloreux à 0,046 %.',
+		'en'      => 'Health Canada registered disinfectant, 0.046% hypochlorous acid.',
+		'es'      => 'Desinfectante registrado ante Health Canada, ácido hipocloroso al 0,046 %.',
 	),
 );
 

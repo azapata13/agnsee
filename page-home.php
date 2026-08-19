@@ -253,12 +253,12 @@ get_header();
 				</div>
 
 				<div class="hort-brands__item" data-brand="3">
-					<span class="hort-brands__item-tag"><span class="lang-fr">Désinfection & assainissement</span><span class="lang-en">Disinfection & sanitation</span><span class="lang-es">Desinfección y saneamiento</span></span>
+					<span class="hort-brands__item-tag"><span class="lang-fr">Homologué Santé Canada</span><span class="lang-en">Health Canada registered</span><span class="lang-es">Registrado ante Health Canada</span></span>
 					<h3 class="hort-brands__item-name">Safe Disinfectant</h3>
 					<p class="hort-brands__item-desc">
-						<span class="lang-fr">Désinfectant à base de HOCl stabilisé, prêt à l'emploi, pour la transformation alimentaire, l'agriculture et le traitement de l'eau.</span>
-						<span class="lang-en">Ready-to-use stabilized HOCl-based disinfectant for food processing, agriculture and water treatment.</span>
-						<span class="lang-es">Desinfectante a base de HOCl estabilizado, listo para usar, para procesamiento de alimentos, agricultura y tratamiento de agua.</span>
+						<span class="lang-fr">Acide hypochloreux à 0,046 %, pour établissements de santé, locaux alimentaires, usage institutionnel/industriel et bâtiments d'élevage.</span>
+						<span class="lang-en">0.046% hypochlorous acid, for healthcare facilities, food premises, institutional/industrial and barn use.</span>
+						<span class="lang-es">Ácido hipocloroso al 0,046 %, para instalaciones de salud, locales alimentarios, uso institucional/industrial y establos.</span>
 					</p>
 					<a href="<?php echo esc_url( home_url( '/produits/safe-disinfectant/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Safe Disinfectant</span><span class="lang-en">Discover Safe Disinfectant</span><span class="lang-es">Descubrir Safe Disinfectant</span>
@@ -323,12 +323,12 @@ get_header();
 			<div class="hort-brands__m-item">
 				<img class="hort-brands__m-img" src="<?php echo esc_url( $agnsee_brands_photos[3] ); ?>" alt="Safe Disinfectant">
 				<div>
-					<span class="hort-brands__item-tag"><span class="lang-fr">Désinfection & assainissement</span><span class="lang-en">Disinfection & sanitation</span><span class="lang-es">Desinfección y saneamiento</span></span>
+					<span class="hort-brands__item-tag"><span class="lang-fr">Homologué Santé Canada</span><span class="lang-en">Health Canada registered</span><span class="lang-es">Registrado ante Health Canada</span></span>
 					<h3 class="hort-brands__m-name">Safe Disinfectant</h3>
 					<p class="hort-brands__m-desc">
-						<span class="lang-fr">Désinfectant à base de HOCl stabilisé, prêt à l'emploi, pour la transformation alimentaire, l'agriculture et le traitement de l'eau.</span>
-						<span class="lang-en">Ready-to-use stabilized HOCl-based disinfectant for food processing, agriculture and water treatment.</span>
-						<span class="lang-es">Desinfectante a base de HOCl estabilizado, listo para usar, para procesamiento de alimentos, agricultura y tratamiento de agua.</span>
+						<span class="lang-fr">Acide hypochloreux à 0,046 %, pour établissements de santé, locaux alimentaires, usage institutionnel/industriel et bâtiments d'élevage.</span>
+						<span class="lang-en">0.046% hypochlorous acid, for healthcare facilities, food premises, institutional/industrial and barn use.</span>
+						<span class="lang-es">Ácido hipocloroso al 0,046 %, para instalaciones de salud, locales alimentarios, uso institucional/industrial y establos.</span>
 					</p>
 					<a href="<?php echo esc_url( home_url( '/produits/safe-disinfectant/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Safe Disinfectant</span><span class="lang-en">Discover Safe Disinfectant</span><span class="lang-es">Descubrir Safe Disinfectant</span> →
