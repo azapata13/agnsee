@@ -142,9 +142,10 @@ get_header();
 	<!-- Produits en vedette -->
 	<?php
 	$agnsee_brands_photos = array(
-		0 => 'https://agnsee.ca/wp-content/uploads/2026/08/safe-disinfectantGOOD.png',
+		0 => 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-AG-Group-Packaging-4L-1000L-August-72026.png',
 		1 => 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-Booster-4Litre-July-2026-1.png',
 		2 => 'https://agnsee.ca/wp-content/uploads/2026/08/Grow-Genius-Mono-Silicic-Acid-40-—-500-ml_2.png',
+		3 => 'https://agnsee.ca/wp-content/uploads/2026/08/safe-disinfectantGOOD.png',
 	);
 	?>
 	<style>
@@ -204,6 +205,7 @@ get_header();
 				<img class="hort-brands__img is-active" data-brand-img="0" src="<?php echo esc_url( $agnsee_brands_photos[0] ); ?>" alt="SafeGrow AG">
 				<img class="hort-brands__img" data-brand-img="1" src="<?php echo esc_url( $agnsee_brands_photos[1] ); ?>" alt="Booster">
 				<img class="hort-brands__img" data-brand-img="2" src="<?php echo esc_url( $agnsee_brands_photos[2] ); ?>" alt="Grow Genius">
+				<img class="hort-brands__img" data-brand-img="3" src="<?php echo esc_url( $agnsee_brands_photos[3] ); ?>" alt="Safe Disinfectant">
 			</div>
 
 			<div class="hort-brands__items" id="hort-brands-items">
@@ -246,6 +248,20 @@ get_header();
 					</p>
 					<a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Grow Genius</span><span class="lang-en">Discover Grow Genius</span><span class="lang-es">Descubrir Grow Genius</span>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+					</a>
+				</div>
+
+				<div class="hort-brands__item" data-brand="3">
+					<span class="hort-brands__item-tag"><span class="lang-fr">Désinfectant</span><span class="lang-en">Disinfectant</span><span class="lang-es">Desinfectante</span></span>
+					<h3 class="hort-brands__item-name">Safe Disinfectant</h3>
+					<p class="hort-brands__item-desc">
+						<span class="lang-fr">Désinfectant sécuritaire pour la culture protégée.</span>
+						<span class="lang-en">Safe disinfectant for protected-crop growing.</span>
+						<span class="lang-es">Desinfectante seguro para el cultivo protegido.</span>
+					</p>
+					<a href="<?php echo esc_url( home_url( '/produits/' ) ); ?>" class="hort-brands__item-link">
+						<span class="lang-fr">Découvrir Safe Disinfectant</span><span class="lang-en">Discover Safe Disinfectant</span><span class="lang-es">Descubrir Safe Disinfectant</span>
 						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
 					</a>
 				</div>
@@ -300,6 +316,22 @@ get_header();
 					</p>
 					<a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Grow Genius</span><span class="lang-en">Discover Grow Genius</span><span class="lang-es">Descubrir Grow Genius</span> →
+					</a>
+				</div>
+			</div>
+
+			<div class="hort-brands__m-item">
+				<img class="hort-brands__m-img" src="<?php echo esc_url( $agnsee_brands_photos[3] ); ?>" alt="Safe Disinfectant">
+				<div>
+					<span class="hort-brands__item-tag"><span class="lang-fr">Désinfectant</span><span class="lang-en">Disinfectant</span><span class="lang-es">Desinfectante</span></span>
+					<h3 class="hort-brands__m-name">Safe Disinfectant</h3>
+					<p class="hort-brands__m-desc">
+						<span class="lang-fr">Désinfectant sécuritaire pour la culture protégée.</span>
+						<span class="lang-en">Safe disinfectant for protected-crop growing.</span>
+						<span class="lang-es">Desinfectante seguro para el cultivo protegido.</span>
+					</p>
+					<a href="<?php echo esc_url( home_url( '/produits/' ) ); ?>" class="hort-brands__item-link">
+						<span class="lang-fr">Découvrir Safe Disinfectant</span><span class="lang-en">Discover Safe Disinfectant</span><span class="lang-es">Descubrir Safe Disinfectant</span> →
 					</a>
 				</div>
 			</div>
