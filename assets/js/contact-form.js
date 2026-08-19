@@ -1,12 +1,8 @@
 /**
- * Agnsee — soumission AJAX du formulaire de contact vers FluentCRM.
+ * Agnsee — soumission AJAX du formulaire de contact vers FormSubmit.co.
  */
 ( function () {
 	'use strict';
-
-	if ( typeof agnseeContact === 'undefined' ) {
-		return;
-	}
 
 	var form = document.getElementById( 'agnsee-contact-form' );
 	var messageBox = document.getElementById( 'contact-form-message' );
@@ -16,8 +12,31 @@
 		return;
 	}
 
-	function showMessage( text, isError ) {
-		messageBox.textContent = text;
+	var messages = {
+		success: {
+			fr: 'Merci ! Votre message a été envoyé, nous vous contacterons rapidement.',
+			en: 'Thank you! Your message has been sent, we will contact you shortly.',
+			es: '¡Gracias! Tu mensaje ha sido enviado, te contactaremos pronto.',
+		},
+		error: {
+			fr: 'Une erreur est survenue. Veuillez réessayer.',
+			en: 'An error occurred. Please try again.',
+			es: 'Ocurrió un error. Por favor intenta de nuevo.',
+		},
+		required: {
+			fr: 'Veuillez remplir tous les champs requis.',
+			en: 'Please fill in all required fields.',
+			es: 'Por favor completa todos los campos requeridos.',
+		},
+	};
+
+	function currentLang() {
+		var lang = document.documentElement.getAttribute( 'data-lang' );
+		return messages.success[ lang ] ? lang : 'fr';
+	}
+
+	function showMessage( type, isError ) {
+		messageBox.textContent = messages[ type ][ currentLang() ];
 		messageBox.className = isError ? 'form-error' : 'form-success';
 		messageBox.style.display = 'block';
 	}
@@ -25,32 +44,33 @@
 	form.addEventListener( 'submit', function ( e ) {
 		e.preventDefault();
 
+		var name = form.querySelector( '#name' ).value.trim();
+		var email = form.querySelector( '#email' ).value.trim();
+		var message = form.querySelector( '#message' ).value.trim();
+
+		if ( ! name || ! email || ! message ) {
+			showMessage( 'required', true );
+			return;
+		}
+
 		submitBtn.disabled = true;
 
-		var formData = new FormData( form );
-		formData.append( 'action', 'agnsee_submit_contact' );
-		formData.append( 'nonce', agnseeContact.nonce );
-
-		fetch( agnseeContact.ajaxUrl, {
+		fetch( form.getAttribute( 'action' ), {
 			method: 'POST',
-			credentials: 'same-origin',
-			body: formData,
+			headers: { Accept: 'application/json' },
+			body: new FormData( form ),
 		} )
 			.then( function ( response ) {
-				return response.json();
-			} )
-			.then( function ( data ) {
-				submitBtn.disabled = false;
-				if ( data.success ) {
-					showMessage( data.data.message, false );
-					form.reset();
-				} else {
-					showMessage( data.data.message, true );
+				if ( ! response.ok ) {
+					throw new Error( 'FormSubmit error' );
 				}
+				submitBtn.disabled = false;
+				showMessage( 'success', false );
+				form.reset();
 			} )
 			.catch( function () {
 				submitBtn.disabled = false;
-				showMessage( 'Une erreur est survenue. Veuillez réessayer. / An error occurred. Please try again. / Ocurrió un error. Por favor intenta de nuevo.', true );
+				showMessage( 'error', true );
 			} );
 	} );
 } )();

@@ -9,7 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'AGNSEE_VERSION', '1.0.0' );
 define( 'AGNSEE_LANG_COOKIE', 'agnsee_lang' );
-define( 'AGNSEE_SALES_EMAIL', get_option( 'admin_email' ) );
 
 /* ==========================================================================
    1. SETUP DU THÈME
@@ -50,11 +49,6 @@ function agnsee_enqueue_assets() {
 		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 		'nonce'   => wp_create_nonce( 'agnsee_lang_nonce' ),
 		'current' => agnsee_get_lang(),
-	) );
-
-	wp_localize_script( 'agnsee-contact-form', 'agnseeContact', array(
-		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-		'nonce'   => wp_create_nonce( 'agnsee_contact_nonce' ),
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'agnsee_enqueue_assets' );
@@ -144,99 +138,9 @@ add_action( 'wp_ajax_agnsee_set_lang', 'agnsee_ajax_set_lang' );
 add_action( 'wp_ajax_nopriv_agnsee_set_lang', 'agnsee_ajax_set_lang' );
 
 /* ==========================================================================
-   5. FORMULAIRE DE CONTACT → FLUENTCRM
+   5. FORMULAIRE DE CONTACT — soumis directement à FormSubmit.co en JS
+   (voir assets/js/contact-form.js), aucun handler serveur nécessaire.
    ========================================================================== */
-
-/**
- * Crée/actualise un contact FluentCRM et l'étiquette selon le produit et la langue.
- */
-function agnsee_push_to_fluentcrm( $data, $lang, $product_interest ) {
-	if ( ! function_exists( 'FluentCrmApi' ) ) {
-		return false;
-	}
-
-	$tags = array();
-
-	if ( ! empty( $product_interest ) ) {
-		$tags[] = 'Produit : ' . $product_interest;
-	}
-	$lang_labels = array(
-		'fr' => 'Langue : FR',
-		'en' => 'Langue : EN',
-		'es' => 'Langue : ES',
-	);
-	$tags[] = isset( $lang_labels[ $lang ] ) ? $lang_labels[ $lang ] : 'Langue : FR';
-
-	$contact_api = FluentCrmApi( 'contacts' );
-
-	$contact = $contact_api->createOrUpdate( array(
-		'email'      => $data['email'],
-		'first_name' => $data['name'],
-		'company'    => $data['company'],
-		'country'    => $data['country'],
-		'status'     => 'subscribed',
-		'source'     => 'Formulaire de contact agnsee.ca',
-	) );
-
-	if ( $contact && ! empty( $tags ) ) {
-		$contact->attachTags( $tags );
-	}
-
-	return $contact;
-}
-
-/**
- * AJAX : soumission du formulaire de contact.
- */
-function agnsee_ajax_submit_contact() {
-	check_ajax_referer( 'agnsee_contact_nonce', 'nonce' );
-
-	// Anti-spam (honeypot).
-	if ( ! empty( $_POST['website'] ) ) {
-		wp_send_json_success( array( 'message' => agnsee_t( 'Merci, votre message a été envoyé.', 'Thank you, your message has been sent.', 'Gracias, tu mensaje ha sido enviado.' ) ) );
-	}
-
-	$name    = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
-	$email   = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
-	$company = isset( $_POST['company'] ) ? sanitize_text_field( wp_unslash( $_POST['company'] ) ) : '';
-	$country = isset( $_POST['country'] ) ? sanitize_text_field( wp_unslash( $_POST['country'] ) ) : '';
-	$product = isset( $_POST['product'] ) ? sanitize_text_field( wp_unslash( $_POST['product'] ) ) : '';
-	$message = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
-	$lang    = agnsee_get_lang();
-
-	if ( empty( $name ) || ! is_email( $email ) || empty( $message ) ) {
-		wp_send_json_error( array(
-			'message' => agnsee_t( 'Veuillez remplir tous les champs requis.', 'Please fill in all required fields.', 'Por favor completa todos los campos requeridos.' ),
-		) );
-	}
-
-	agnsee_push_to_fluentcrm( array(
-		'name'    => $name,
-		'email'   => $email,
-		'company' => $company,
-		'country' => $country,
-	), $lang, $product );
-
-	$subject = agnsee_t( 'Nouvelle demande — agnsee.ca', 'New inquiry — agnsee.ca', 'Nueva solicitud — agnsee.ca' );
-	$body    = sprintf(
-		"Nom : %s\nCourriel : %s\nEntreprise : %s\nPays : %s\nProduit d'intérêt : %s\nLangue : %s\n\nMessage :\n%s",
-		$name,
-		$email,
-		$company,
-		$country,
-		$product,
-		strtoupper( $lang ),
-		$message
-	);
-
-	wp_mail( AGNSEE_SALES_EMAIL, $subject, $body );
-
-	wp_send_json_success( array(
-		'message' => agnsee_t( 'Merci ! Votre message a été envoyé, nous vous contacterons rapidement.', 'Thank you! Your message has been sent, we will contact you shortly.', '¡Gracias! Tu mensaje ha sido enviado, te contactaremos pronto.' ),
-	) );
-}
-add_action( 'wp_ajax_agnsee_submit_contact', 'agnsee_ajax_submit_contact' );
-add_action( 'wp_ajax_nopriv_agnsee_submit_contact', 'agnsee_ajax_submit_contact' );
 
 /* ==========================================================================
    6. NETTOYAGE WORDPRESS

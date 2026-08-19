@@ -34,10 +34,13 @@ $agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius' );
 				<div>
 					<div id="contact-form-message" style="display:none;"></div>
 
-					<form id="agnsee-contact-form" novalidate>
+					<form id="agnsee-contact-form" action="https://formsubmit.co/info@agnsee.ca" method="POST" novalidate>
+						<input type="hidden" name="_subject" value="Nouvelle demande — agnsee.ca">
+						<input type="hidden" name="_template" value="table">
+						<input type="hidden" name="_captcha" value="false">
 						<div class="form-field" style="position:absolute;left:-9999px;" aria-hidden="true">
 							<label for="website">Website</label>
-							<input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+							<input type="text" id="website" name="_honey" tabindex="-1" autocomplete="off">
 						</div>
 
 						<div class="form-field">
