@@ -388,7 +388,8 @@ get_header();
 		</div>
 	</section>
 
-	<!-- Logos partenaires -->
+	<!-- Logos partenaires — masqué temporairement (ne pas supprimer, on le remet plus tard) -->
+	<?php if ( false ) : ?>
 	<?php $agnsee_hort_americas_logo = 'https://agnsee.ca/wp-content/uploads/2026/08/Capture-decran-le-2026-08-12-a-12.49.14.png'; ?>
 	<style>
 	.partners-marquee { overflow: hidden; width: 100%; padding: 1.5rem 0; }
@@ -426,6 +427,7 @@ get_header();
 			</div>
 		</div>
 	</section>
+	<?php endif; ?>
 
 	<!-- CTA contact -->
 	<section class="section section-dark">
