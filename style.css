@@ -140,7 +140,7 @@ p { color: var(--color-text-secondary); }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-accent);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-xs);
 }
 
@@ -180,6 +180,10 @@ p { color: var(--color-text-secondary); }
 .section-dark h3,
 .section-dark p {
   color: var(--color-text-inverse);
+}
+
+.section-dark .eyebrow {
+  color: rgba(245, 245, 247, 0.55);
 }
 
 .grid {
