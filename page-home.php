@@ -85,6 +85,343 @@ get_header();
 		</section>
 	<?php endif; ?>
 
+	<!-- Un fabricant, un monde de distributeurs — hero vidéo scrub au scroll -->
+	<?php
+	$agnsee_metro_video = agnsee_video_url( 'metro-hero' );
+	if ( ! $agnsee_metro_video ) {
+		$agnsee_metro_video = 'https://agnsee.ca/wp-content/uploads/2026/08/Generated-Video-August-28-2026-1_44PM.mp4';
+	}
+	?>
+	<style>
+	.mh-section {
+		position: relative;
+		height: 100dvh;
+		width: 100%;
+		overflow: hidden;
+		background: #05070d;
+	}
+	.mh-video {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0;
+		transform-origin: center center;
+		will-change: transform;
+		transition: opacity 0.6s ease;
+	}
+	.mh-section.is-ready .mh-video { opacity: 1; }
+	.mh-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, rgba(5,7,13,0.4) 0%, rgba(5,7,13,0.05) 30%, rgba(5,7,13,0.2) 65%, rgba(5,7,13,0.6) 100%);
+		pointer-events: none;
+	}
+	.mh-title,
+	.mh-tagline {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 0 6%;
+		pointer-events: none;
+	}
+	.mh-title {
+		font-family: var(--font-family);
+		font-weight: 800;
+		font-size: clamp(28px, 6vw, 88px);
+		line-height: 1.08;
+		letter-spacing: -0.02em;
+		color: #f5f5f7;
+		text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	.mh-tagline {
+		opacity: 0;
+	}
+	.mh-tagline-text {
+		font-family: var(--font-family);
+		font-weight: 700;
+		font-size: clamp(19px, 3.2vw, 38px);
+		line-height: 1.25;
+		letter-spacing: -0.01em;
+		color: #f5f5f7;
+		text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+		max-width: 760px;
+		margin: 0 auto 1.5rem;
+	}
+	.mh-cta {
+		pointer-events: auto;
+	}
+	.mh-hint {
+		position: absolute;
+		left: 50%;
+		bottom: clamp(20px, 6vh, 48px);
+		transform: translateX(-50%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+		color: rgba(245,245,247,0.75);
+		font-family: var(--font-family);
+		font-size: clamp(10px, 1.4vw, 12px);
+		font-weight: 600;
+		letter-spacing: 0.3em;
+		text-transform: uppercase;
+		transition: opacity 0.4s ease;
+		pointer-events: none;
+	}
+	.mh-hint svg { animation: mh-bounce 1.6s ease-in-out infinite; }
+	@keyframes mh-bounce {
+		0%, 100% { transform: translateY(0); opacity: 0.5; }
+		50% { transform: translateY(5px); opacity: 1; }
+	}
+	.mh-progress-track {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 2px;
+		background: rgba(255,255,255,0.12);
+	}
+	.mh-progress-bar {
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(90deg, rgba(255,255,255,0.5), rgba(255,255,255,0.95));
+		transform: scaleX(0);
+		transform-origin: left center;
+	}
+	@media (max-width: 782px) {
+		.mh-title { font-size: clamp(24px, 8vw, 44px); }
+		.mh-tagline-text { font-size: clamp(17px, 5vw, 24px); }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.mh-video, .mh-title, .mh-tagline { transition: none; }
+	}
+	</style>
+
+	<section class="mh-section" id="metro-hero" data-scrub-distance="3200">
+		<video class="mh-video" id="metro-hero-video" data-no-optimize="1" src="<?php echo esc_url( $agnsee_metro_video ); ?>" muted playsinline preload="auto"></video>
+		<div class="mh-overlay"></div>
+
+		<div class="mh-title" id="metro-hero-title">
+			<span class="lang-fr">Un fabricant. Un monde de distributeurs.</span>
+			<span class="lang-en">One manufacturer. A world of distributors.</span>
+			<span class="lang-es">Un fabricante. Un mundo de distribuidores.</span>
+		</div>
+
+		<div class="mh-tagline" id="metro-hero-tagline">
+			<div class="mh-tagline-text">
+				<span class="lang-fr">Agnsee ouvre la voie à l'international.</span>
+				<span class="lang-en">Agnsee opens the way, worldwide.</span>
+				<span class="lang-es">Agnsee abre el camino a nivel internacional.</span>
+			</div>
+			<a class="btn btn-hero-solid mh-cta" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
+				<span class="lang-fr">Voir nos produits</span><span class="lang-en">View our products</span><span class="lang-es">Ver nuestros productos</span>
+			</a>
+		</div>
+
+		<div class="mh-hint" id="metro-hero-hint">
+			<span class="lang-fr">Défiler</span><span class="lang-en">Scroll</span><span class="lang-es">Desplazar</span>
+			<svg width="14" height="18" viewBox="0 0 14 18">
+				<path d="M7 1 L7 17 M2 12 L7 17 L12 12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+		</div>
+
+		<div class="mh-progress-track">
+			<div class="mh-progress-bar" id="metro-hero-progress"></div>
+		</div>
+	</section>
+
+	<script data-no-optimize="1">
+	( function () {
+		'use strict';
+
+		var section  = document.getElementById( 'metro-hero' );
+		var video    = document.getElementById( 'metro-hero-video' );
+		var titleEl  = document.getElementById( 'metro-hero-title' );
+		var taglineEl = document.getElementById( 'metro-hero-tagline' );
+		var hintEl   = document.getElementById( 'metro-hero-hint' );
+		var progressEl = document.getElementById( 'metro-hero-progress' );
+		if ( ! section || ! video ) { return; }
+
+		var scrubDistance = parseInt( section.getAttribute( 'data-scrub-distance' ), 10 ) || 3200;
+		var reduceMotion  = window.matchMedia && window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
+
+		function clamp( v, min, max ) { return Math.min( max, Math.max( min, v ) ); }
+
+		if ( reduceMotion ) {
+			if ( titleEl ) { titleEl.style.opacity = '0'; }
+			if ( taglineEl ) { taglineEl.style.opacity = '1'; taglineEl.style.transform = 'none'; taglineEl.style.filter = 'none'; }
+			if ( hintEl ) { hintEl.style.opacity = '0'; }
+			section.classList.add( 'is-ready' );
+			return;
+		}
+
+		var duration = 0;
+		var targetProgress = 0;
+		var currentProgress = 0;
+		var hasStarted = false;
+		var isSeeking = false;
+		var pendingTime = null;
+		var locked = false;
+		var lockedScrollY = 0;
+		var touchStartY = 0;
+		var prevScrollY = window.scrollY;
+		var cooldownUntil = 0;
+		var rafId = 0;
+
+		video.addEventListener( 'loadeddata', function () {
+			duration = video.duration || 0;
+			section.classList.add( 'is-ready' );
+			try {
+				var p = video.play();
+				if ( p && p.then ) { p.then( function () { video.pause(); } ).catch( function () {} ); }
+			} catch ( e ) {}
+		} );
+
+		video.addEventListener( 'seeked', function () {
+			isSeeking = false;
+			if ( pendingTime !== null ) {
+				var t = pendingTime;
+				pendingTime = null;
+				isSeeking = true;
+				video.currentTime = t;
+			}
+		} );
+
+		function seekTo( t ) {
+			if ( isSeeking ) { pendingTime = t; return; }
+			isSeeking = true;
+			try { video.currentTime = t; } catch ( e ) { isSeeking = false; }
+		}
+
+		function engageLock( fromBelow ) {
+			if ( locked ) { return; }
+			locked = true;
+			lockedScrollY = window.scrollY;
+			var b = document.body.style;
+			b.position = 'fixed';
+			b.top = ( -lockedScrollY ) + 'px';
+			b.left = '0';
+			b.right = '0';
+			b.width = '100%';
+			targetProgress = fromBelow ? 1 : 0;
+			currentProgress = targetProgress;
+			hasStarted = fromBelow;
+		}
+
+		function releaseLock() {
+			if ( ! locked ) { return; }
+			locked = false;
+			var y = lockedScrollY;
+			var b = document.body.style;
+			b.position = '';
+			b.top = '';
+			b.left = '';
+			b.right = '';
+			b.width = '';
+			window.scrollTo( 0, y );
+			prevScrollY = y;
+			cooldownUntil = Date.now() + 500;
+		}
+
+		function addDelta( deltaY ) {
+			targetProgress = clamp( targetProgress + deltaY / scrubDistance, 0, 1 );
+			if ( targetProgress > 0.001 ) { hasStarted = true; }
+		}
+
+		function onWheel( e ) {
+			if ( ! locked ) { return; }
+			var atForwardEdge  = targetProgress >= 1 && e.deltaY > 0;
+			var atBackwardEdge = targetProgress <= 0 && e.deltaY < 0;
+			if ( atForwardEdge || atBackwardEdge ) {
+				releaseLock();
+				return;
+			}
+			addDelta( e.deltaY );
+			e.preventDefault();
+		}
+
+		function onTouchStart( e ) {
+			touchStartY = e.touches[0] ? e.touches[0].clientY : 0;
+		}
+
+		function onTouchMove( e ) {
+			if ( ! locked ) { return; }
+			var y = e.touches[0] ? e.touches[0].clientY : touchStartY;
+			var deltaY = touchStartY - y;
+			var atForwardEdge  = targetProgress >= 1 && deltaY > 0;
+			var atBackwardEdge = targetProgress <= 0 && deltaY < 0;
+			if ( atForwardEdge || atBackwardEdge ) {
+				releaseLock();
+				touchStartY = y;
+				return;
+			}
+			touchStartY = y;
+			addDelta( deltaY );
+			e.preventDefault();
+		}
+
+		window.addEventListener( 'wheel', onWheel, { passive: false } );
+		window.addEventListener( 'touchstart', onTouchStart, { passive: true } );
+		window.addEventListener( 'touchmove', onTouchMove, { passive: false } );
+
+		function checkEntry( scrollingDown ) {
+			if ( locked || Date.now() < cooldownUntil ) { return; }
+			var rect = section.getBoundingClientRect();
+			var vh = window.innerHeight;
+			var fullyCovers = rect.top <= 1 && rect.bottom >= vh - 1;
+			if ( ! fullyCovers ) { return; }
+			engageLock( ! scrollingDown );
+		}
+
+		window.addEventListener( 'scroll', function () {
+			if ( locked ) { return; }
+			var curY = window.scrollY;
+			checkEntry( curY > prevScrollY );
+			prevScrollY = curY;
+		}, { passive: true } );
+
+		function render() {
+			currentProgress += ( targetProgress - currentProgress ) * 0.18;
+			if ( Math.abs( targetProgress - currentProgress ) < 0.0005 ) { currentProgress = targetProgress; }
+
+			if ( duration > 0 ) { seekTo( currentProgress * duration ); }
+
+			video.style.transform = 'scale(' + ( 1 + currentProgress * 0.08 ) + ')';
+
+			if ( titleEl ) {
+				var t1 = 1 - clamp( currentProgress / 0.35, 0, 1 );
+				titleEl.style.opacity = String( t1 );
+				titleEl.style.transform = 'translateY(' + ( ( 1 - t1 ) * -24 ) + 'px) scale(' + ( 0.96 + t1 * 0.04 ) + ')';
+				titleEl.style.filter = 'blur(' + ( ( 1 - t1 ) * 10 ) + 'px)';
+			}
+			if ( hintEl ) {
+				hintEl.style.opacity = hasStarted ? '0' : '1';
+			}
+			if ( taglineEl ) {
+				var t2 = clamp( ( currentProgress - 0.8 ) / 0.2, 0, 1 );
+				taglineEl.style.opacity = String( t2 );
+				taglineEl.style.transform = 'translateY(' + ( ( 1 - t2 ) * 20 ) + 'px) scale(' + ( 0.97 + t2 * 0.03 ) + ')';
+				taglineEl.style.filter = 'blur(' + ( ( 1 - t2 ) * 8 ) + 'px)';
+			}
+			if ( progressEl ) {
+				progressEl.style.transform = 'scaleX(' + currentProgress + ')';
+			}
+
+			rafId = requestAnimationFrame( render );
+		}
+
+		rafId = requestAnimationFrame( render );
+	} )();
+	</script>
+
 	<!-- Notre rôle -->
 	<?php $agnsee_role_video = 'https://agnsee.ca/wp-content/uploads/2026/08/Video-Project-2.mp4'; ?>
 	<section class="section section-alt">
