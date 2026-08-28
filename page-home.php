@@ -93,8 +93,14 @@ get_header();
 	}
 	?>
 	<style>
-	.mh-section {
+	.mh-wrapper {
 		position: relative;
+		height: 300vh;
+		width: 100%;
+	}
+	.mh-section {
+		position: sticky;
+		top: 0;
 		height: 100dvh;
 		width: 100%;
 		overflow: hidden;
@@ -205,53 +211,55 @@ get_header();
 	}
 	</style>
 
-	<section class="mh-section" id="metro-hero" data-scrub-distance="3200">
-		<video class="mh-video" id="metro-hero-video" data-no-optimize="1" src="<?php echo esc_url( $agnsee_metro_video ); ?>" muted playsinline preload="auto"></video>
-		<div class="mh-overlay"></div>
+	<div class="mh-wrapper" id="metro-hero-wrapper">
+		<section class="mh-section" id="metro-hero">
+			<video class="mh-video" id="metro-hero-video" data-no-optimize="1" src="<?php echo esc_url( $agnsee_metro_video ); ?>" muted playsinline preload="auto"></video>
+			<div class="mh-overlay"></div>
 
-		<div class="mh-title" id="metro-hero-title">
-			<span class="lang-fr">Un fabricant. Un monde de distributeurs.</span>
-			<span class="lang-en">One manufacturer. A world of distributors.</span>
-			<span class="lang-es">Un fabricante. Un mundo de distribuidores.</span>
-		</div>
-
-		<div class="mh-tagline" id="metro-hero-tagline">
-			<div class="mh-tagline-text">
-				<span class="lang-fr">Agnsee ouvre la voie à l'international.</span>
-				<span class="lang-en">Agnsee opens the way, worldwide.</span>
-				<span class="lang-es">Agnsee abre el camino a nivel internacional.</span>
+			<div class="mh-title" id="metro-hero-title">
+				<span class="lang-fr">Un fabricant. Un monde de distributeurs.</span>
+				<span class="lang-en">One manufacturer. A world of distributors.</span>
+				<span class="lang-es">Un fabricante. Un mundo de distribuidores.</span>
 			</div>
-			<a class="btn btn-hero-solid mh-cta" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
-				<span class="lang-fr">Voir nos produits</span><span class="lang-en">View our products</span><span class="lang-es">Ver nuestros productos</span>
-			</a>
-		</div>
 
-		<div class="mh-hint" id="metro-hero-hint">
-			<span class="lang-fr">Défiler</span><span class="lang-en">Scroll</span><span class="lang-es">Desplazar</span>
-			<svg width="14" height="18" viewBox="0 0 14 18">
-				<path d="M7 1 L7 17 M2 12 L7 17 L12 12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-			</svg>
-		</div>
+			<div class="mh-tagline" id="metro-hero-tagline">
+				<div class="mh-tagline-text">
+					<span class="lang-fr">Agnsee ouvre la voie à l'international.</span>
+					<span class="lang-en">Agnsee opens the way, worldwide.</span>
+					<span class="lang-es">Agnsee abre el camino a nivel internacional.</span>
+				</div>
+				<a class="btn btn-hero-solid mh-cta" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
+					<span class="lang-fr">Voir nos produits</span><span class="lang-en">View our products</span><span class="lang-es">Ver nuestros productos</span>
+				</a>
+			</div>
 
-		<div class="mh-progress-track">
-			<div class="mh-progress-bar" id="metro-hero-progress"></div>
-		</div>
-	</section>
+			<div class="mh-hint" id="metro-hero-hint">
+				<span class="lang-fr">Défiler</span><span class="lang-en">Scroll</span><span class="lang-es">Desplazar</span>
+				<svg width="14" height="18" viewBox="0 0 14 18">
+					<path d="M7 1 L7 17 M2 12 L7 17 L12 12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</div>
+
+			<div class="mh-progress-track">
+				<div class="mh-progress-bar" id="metro-hero-progress"></div>
+			</div>
+		</section>
+	</div>
 
 	<script data-no-optimize="1">
 	( function () {
 		'use strict';
 
+		var wrapper  = document.getElementById( 'metro-hero-wrapper' );
 		var section  = document.getElementById( 'metro-hero' );
 		var video    = document.getElementById( 'metro-hero-video' );
 		var titleEl  = document.getElementById( 'metro-hero-title' );
 		var taglineEl = document.getElementById( 'metro-hero-tagline' );
 		var hintEl   = document.getElementById( 'metro-hero-hint' );
 		var progressEl = document.getElementById( 'metro-hero-progress' );
-		if ( ! section || ! video ) { return; }
+		if ( ! wrapper || ! section || ! video ) { return; }
 
-		var scrubDistance = parseInt( section.getAttribute( 'data-scrub-distance' ), 10 ) || 3200;
-		var reduceMotion  = window.matchMedia && window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
+		var reduceMotion = window.matchMedia && window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
 
 		function clamp( v, min, max ) { return Math.min( max, Math.max( min, v ) ); }
 
@@ -263,17 +271,17 @@ get_header();
 			return;
 		}
 
+		// Technique standard "sticky + hauteur de scroll dédiée" : le
+		// wrapper fait 300vh, la section reste collée en haut (CSS
+		// position:sticky) le temps que le scroll natif traverse cette
+		// hauteur, puis se libère toute seule — aucune capture de
+		// wheel/touch ni verrouillage manuel du body nécessaire, donc
+		// aucun risque de rester coincé.
 		var duration = 0;
 		var targetProgress = 0;
 		var currentProgress = 0;
-		var hasStarted = false;
 		var isSeeking = false;
 		var pendingTime = null;
-		var locked = false;
-		var lockedScrollY = 0;
-		var touchStartY = 0;
-		var prevScrollY = window.scrollY;
-		var cooldownUntil = 0;
 		var rafId = 0;
 
 		video.addEventListener( 'loadeddata', function () {
@@ -301,103 +309,16 @@ get_header();
 			try { video.currentTime = t; } catch ( e ) { isSeeking = false; }
 		}
 
-		function engageLock( fromBelow ) {
-			if ( locked ) { return; }
-			locked = true;
-			lockedScrollY = window.scrollY;
-			var b = document.body.style;
-			b.position = 'fixed';
-			b.top = ( -lockedScrollY ) + 'px';
-			b.left = '0';
-			b.right = '0';
-			b.width = '100%';
-			targetProgress = fromBelow ? 1 : 0;
-			currentProgress = targetProgress;
-			hasStarted = fromBelow;
+		function updateProgress() {
+			var rect = wrapper.getBoundingClientRect();
+			var scrollable = wrapper.offsetHeight - window.innerHeight;
+			if ( scrollable <= 0 ) { targetProgress = 0; return; }
+			targetProgress = clamp( -rect.top / scrollable, 0, 1 );
 		}
 
-		function releaseLock() {
-			if ( ! locked ) { return; }
-			locked = false;
-			var y = lockedScrollY;
-			var b = document.body.style;
-			b.position = '';
-			b.top = '';
-			b.left = '';
-			b.right = '';
-			b.width = '';
-			window.scrollTo( 0, y );
-			prevScrollY = y;
-			cooldownUntil = Date.now() + 500;
-		}
-
-		function addDelta( deltaY ) {
-			targetProgress = clamp( targetProgress + deltaY / scrubDistance, 0, 1 );
-			if ( targetProgress > 0.001 ) { hasStarted = true; }
-		}
-
-		function releaseLockAndNudge( direction ) {
-			releaseLock();
-			// Ne pas compter sur le scroll natif du navigateur dans le même tick
-			// où on vient de changer position:fixed en synchrone — trop fragile
-			// suivant les navigateurs. On pousse nous-mêmes le scroll pour
-			// garantir la sortie du bloc, dans les deux sens.
-			window.scrollBy( 0, direction * 120 );
-		}
-
-		function onWheel( e ) {
-			if ( ! locked ) { return; }
-			var atForwardEdge  = targetProgress >= 1 && e.deltaY > 0;
-			var atBackwardEdge = targetProgress <= 0 && e.deltaY < 0;
-			if ( atForwardEdge || atBackwardEdge ) {
-				releaseLockAndNudge( atForwardEdge ? 1 : -1 );
-				e.preventDefault();
-				return;
-			}
-			addDelta( e.deltaY );
-			e.preventDefault();
-		}
-
-		function onTouchStart( e ) {
-			touchStartY = e.touches[0] ? e.touches[0].clientY : 0;
-		}
-
-		function onTouchMove( e ) {
-			if ( ! locked ) { return; }
-			var y = e.touches[0] ? e.touches[0].clientY : touchStartY;
-			var deltaY = touchStartY - y;
-			var atForwardEdge  = targetProgress >= 1 && deltaY > 0;
-			var atBackwardEdge = targetProgress <= 0 && deltaY < 0;
-			if ( atForwardEdge || atBackwardEdge ) {
-				releaseLockAndNudge( atForwardEdge ? 1 : -1 );
-				touchStartY = y;
-				e.preventDefault();
-				return;
-			}
-			touchStartY = y;
-			addDelta( deltaY );
-			e.preventDefault();
-		}
-
-		window.addEventListener( 'wheel', onWheel, { passive: false } );
-		window.addEventListener( 'touchstart', onTouchStart, { passive: true } );
-		window.addEventListener( 'touchmove', onTouchMove, { passive: false } );
-
-		function checkEntry( scrollingDown ) {
-			if ( locked || Date.now() < cooldownUntil ) { return; }
-			var rect = section.getBoundingClientRect();
-			var vh = window.innerHeight;
-			var fullyCovers = rect.top <= 1 && rect.bottom >= vh - 1;
-			if ( ! fullyCovers ) { return; }
-			engageLock( ! scrollingDown );
-		}
-
-		window.addEventListener( 'scroll', function () {
-			if ( locked ) { return; }
-			var curY = window.scrollY;
-			checkEntry( curY > prevScrollY );
-			prevScrollY = curY;
-		}, { passive: true } );
+		window.addEventListener( 'scroll', updateProgress, { passive: true } );
+		window.addEventListener( 'resize', updateProgress, { passive: true } );
+		updateProgress();
 
 		function render() {
 			currentProgress += ( targetProgress - currentProgress ) * 0.18;
@@ -414,7 +335,7 @@ get_header();
 				titleEl.style.filter = 'blur(' + ( ( 1 - t1 ) * 10 ) + 'px)';
 			}
 			if ( hintEl ) {
-				hintEl.style.opacity = hasStarted ? '0' : '1';
+				hintEl.style.opacity = currentProgress > 0.02 ? '0' : '1';
 			}
 			if ( taglineEl ) {
 				var t2 = clamp( ( currentProgress - 0.8 ) / 0.2, 0, 1 );
