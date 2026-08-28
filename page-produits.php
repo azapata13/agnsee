@@ -10,33 +10,37 @@ $agnsee_products = array(
 		'slug'    => 'safegrow-ag',
 		'segment' => 'irrigation',
 		'name'    => 'SafeGrow AG',
-		'fr'      => "Nettoyant d'infrastructure d'irrigation à base de HOCl stabilisé.",
-		'en'      => 'Irrigation infrastructure cleaner based on stabilized HOCl.',
-		'es'      => 'Limpiador de infraestructura de irrigación a base de HOCl estabilizado.',
+		'fr'      => "Nettoyant d'infrastructure d'irrigation à base de HOCl stabilisé — cible les dépôts minéraux et résidus nutritifs dans les lignes, goutteurs et réservoirs.",
+		'en'      => 'Irrigation infrastructure cleaner based on stabilized HOCl — targets mineral and nutrient buildup in lines, drippers and tanks.',
+		'es'      => 'Limpiador de infraestructura de irrigación a base de HOCl estabilizado — ataca depósitos minerales y residuos nutritivos en líneas, goteros y tanques.',
+		'img'     => 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-AG-Group-Packaging-4L-1000L-August-72026.png',
 	),
 	array(
 		'slug'    => 'booster',
 		'segment' => 'biostimulants',
 		'name'    => 'Booster',
-		'fr'      => "Extrait d'algues marines pour programmes de culture.",
-		'en'      => 'Marine seaweed extract for growing programs.',
-		'es'      => 'Extracto de algas marinas para programas de cultivo.',
+		'fr'      => "Extrait d'algues marines conçu pour s'intégrer aux programmes de culture en horticulture protégée.",
+		'en'      => 'Marine seaweed extract designed to integrate into growing programs in protected horticulture.',
+		'es'      => 'Extracto de algas marinas diseñado para integrarse a los programas de cultivo en horticultura protegida.',
+		'img'     => 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-Booster-4Litre-July-2026-1.png',
 	),
 	array(
 		'slug'    => 'grow-genius',
 		'segment' => 'biostimulants',
 		'name'    => 'Grow Genius',
-		'fr'      => 'Acide monosilicique concentré à 40 %.',
-		'en'      => '40% concentrated monosilicic acid.',
-		'es'      => 'Ácido monosilícico concentrado al 40 %.',
+		'fr'      => "Concentré d'acide monosilicique à 40 %, conçu pour s'intégrer aux programmes de culture existants.",
+		'en'      => '40% concentrated monosilicic acid, designed to integrate into existing growing programs.',
+		'es'      => 'Concentrado de ácido monosilícico al 40 %, diseñado para integrarse a los programas de cultivo existentes.',
+		'img'     => 'https://agnsee.ca/wp-content/uploads/2026/08/Grow-Genius-Mono-Silicic-Acid-40-—-500-ml_2.png',
 	),
 	array(
 		'slug'    => 'safe-disinfectant',
 		'segment' => 'disinfection',
 		'name'    => 'Safe Disinfectant',
-		'fr'      => 'Désinfectant homologué par Santé Canada, acide hypochloreux à 0,046 %.',
-		'en'      => 'Health Canada registered disinfectant, 0.046% hypochlorous acid.',
-		'es'      => 'Desinfectante registrado ante Health Canada, ácido hipocloroso al 0,046 %.',
+		'fr'      => "Désinfectant à base d'acide hypochloreux (HOCl) à 0,046 %, homologué par Santé Canada pour établissements de santé, locaux alimentaires et bâtiments d'élevage.",
+		'en'      => 'Hypochlorous acid (HOCl) 0.046% disinfectant, Health Canada registered for healthcare facilities, food premises and barn settings.',
+		'es'      => 'Desinfectante a base de ácido hipocloroso (HOCl) al 0,046 %, registrado ante Health Canada para instalaciones de salud, locales alimentarios y establos.',
+		'img'     => 'https://agnsee.ca/wp-content/uploads/2026/08/safe-disinfectantGOOD.png',
 	),
 );
 
@@ -82,6 +86,9 @@ $agnsee_segments = array(
 			<div class="grid grid-4" id="products-grid">
 				<?php foreach ( $agnsee_products as $product ) : ?>
 					<?php $agnsee_product_img = agnsee_image_url( 'products/' . $product['slug'] ); ?>
+					<?php if ( ! $agnsee_product_img && ! empty( $product['img'] ) ) : ?>
+						<?php $agnsee_product_img = $product['img']; ?>
+					<?php endif; ?>
 					<a class="card" data-segment="<?php echo esc_attr( $product['segment'] ); ?>" href="<?php echo esc_url( home_url( '/produits/' . $product['slug'] . '/' ) ); ?>">
 						<?php if ( $agnsee_product_img ) : ?>
 							<img src="<?php echo esc_url( $agnsee_product_img ); ?>" alt="<?php echo esc_attr( $product['name'] ); ?>" style="width:100%;height:140px;object-fit:cover;border-radius:var(--radius-sm);margin-bottom:0.75rem;">
