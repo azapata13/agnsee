@@ -336,12 +336,22 @@ get_header();
 			if ( targetProgress > 0.001 ) { hasStarted = true; }
 		}
 
+		function releaseLockAndNudge( direction ) {
+			releaseLock();
+			// Ne pas compter sur le scroll natif du navigateur dans le même tick
+			// où on vient de changer position:fixed en synchrone — trop fragile
+			// suivant les navigateurs. On pousse nous-mêmes le scroll pour
+			// garantir la sortie du bloc, dans les deux sens.
+			window.scrollBy( 0, direction * 120 );
+		}
+
 		function onWheel( e ) {
 			if ( ! locked ) { return; }
 			var atForwardEdge  = targetProgress >= 1 && e.deltaY > 0;
 			var atBackwardEdge = targetProgress <= 0 && e.deltaY < 0;
 			if ( atForwardEdge || atBackwardEdge ) {
-				releaseLock();
+				releaseLockAndNudge( atForwardEdge ? 1 : -1 );
+				e.preventDefault();
 				return;
 			}
 			addDelta( e.deltaY );
@@ -359,8 +369,9 @@ get_header();
 			var atForwardEdge  = targetProgress >= 1 && deltaY > 0;
 			var atBackwardEdge = targetProgress <= 0 && deltaY < 0;
 			if ( atForwardEdge || atBackwardEdge ) {
-				releaseLock();
+				releaseLockAndNudge( atForwardEdge ? 1 : -1 );
 				touchStartY = y;
+				e.preventDefault();
 				return;
 			}
 			touchStartY = y;
