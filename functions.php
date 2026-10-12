@@ -281,3 +281,50 @@ function agnsee_customize_register( $wp_customize ) {
 	) );
 }
 add_action( 'customize_register', 'agnsee_customize_register' );
+
+/* ==========================================================================
+   9. DÉPLOIEMENT — PURGE AUTOMATIQUE DU CACHE LITESPEED
+   ========================================================================== */
+
+/**
+ * Commit Git actuellement déployé dans le dossier du thème (lu dans .git,
+ * sans exécuter git). Retourne une chaîne vide si introuvable.
+ */
+function agnsee_deployed_commit() {
+	$git  = get_template_directory() . '/.git';
+	$head = @file_get_contents( $git . '/HEAD' );
+	if ( ! $head ) {
+		return '';
+	}
+	$head = trim( $head );
+	if ( 0 !== strpos( $head, 'ref: ' ) ) {
+		return $head;
+	}
+	$ref = substr( $head, 5 );
+	$sha = @file_get_contents( $git . '/' . $ref );
+	if ( $sha ) {
+		return trim( $sha );
+	}
+	$packed = @file_get_contents( $git . '/packed-refs' );
+	if ( $packed && preg_match( '/^([0-9a-f]{40}) ' . preg_quote( $ref, '/' ) . '$/m', $packed, $m ) ) {
+		return $m[1];
+	}
+	return '';
+}
+
+/**
+ * Après un git pull, le premier appel PHP (ex. /wp-json/ appelé par
+ * GitHub Actions) détecte le nouveau commit et purge tout le cache.
+ */
+function agnsee_purge_cache_on_deploy() {
+	$commit = agnsee_deployed_commit();
+	if ( ! $commit || get_option( 'agnsee_deployed_commit' ) === $commit ) {
+		return;
+	}
+	update_option( 'agnsee_deployed_commit', $commit, false );
+	do_action( 'litespeed_purge_all' );
+	if ( ! headers_sent() ) {
+		header( 'X-LiteSpeed-Purge: *' );
+	}
+}
+add_action( 'init', 'agnsee_purge_cache_on_deploy' );
