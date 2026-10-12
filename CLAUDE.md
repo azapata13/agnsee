@@ -63,9 +63,13 @@ SafeGrow AG, Booster, Grow Genius, Safe Disinfectant (Aranet a été retiré du 
 Compression images/vidéos, meta SEO/OG, finir les outils (calculateur HOCl),
 template 404 custom, analytics, activer le cache de page LiteSpeed complet
 
-## Workflow déploiement
+## Workflow déploiement (automatique)
 1. Modifier le fichier local
 2. git add . && git commit -m "message" && git push origin main
-3. Sur cPanel: git pull origin main (dans wp-content/themes/agnsee/)
-4. Purger le cache LiteSpeed
-5. Vérifier sur agnsee.ca
+3. GitHub Actions (.github/workflows/deploy.yml) vérifie php -l + spans trilingues,
+   puis fait le pull sur cPanel via l'API UAPI (secrets CPANEL_*)
+4. functions.php purge le cache LiteSpeed dès qu'il détecte le nouveau commit
+5. Vérifier sur agnsee.ca (onglet Actions de GitHub en cas d'échec)
+
+Note : le jeton GitHub du Mac n'a pas le scope `workflow` — toute modification
+de .github/workflows/ doit se faire via l'interface web de GitHub.
