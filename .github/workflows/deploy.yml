@@ -1,0 +1,57 @@
+name: Déploiement cPanel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-cpanel
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vérifier la syntaxe PHP
+        run: |
+          set -e
+          for f in $(git ls-files '*.php'); do php -l "$f"; done
+
+      - name: Vérifier l'équilibre des spans trilingues
+        run: |
+          fail=0
+          for f in $(git ls-files '*.php'); do
+            fr=$(grep -o 'class="lang-fr"' "$f" | wc -l)
+            en=$(grep -o 'class="lang-en"' "$f" | wc -l)
+            es=$(grep -o 'class="lang-es"' "$f" | wc -l)
+            if [ "$fr" != "$en" ] || [ "$fr" != "$es" ]; then
+              echo "::error file=$f::spans déséquilibrés fr=$fr en=$en es=$es"
+              fail=1
+            fi
+          done
+          exit $fail
+
+      - name: Pull sur cPanel (Git Version Control)
+        env:
+          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+          CPANEL_USER: ${{ secrets.CPANEL_USER }}
+          CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
+          REPO_ROOT: ${{ secrets.CPANEL_REPO_ROOT }}
+        run: |
+          set -e
+          res=$(curl -sS --fail-with-body -G \
+            -H "Authorization: cpanel ${CPANEL_USER}:${CPANEL_TOKEN}" \
+            --data-urlencode "repository_root=${REPO_ROOT}" \
+            --data-urlencode "branch=main" \
+            "https://${CPANEL_HOST}:2083/execute/VersionControl/update")
+          echo "$res" | jq '{status, errors, messages, head: .data.last_update}'
+          [ "$(echo "$res" | jq -r .status)" = "1" ]
+
+      - name: Purger le cache LiteSpeed
+        run: |
+          sleep 5
+          curl -sS -o /dev/null -w "wp-json: %{http_code}\n" "https://agnsee.ca/wp-json/?deploy=${GITHUB_SHA}"
+          curl -sS -o /dev/null -w "accueil: %{http_code}\n" "https://agnsee.ca/"
