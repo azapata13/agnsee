@@ -8,61 +8,32 @@ get_header();
 
 <main id="main-content" class="site-main">
 
-	<section class="hero" style="padding-bottom:2rem;">
-		<div class="container">
-			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Extrait d'algues</span><span class="lang-en">Seaweed extract</span><span class="lang-es">Extracto de algas</span></div>
-			<h1>Booster</h1>
-			<p class="hero-lead">
-				<span class="lang-fr">Extrait d'algues marines destiné aux programmes de culture en horticulture protégée.</span>
-				<span class="lang-en">Marine seaweed extract for growing programs in protected horticulture.</span>
-				<span class="lang-es">Extracto de algas marinas para programas de cultivo en horticultura protegida.</span>
-			</p>
-			<?php $agnsee_product_img = agnsee_image_url( 'products/booster' ); ?>
-			<?php if ( $agnsee_product_img ) : ?>
-				<img src="<?php echo esc_url( $agnsee_product_img ); ?>" alt="Booster" style="max-width:480px;width:100%;border-radius:var(--radius-md);margin:0 auto 1.5rem;">
-			<?php endif; ?>
-			<div class="hero-actions">
-				<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/?produit=Booster' ) ); ?>">
-					<span class="lang-fr">Demander une consultation</span><span class="lang-en">Request a consultation</span><span class="lang-es">Solicitar una consulta</span>
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<section class="section section-alt" style="padding-top:0;">
-		<div class="container">
-			<div class="grid grid-2">
-				<div>
-					<h2><span class="lang-fr">Description</span><span class="lang-en">Description</span><span class="lang-es">Descripción</span></h2>
-					<p>
-						<span class="lang-fr">Booster est un extrait d'algues marines conçu pour s'intégrer aux programmes de culture existants. Aucune allégation de santé ou de rendement des plantes n'est associée à ce produit.</span>
-						<span class="lang-en">Booster is a marine seaweed extract designed to integrate into existing growing programs. No plant health or performance claims are associated with this product.</span>
-						<span class="lang-es">Booster es un extracto de algas marinas diseñado para integrarse a los programas de cultivo existentes. No se asocia a este producto ninguna alegación de salud o rendimiento de las plantas.</span>
-					</p>
-				</div>
-				<div>
-					<h2><span class="lang-fr">Fiche technique</span><span class="lang-en">Specifications</span><span class="lang-es">Ficha técnica</span></h2>
-					<ul style="color:var(--color-text-secondary);">
-						<li style="padding:0.5rem 0;border-bottom:1px solid var(--color-border);">
-							<span class="lang-fr">Origine : algues marines</span>
-							<span class="lang-en">Origin: marine seaweed</span>
-							<span class="lang-es">Origen: algas marinas</span>
-						</li>
-						<li style="padding:0.5rem 0;border-bottom:1px solid var(--color-border);">
-							<span class="lang-fr">Usage : programmes de culture protégée</span>
-							<span class="lang-en">Use: protected-crop growing programs</span>
-							<span class="lang-es">Uso: programas de cultivo protegido</span>
-						</li>
-						<li style="padding:0.5rem 0;">
-							<span class="lang-fr">Format : sur demande</span>
-							<span class="lang-en">Format: on request</span>
-							<span class="lang-es">Formato: bajo pedido</span>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
+	<?php
+	$agnsee_product_img = agnsee_image_url( 'products/booster' );
+	get_template_part( 'product-showcase', null, array(
+		'name'      => 'Booster',
+		'eyebrow'   => array( 'fr' => 'Extrait d\'algues', 'en' => 'Seaweed extract', 'es' => 'Extracto de algas' ),
+		'lead'      => array( 'fr' => 'Extrait d\'algues marines destiné aux programmes de culture en horticulture protégée.', 'en' => 'Marine seaweed extract for growing programs in protected horticulture.', 'es' => 'Extracto de algas marinas para programas de cultivo en horticultura protegida.' ),
+		'stats'     => array(
+			array( 'fr' => 'Algues marines', 'en' => 'Marine seaweed', 'es' => 'Algas marinas' ),
+			array( 'fr' => 'Programmes de culture', 'en' => 'Growing programs', 'es' => 'Programas de cultivo' ),
+			array( 'fr' => 'Format sur demande', 'en' => 'Format on request', 'es' => 'Formato bajo pedido' ),
+		),
+		'steps'     => array(
+			array( 'title' => array( 'fr' => 'Description', 'en' => 'Description', 'es' => 'Descripción' ), 'text' => array( 'fr' => 'Booster est un extrait d\'algues marines conçu pour s\'intégrer aux programmes de culture existants. Aucune allégation de santé ou de rendement des plantes n\'est associée à ce produit.', 'en' => 'Booster is a marine seaweed extract designed to integrate into existing growing programs. No plant health or performance claims are associated with this product.', 'es' => 'Booster es un extracto de algas marinas diseñado para integrarse a los programas de cultivo existentes. No se asocia a este producto ninguna alegación de salud o rendimiento de las plantas.' ) ),
+			array( 'title' => array( 'fr' => 'Fiche technique', 'en' => 'Specifications', 'es' => 'Ficha técnica' ), 'list' => array(
+				array( 'fr' => 'Origine : algues marines', 'en' => 'Origin: marine seaweed', 'es' => 'Origen: algas marinas' ),
+				array( 'fr' => 'Usage : programmes de culture protégée', 'en' => 'Use: protected-crop growing programs', 'es' => 'Uso: programas de cultivo protegido' ),
+				array( 'fr' => 'Format : sur demande', 'en' => 'Format: on request', 'es' => 'Formato: bajo pedido' ),
+			) ),
+			array( 'title' => array( 'fr' => 'Commander ou distribuer', 'en' => 'Order or distribute', 'es' => 'Pedir o distribuir' ), 'text' => array( 'fr' => 'Formats, prix distributeur et documentation (fiche technique, FDS) sur demande. Notre équipe vous répond rapidement.', 'en' => 'Formats, distributor pricing and documentation (spec sheet, SDS) on request. Our team will get back to you quickly.', 'es' => 'Formatos, precios para distribuidores y documentación (ficha técnica, HDS) bajo pedido. Nuestro equipo le responderá rápidamente.' ) ),
+		),
+		'images'    => array(
+			array( 'src' => $agnsee_product_img ? $agnsee_product_img : 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-Booster-4Litre-July-2026-1.png', 'label' => array( 'fr' => 'Produit', 'en' => 'Product', 'es' => 'Producto' ) ),
+		),
+		'secondary' => array( 'href' => home_url( '/produits/' ), 'fr' => 'Tous les produits', 'en' => 'All products', 'es' => 'Todos los productos' ),
+	) );
+	?>
 
 	<section class="section">
 		<div class="container">

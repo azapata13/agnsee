@@ -8,61 +8,32 @@ get_header();
 
 <main id="main-content" class="site-main">
 
-	<section class="hero" style="padding-bottom:2rem;">
-		<div class="container">
-			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Acide monosilicique</span><span class="lang-en">Monosilicic acid</span><span class="lang-es">Ácido monosilícico</span></div>
-			<h1>Grow Genius</h1>
-			<p class="hero-lead">
-				<span class="lang-fr">Acide monosilicique concentré à 40 %, destiné aux programmes de culture en horticulture protégée.</span>
-				<span class="lang-en">40% concentrated monosilicic acid, designed for growing programs in protected horticulture.</span>
-				<span class="lang-es">Ácido monosilícico concentrado al 40 %, diseñado para programas de cultivo en horticultura protegida.</span>
-			</p>
-			<?php $agnsee_product_img = agnsee_image_url( 'products/grow-genius' ); ?>
-			<?php if ( $agnsee_product_img ) : ?>
-				<img src="<?php echo esc_url( $agnsee_product_img ); ?>" alt="Grow Genius" style="max-width:480px;width:100%;border-radius:var(--radius-md);margin:0 auto 1.5rem;">
-			<?php endif; ?>
-			<div class="hero-actions">
-				<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/?produit=Grow+Genius' ) ); ?>">
-					<span class="lang-fr">Demander une consultation</span><span class="lang-en">Request a consultation</span><span class="lang-es">Solicitar una consulta</span>
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<section class="section section-alt" style="padding-top:0;">
-		<div class="container">
-			<div class="grid grid-2">
-				<div>
-					<h2><span class="lang-fr">Description</span><span class="lang-en">Description</span><span class="lang-es">Descripción</span></h2>
-					<p>
-						<span class="lang-fr">Grow Genius est un concentré d'acide monosilicique à 40 %, conçu pour s'intégrer aux programmes de culture existants. Aucune allégation de santé ou de rendement des plantes n'est associée à ce produit.</span>
-						<span class="lang-en">Grow Genius is a 40% concentrated monosilicic acid, designed to integrate into existing growing programs. No plant health or performance claims are associated with this product.</span>
-						<span class="lang-es">Grow Genius es un concentrado de ácido monosilícico al 40 %, diseñado para integrarse a los programas de cultivo existentes. No se asocia a este producto ninguna alegación de salud o rendimiento de las plantas.</span>
-					</p>
-				</div>
-				<div>
-					<h2><span class="lang-fr">Fiche technique</span><span class="lang-en">Specifications</span><span class="lang-es">Ficha técnica</span></h2>
-					<ul style="color:var(--color-text-secondary);">
-						<li style="padding:0.5rem 0;border-bottom:1px solid var(--color-border);">
-							<span class="lang-fr">Concentration : acide monosilicique 40 %</span>
-							<span class="lang-en">Concentration: 40% monosilicic acid</span>
-							<span class="lang-es">Concentración: ácido monosilícico al 40 %</span>
-						</li>
-						<li style="padding:0.5rem 0;border-bottom:1px solid var(--color-border);">
-							<span class="lang-fr">Usage : programmes de culture protégée</span>
-							<span class="lang-en">Use: protected-crop growing programs</span>
-							<span class="lang-es">Uso: programas de cultivo protegido</span>
-						</li>
-						<li style="padding:0.5rem 0;">
-							<span class="lang-fr">Format : sur demande</span>
-							<span class="lang-en">Format: on request</span>
-							<span class="lang-es">Formato: bajo pedido</span>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
+	<?php
+	$agnsee_product_img = agnsee_image_url( 'products/grow-genius' );
+	get_template_part( 'product-showcase', null, array(
+		'name'      => 'Grow Genius',
+		'eyebrow'   => array( 'fr' => 'Acide monosilicique', 'en' => 'Monosilicic acid', 'es' => 'Ácido monosilícico' ),
+		'lead'      => array( 'fr' => 'Acide monosilicique concentré à 40 %, destiné aux programmes de culture en horticulture protégée.', 'en' => '40% concentrated monosilicic acid, designed for growing programs in protected horticulture.', 'es' => 'Ácido monosilícico concentrado al 40 %, diseñado para programas de cultivo en horticultura protegida.' ),
+		'stats'     => array(
+			array( 'fr' => 'Acide monosilicique 40 %', 'en' => '40% monosilicic acid', 'es' => 'Ácido monosilícico 40 %' ),
+			array( 'fr' => 'Programmes de culture', 'en' => 'Growing programs', 'es' => 'Programas de cultivo' ),
+			array( 'fr' => 'Format sur demande', 'en' => 'Format on request', 'es' => 'Formato bajo pedido' ),
+		),
+		'steps'     => array(
+			array( 'title' => array( 'fr' => 'Description', 'en' => 'Description', 'es' => 'Descripción' ), 'text' => array( 'fr' => 'Grow Genius est un concentré d\'acide monosilicique à 40 %, conçu pour s\'intégrer aux programmes de culture existants. Aucune allégation de santé ou de rendement des plantes n\'est associée à ce produit.', 'en' => 'Grow Genius is a 40% concentrated monosilicic acid, designed to integrate into existing growing programs. No plant health or performance claims are associated with this product.', 'es' => 'Grow Genius es un concentrado de ácido monosilícico al 40 %, diseñado para integrarse a los programas de cultivo existentes. No se asocia a este producto ninguna alegación de salud o rendimiento de las plantas.' ) ),
+			array( 'title' => array( 'fr' => 'Fiche technique', 'en' => 'Specifications', 'es' => 'Ficha técnica' ), 'list' => array(
+				array( 'fr' => 'Concentration : acide monosilicique 40 %', 'en' => 'Concentration: 40% monosilicic acid', 'es' => 'Concentración: ácido monosilícico al 40 %' ),
+				array( 'fr' => 'Usage : programmes de culture protégée', 'en' => 'Use: protected-crop growing programs', 'es' => 'Uso: programas de cultivo protegido' ),
+				array( 'fr' => 'Format : sur demande', 'en' => 'Format: on request', 'es' => 'Formato: bajo pedido' ),
+			) ),
+			array( 'title' => array( 'fr' => 'Commander ou distribuer', 'en' => 'Order or distribute', 'es' => 'Pedir o distribuir' ), 'text' => array( 'fr' => 'Formats, prix distributeur et documentation (fiche technique, FDS) sur demande. Notre équipe vous répond rapidement.', 'en' => 'Formats, distributor pricing and documentation (spec sheet, SDS) on request. Our team will get back to you quickly.', 'es' => 'Formatos, precios para distribuidores y documentación (ficha técnica, HDS) bajo pedido. Nuestro equipo le responderá rápidamente.' ) ),
+		),
+		'images'    => array(
+			array( 'src' => $agnsee_product_img ? $agnsee_product_img : 'https://agnsee.ca/wp-content/uploads/2026/08/Grow-Genius-Mono-Silicic-Acid-40-—-500-ml_2.png', 'label' => array( 'fr' => 'Produit', 'en' => 'Product', 'es' => 'Producto' ) ),
+		),
+		'secondary' => array( 'href' => home_url( '/produits/' ), 'fr' => 'Tous les produits', 'en' => 'All products', 'es' => 'Todos los productos' ),
+	) );
+	?>
 
 	<section class="section">
 		<div class="container">
