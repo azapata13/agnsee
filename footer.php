@@ -13,9 +13,9 @@
 						<?php endif; ?>
 					</div>
 					<p style="max-width:280px;">
-						<span class="lang-fr">Agent manufacturier représentant des produits techniques pour l'horticulture protégée au Canada.</span>
-						<span class="lang-en">Manufacturer's representative for technical products serving protected horticulture across Canada.</span>
-						<span class="lang-es">Agente manufacturero que representa productos técnicos para la horticultura protegida en Canadá.</span>
+						<span class="lang-fr">Agent manufacturier représentant des produits techniques pour l'agriculture — irrigation, désinfection, nutrition des cultures — au Canada et à l'international.</span>
+						<span class="lang-en">Manufacturer's representative for technical agricultural products — irrigation, disinfection, crop nutrition — in Canada and internationally.</span>
+						<span class="lang-es">Agente manufacturero que representa productos técnicos para la agricultura — riego, desinfección, nutrición de cultivos — en Canadá y a nivel internacional.</span>
 					</p>
 				</div>
 
