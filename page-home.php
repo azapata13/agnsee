@@ -31,19 +31,19 @@ get_header();
 			<div class="hero-video-overlay"></div>
 			<div class="hero-video-content">
 				<div class="hero-video-eyebrow">
-					<span class="lang-fr">Agent manufacturier</span>
-					<span class="lang-en">Manufacturer's representative</span>
-					<span class="lang-es">Agente manufacturero</span>
+					<span class="lang-fr">AGENT MANUFACTURIER · AGRICULTURE MODERNE</span>
+					<span class="lang-en">MANUFACTURER'S AGENT · MODERN AGRICULTURE</span>
+					<span class="lang-es">AGENTE DE FABRICANTES · AGRICULTURA MODERNA</span>
 				</div>
 				<h1 class="hero-video-title">
-					<span class="lang-fr">Des produits agricoles techniques pour votre réseau de distribution</span>
-					<span class="lang-en">Technical agricultural products for your distribution network</span>
-					<span class="lang-es">Productos agrícolas técnicos para su red de distribución</span>
+					<span class="lang-fr">L'agriculture moderne, propulsée par la bonne technologie</span>
+					<span class="lang-en">Modern agriculture, powered by the right technology</span>
+					<span class="lang-es">La agricultura moderna, impulsada por la tecnología adecuada</span>
 				</h1>
 				<p class="hero-video-lead">
-					<span class="lang-fr">Nettoyants pour lignes d'irrigation, désinfectants et intrants de culture : nous représentons des fabricants spécialisés et les connectons aux distributeurs agricoles, au Canada et à l'international.</span>
-					<span class="lang-en">Irrigation line cleaners, disinfectants and crop inputs: we represent specialized manufacturers and connect them with agricultural distributors in Canada and internationally.</span>
-					<span class="lang-es">Limpiadores para líneas de riego, desinfectantes e insumos de cultivo: representamos a fabricantes especializados y los conectamos con distribuidores agrícolas en Canadá y a nivel internacional.</span>
+					<span class="lang-fr">Nous représentons des produits techniques sélectionnés pour les serres, les grandes cultures et l'élevage, et connectons les fabricants aux distributeurs, aux entreprises agricoles et aux acheteurs institutionnels.</span>
+					<span class="lang-en">We represent selected technical products for greenhouses, field crops and livestock, and connect manufacturers with distributors, farm businesses and institutional buyers.</span>
+					<span class="lang-es">Representamos productos técnicos seleccionados para invernaderos, cultivos extensivos y ganadería, y conectamos a los fabricantes con distribuidores, empresas agrícolas y compradores institucionales.</span>
 				</p>
 				<div class="hero-video-actions">
 					<a class="btn btn-hero-solid" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
@@ -59,19 +59,19 @@ get_header();
 		<section class="hero">
 			<div class="container">
 				<div class="eyebrow hero-eyebrow">
-					<span class="lang-fr">Agent manufacturier</span>
-					<span class="lang-en">Manufacturer's representative</span>
-					<span class="lang-es">Agente manufacturero</span>
+					<span class="lang-fr">AGENT MANUFACTURIER · AGRICULTURE MODERNE</span>
+					<span class="lang-en">MANUFACTURER'S AGENT · MODERN AGRICULTURE</span>
+					<span class="lang-es">AGENTE DE FABRICANTES · AGRICULTURA MODERNA</span>
 				</div>
 				<h1>
-					<span class="lang-fr">Agent manufacturier pour l'agriculture</span>
-					<span class="lang-en">Manufacturer's representative for agriculture</span>
-					<span class="lang-es">Agente manufacturero para la agricultura</span>
+					<span class="lang-fr">L'agriculture moderne, propulsée par la bonne technologie</span>
+					<span class="lang-en">Modern agriculture, powered by the right technology</span>
+					<span class="lang-es">La agricultura moderna, impulsada por la tecnología adecuada</span>
 				</h1>
 				<p class="hero-lead">
-					<span class="lang-fr">Nettoyants pour lignes d'irrigation, désinfectants et intrants de culture : nous représentons des fabricants spécialisés et les connectons aux distributeurs agricoles, au Canada et à l'international.</span>
-					<span class="lang-en">Irrigation line cleaners, disinfectants and crop inputs: we represent specialized manufacturers and connect them with agricultural distributors in Canada and internationally.</span>
-					<span class="lang-es">Limpiadores para líneas de riego, desinfectantes e insumos de cultivo: representamos a fabricantes especializados y los conectamos con distribuidores agrícolas en Canadá y a nivel internacional.</span>
+					<span class="lang-fr">Nous représentons des produits techniques sélectionnés pour les serres, les grandes cultures et l'élevage, et connectons les fabricants aux distributeurs, aux entreprises agricoles et aux acheteurs institutionnels.</span>
+					<span class="lang-en">We represent selected technical products for greenhouses, field crops and livestock, and connect manufacturers with distributors, farm businesses and institutional buyers.</span>
+					<span class="lang-es">Representamos productos técnicos seleccionados para invernaderos, cultivos extensivos y ganadería, y conectamos a los fabricantes con distribuidores, empresas agrícolas y compradores institucionales.</span>
 				</p>
 				<div class="hero-actions">
 					<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
@@ -363,14 +363,14 @@ get_header();
 				<div class="role-card">
 					<span class="role-number">01</span>
 					<h3>
-						<span class="lang-fr">Sourcing exclusif</span>
-						<span class="lang-en">Exclusive sourcing</span>
-						<span class="lang-es">Abastecimiento exclusivo</span>
+						<span class="lang-fr">Sourcing sélectif</span>
+						<span class="lang-en">Selective sourcing</span>
+						<span class="lang-es">Abastecimiento selectivo</span>
 					</h3>
 					<p>
-						<span class="lang-fr">Une sélection rigoureuse de produits techniques auprès de fabricants spécialisés, avec représentation exclusive sur le marché canadien.</span>
-						<span class="lang-en">A rigorous selection of technical products from specialized manufacturers, with exclusive representation across the Canadian market.</span>
-						<span class="lang-es">Una selección rigurosa de productos técnicos de fabricantes especializados, con representación exclusiva en el mercado canadiense.</span>
+						<span class="lang-fr">Une sélection rigoureuse de produits techniques auprès de fabricants spécialisés, représentés sur le marché canadien.</span>
+						<span class="lang-en">A rigorous selection of technical products from specialized manufacturers, represented in the Canadian market.</span>
+						<span class="lang-es">Una selección rigurosa de productos técnicos de fabricantes especializados, representados en el mercado canadiense.</span>
 					</p>
 				</div>
 
@@ -382,9 +382,9 @@ get_header();
 						<span class="lang-es">Experiencia técnica</span>
 					</h3>
 					<p>
-						<span class="lang-fr">Une compréhension approfondie des enjeux agricoles — irrigation, hygiène, nutrition des cultures — pour orienter chaque client vers la bonne solution.</span>
-						<span class="lang-en">A deep understanding of agricultural challenges — irrigation, sanitation, crop nutrition — to guide every client toward the right solution.</span>
-						<span class="lang-es">Un conocimiento profundo de los desafíos agrícolas — riego, higiene, nutrición de cultivos — para guiar a cada cliente hacia la solución adecuada.</span>
+						<span class="lang-fr">Une compréhension terrain des enjeux propres à chaque production (serres, grandes cultures, élevage) pour orienter chaque client vers la bonne solution.</span>
+						<span class="lang-en">On-the-ground understanding of the challenges specific to each type of production (greenhouses, field crops, livestock) to guide every client to the right solution.</span>
+						<span class="lang-es">Un conocimiento de campo de los retos propios de cada producción (invernaderos, cultivos extensivos, ganadería) para orientar a cada cliente hacia la solución adecuada.</span>
 					</p>
 				</div>
 
@@ -396,15 +396,103 @@ get_header();
 						<span class="lang-es">Soporte en campo</span>
 					</h3>
 					<p>
-						<span class="lang-fr">Un accompagnement direct — dosage, installation, mise en service — auprès des distributeurs et acheteurs institutionnels.</span>
-						<span class="lang-en">Hands-on support — dosing, installation, commissioning — for distributors and institutional buyers.</span>
-						<span class="lang-es">Acompañamiento directo — dosificación, instalación, puesta en marcha — para distribuidores y compradores institucionales.</span>
+						<span class="lang-fr">Un accompagnement direct (dosage, installation, mise en service) dans la serre, au champ comme à l'étable, auprès des distributeurs et des entreprises agricoles.</span>
+						<span class="lang-en">Hands-on support (dosing, installation, commissioning) in the greenhouse, in the field and in the barn, for distributors and farm businesses.</span>
+						<span class="lang-es">Acompañamiento directo (dosificación, instalación, puesta en marcha) en el invernadero, en el campo y en el establo, para distribuidores y empresas agrícolas.</span>
 					</p>
 				</div>
 
 			</div>
 
 			<video class="role-video-small" data-no-optimize="1" src="<?php echo esc_url( $agnsee_role_video ); ?>" muted autoplay loop playsinline preload="auto"></video>
+		</div>
+	</section>
+
+	<!-- Nos secteurs -->
+	<?php
+	$agnsee_sector_tiles = array(
+		array(
+			'key'   => 'serres',
+			'media' => agnsee_image_url( 'sectors/serres' ),
+			'axis'  => array( 'fr' => 'Végétal · Contrôlé', 'en' => 'Crops · Controlled', 'es' => 'Vegetal · Controlado' ),
+			'title' => array( 'fr' => 'Serres et culture intérieure', 'en' => 'Greenhouses and indoor growing', 'es' => 'Invernaderos y cultivo interior' ),
+			'text'  => array( 'fr' => 'Irrigation, éclairage et programmes de culture pour les environnements contrôlés.', 'en' => 'Irrigation, lighting and growing programs for controlled environments.', 'es' => 'Riego, iluminación y programas de cultivo para ambientes controlados.' ),
+		),
+		array(
+			'key'   => 'champs',
+			'media' => agnsee_image_url( 'sectors/champs' ),
+			'axis'  => array( 'fr' => 'Végétal · Plein air', 'en' => 'Crops · Open air', 'es' => 'Vegetal · Aire libre' ),
+			'title' => array( 'fr' => 'Grandes cultures, maraîcher et vergers', 'en' => 'Field crops, vegetables and orchards', 'es' => 'Cultivos extensivos, hortalizas y huertos frutales' ),
+			'text'  => array( 'fr' => "Entretien des systèmes d'irrigation et intrants pour programmes de culture en plein champ.", 'en' => 'Irrigation system maintenance and inputs for open-field growing programs.', 'es' => 'Mantenimiento de sistemas de riego e insumos para programas de cultivo a campo abierto.' ),
+		),
+		array(
+			'key'   => 'elevage',
+			'media' => agnsee_image_url( 'sectors/elevage' ),
+			'axis'  => array( 'fr' => 'Animal · Contrôlé', 'en' => 'Livestock · Controlled', 'es' => 'Animal · Controlado' ),
+			'title' => array( 'fr' => 'Élevage en bâtiment', 'en' => 'Indoor livestock', 'es' => 'Ganadería en instalaciones' ),
+			'text'  => array( 'fr' => 'Assainissement des étables, poulaillers et porcheries avec un désinfectant homologué par Santé Canada.', 'en' => 'Sanitation of barns, poultry houses and hog barns with a Health Canada–registered disinfectant.', 'es' => 'Saneamiento de establos, galpones avícolas y porquerizas con un desinfectante registrado por Health Canada.' ),
+		),
+		array(
+			'key'   => 'paturage',
+			'media' => agnsee_image_url( 'sectors/paturage' ),
+			'axis'  => array( 'fr' => 'Animal · Plein air', 'en' => 'Livestock · Open air', 'es' => 'Animal · Aire libre' ),
+			'title' => array( 'fr' => 'Pâturage et élevage extérieur', 'en' => 'Pasture and outdoor livestock', 'es' => 'Pastoreo y ganadería al aire libre' ),
+			'text'  => array( 'fr' => "Un secteur en développement : notre portefeuille s'élargit. Parlez-nous de vos besoins.", 'en' => 'A sector in development: our portfolio is growing. Tell us what you need.', 'es' => 'Un sector en desarrollo: nuestro portafolio está creciendo. Cuéntenos sus necesidades.' ),
+		),
+	);
+	?>
+	<section class="section" id="nos-secteurs">
+		<div class="container">
+			<div class="sectors-head">
+				<div class="eyebrow">
+					<span class="lang-fr">NOS SECTEURS</span>
+					<span class="lang-en">OUR SECTORS</span>
+					<span class="lang-es">NUESTROS SECTORES</span>
+				</div>
+				<h2>
+					<span class="lang-fr">Du champ à l'étable, en passant par la serre</span>
+					<span class="lang-en">From field to barn, by way of the greenhouse</span>
+					<span class="lang-es">Del campo al establo, pasando por el invernadero</span>
+				</h2>
+				<p>
+					<span class="lang-fr">Des solutions techniques pour les productions végétales et animales, en environnement contrôlé comme en plein air.</span>
+					<span class="lang-en">Technical solutions for crop and livestock production, in controlled environments and in the open air.</span>
+					<span class="lang-es">Soluciones técnicas para la producción vegetal y animal, en ambiente controlado y al aire libre.</span>
+				</p>
+			</div>
+			<div class="sectors-grid">
+				<?php foreach ( $agnsee_sector_tiles as $agnsee_tile ) : ?>
+					<a class="sector-card" href="<?php echo esc_url( home_url( '/produits/?secteur=' . $agnsee_tile['key'] ) ); ?>">
+						<div class="sector-card__media">
+							<?php if ( ! empty( $agnsee_tile['video'] ) ) : ?>
+								<video data-no-optimize="1" src="<?php echo esc_url( $agnsee_tile['video'] ); ?>" muted autoplay loop playsinline preload="metadata"></video>
+							<?php elseif ( ! empty( $agnsee_tile['media'] ) ) : ?>
+								<img src="<?php echo esc_url( $agnsee_tile['media'] ); ?>" alt="" loading="lazy">
+							<?php endif; ?>
+						</div>
+						<div class="sector-card__body">
+							<div class="sector-card__axis">
+								<span class="lang-fr"><?php echo esc_html( $agnsee_tile['axis']['fr'] ); ?></span>
+								<span class="lang-en"><?php echo esc_html( $agnsee_tile['axis']['en'] ); ?></span>
+								<span class="lang-es"><?php echo esc_html( $agnsee_tile['axis']['es'] ); ?></span>
+							</div>
+							<h3 class="sector-card__title">
+								<span class="lang-fr"><?php echo esc_html( $agnsee_tile['title']['fr'] ); ?></span>
+								<span class="lang-en"><?php echo esc_html( $agnsee_tile['title']['en'] ); ?></span>
+								<span class="lang-es"><?php echo esc_html( $agnsee_tile['title']['es'] ); ?></span>
+							</h3>
+							<p class="sector-card__text">
+								<span class="lang-fr"><?php echo esc_html( $agnsee_tile['text']['fr'] ); ?></span>
+								<span class="lang-en"><?php echo esc_html( $agnsee_tile['text']['en'] ); ?></span>
+								<span class="lang-es"><?php echo esc_html( $agnsee_tile['text']['es'] ); ?></span>
+							</p>
+							<span class="sector-card__link">
+								<span class="lang-fr">Voir les solutions →</span><span class="lang-en">See solutions →</span><span class="lang-es">Ver soluciones →</span>
+							</span>
+						</div>
+					</a>
+				<?php endforeach; ?>
+			</div>
 		</div>
 	</section>
 
@@ -437,6 +525,7 @@ get_header();
 	.hort-brands__item-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(0,0,0,.35); margin-bottom: 12px; }
 	.hort-brands__item-name { font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: #0d0d0d; line-height: 1.15; margin-bottom: 14px; }
 	.hort-brands__item-desc { font-size: 15px; color: #555; line-height: 1.7; max-width: 440px; margin-bottom: 24px; }
+	.hort-brands__chips { margin: -8px 0 18px; }
 	.hort-brands__item-link { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: #111; text-decoration: none; border-bottom: 1.5px solid rgba(0,0,0,.18); padding-bottom: 2px; transition: border-color .2s, gap .2s; }
 	.hort-brands__item-link:hover { border-color: #111; gap: 10px; }
 	.hort-brands__m-video, .hort-brands__m-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,.1); margin-bottom: 8px; }
@@ -462,9 +551,9 @@ get_header();
 				<span class="lang-es">Productos destacados</span>
 			</h2>
 			<p class="hort-brands__sub">
-				<span class="lang-fr">Irrigation, désinfection et nutrition des cultures : des produits techniques pour l'agriculture, représentés en exclusivité au Canada.</span>
-				<span class="lang-en">Irrigation, disinfection and crop nutrition: technical products for agriculture, exclusively represented across Canada.</span>
-				<span class="lang-es">Riego, desinfección y nutrición de cultivos: productos técnicos para la agricultura, representados en exclusiva en Canadá.</span>
+				<span class="lang-fr">Des produits techniques sélectionnés pour l'agriculture moderne, représentés au Canada.</span>
+				<span class="lang-en">Selected technical products for modern agriculture, represented in Canada.</span>
+				<span class="lang-es">Productos técnicos seleccionados para la agricultura moderna, representados en Canadá.</span>
 			</p>
 		</div>
 
@@ -483,10 +572,11 @@ get_header();
 					<span class="hort-brands__item-tag"><span class="lang-fr">Traitement d'irrigation</span><span class="lang-en">Irrigation treatment</span><span class="lang-es">Tratamiento de irrigación</span></span>
 					<h3 class="hort-brands__item-name">SafeGrow AG</h3>
 					<p class="hort-brands__item-desc">
-						<span class="lang-fr">Nettoyant d'infrastructure d'irrigation à base de HOCl stabilisé.</span>
-						<span class="lang-en">Irrigation infrastructure cleaner based on stabilized HOCl.</span>
-						<span class="lang-es">Limpiador de infraestructura de irrigación a base de HOCl estabilizado.</span>
+						<span class="lang-fr">Nettoyant d'infrastructure d'irrigation à base de HOCl stabilisé, en serre comme au champ.</span>
+						<span class="lang-en">Stabilized HOCl-based irrigation infrastructure cleaner, for greenhouses and open fields.</span>
+						<span class="lang-es">Limpiador de infraestructura de riego a base de HOCl estabilizado, en invernadero y a campo abierto.</span>
 					</p>
+					<?php agnsee_sector_chips( array( 'serres', 'champs' ), 'hort-brands__chips' ); ?>
 					<a href="<?php echo esc_url( home_url( '/produits/safegrow-ag/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir SafeGrow AG</span><span class="lang-en">Discover SafeGrow AG</span><span class="lang-es">Descubrir SafeGrow AG</span>
 						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -497,10 +587,11 @@ get_header();
 					<span class="hort-brands__item-tag"><span class="lang-fr">Extrait d'algues</span><span class="lang-en">Seaweed extract</span><span class="lang-es">Extracto de algas</span></span>
 					<h3 class="hort-brands__item-name">Booster</h3>
 					<p class="hort-brands__item-desc">
-						<span class="lang-fr">Extrait d'algues marines pour programmes de culture.</span>
-						<span class="lang-en">Marine seaweed extract for growing programs.</span>
-						<span class="lang-es">Extracto de algas marinas para programas de cultivo.</span>
+						<span class="lang-fr">Extrait d'algues marines pour programmes de culture, en serre comme au champ.</span>
+						<span class="lang-en">Marine seaweed extract for growing programs, in the greenhouse and in the field.</span>
+						<span class="lang-es">Extracto de algas marinas para programas de cultivo, en invernadero y en campo.</span>
 					</p>
+					<?php agnsee_sector_chips( array( 'serres', 'champs' ), 'hort-brands__chips' ); ?>
 					<a href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Booster</span><span class="lang-en">Discover Booster</span><span class="lang-es">Descubrir Booster</span>
 						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -515,6 +606,7 @@ get_header();
 						<span class="lang-en">40% concentrated monosilicic acid.</span>
 						<span class="lang-es">Ácido monosilícico concentrado al 40 %.</span>
 					</p>
+					<?php agnsee_sector_chips( array( 'serres', 'champs' ), 'hort-brands__chips' ); ?>
 					<a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Grow Genius</span><span class="lang-en">Discover Grow Genius</span><span class="lang-es">Descubrir Grow Genius</span>
 						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -525,10 +617,11 @@ get_header();
 					<span class="hort-brands__item-tag"><span class="lang-fr">Homologué Santé Canada</span><span class="lang-en">Health Canada registered</span><span class="lang-es">Registrado ante Health Canada</span></span>
 					<h3 class="hort-brands__item-name">Safe Disinfectant</h3>
 					<p class="hort-brands__item-desc">
-						<span class="lang-fr">Acide hypochloreux à 0,046 %, pour établissements de santé, locaux alimentaires, usage institutionnel/industriel et bâtiments d'élevage.</span>
-						<span class="lang-en">0.046% hypochlorous acid, for healthcare facilities, food premises, institutional/industrial and barn use.</span>
-						<span class="lang-es">Ácido hipocloroso al 0,046 %, para instalaciones de salud, locales alimentarios, uso institucional/industrial y establos.</span>
+						<span class="lang-fr">Désinfectant homologué par Santé Canada, pour les bâtiments d'élevage, les locaux alimentaires et les établissements de santé.</span>
+						<span class="lang-en">Health Canada–registered disinfectant for livestock buildings, food premises and healthcare facilities.</span>
+						<span class="lang-es">Desinfectante registrado por Health Canada para instalaciones ganaderas, locales alimentarios y establecimientos de salud.</span>
 					</p>
+					<?php agnsee_sector_chips( array( 'elevage' ), 'hort-brands__chips' ); ?>
 					<a href="<?php echo esc_url( home_url( '/produits/safe-disinfectant/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Safe Disinfectant</span><span class="lang-en">Discover Safe Disinfectant</span><span class="lang-es">Descubrir Safe Disinfectant</span>
 						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -547,10 +640,11 @@ get_header();
 					<span class="hort-brands__item-tag"><span class="lang-fr">Traitement d'irrigation</span><span class="lang-en">Irrigation treatment</span><span class="lang-es">Tratamiento de irrigación</span></span>
 					<h3 class="hort-brands__m-name">SafeGrow AG</h3>
 					<p class="hort-brands__m-desc">
-						<span class="lang-fr">Nettoyant d'infrastructure d'irrigation à base de HOCl stabilisé.</span>
-						<span class="lang-en">Irrigation infrastructure cleaner based on stabilized HOCl.</span>
-						<span class="lang-es">Limpiador de infraestructura de irrigación a base de HOCl estabilizado.</span>
+						<span class="lang-fr">Nettoyant d'infrastructure d'irrigation à base de HOCl stabilisé, en serre comme au champ.</span>
+						<span class="lang-en">Stabilized HOCl-based irrigation infrastructure cleaner, for greenhouses and open fields.</span>
+						<span class="lang-es">Limpiador de infraestructura de riego a base de HOCl estabilizado, en invernadero y a campo abierto.</span>
 					</p>
+					<?php agnsee_sector_chips( array( 'serres', 'champs' ), 'hort-brands__chips' ); ?>
 					<a href="<?php echo esc_url( home_url( '/produits/safegrow-ag/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir SafeGrow AG</span><span class="lang-en">Discover SafeGrow AG</span><span class="lang-es">Descubrir SafeGrow AG</span> →
 					</a>
@@ -563,10 +657,11 @@ get_header();
 					<span class="hort-brands__item-tag"><span class="lang-fr">Extrait d'algues</span><span class="lang-en">Seaweed extract</span><span class="lang-es">Extracto de algas</span></span>
 					<h3 class="hort-brands__m-name">Booster</h3>
 					<p class="hort-brands__m-desc">
-						<span class="lang-fr">Extrait d'algues marines pour programmes de culture.</span>
-						<span class="lang-en">Marine seaweed extract for growing programs.</span>
-						<span class="lang-es">Extracto de algas marinas para programas de cultivo.</span>
+						<span class="lang-fr">Extrait d'algues marines pour programmes de culture, en serre comme au champ.</span>
+						<span class="lang-en">Marine seaweed extract for growing programs, in the greenhouse and in the field.</span>
+						<span class="lang-es">Extracto de algas marinas para programas de cultivo, en invernadero y en campo.</span>
 					</p>
+					<?php agnsee_sector_chips( array( 'serres', 'champs' ), 'hort-brands__chips' ); ?>
 					<a href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Booster</span><span class="lang-en">Discover Booster</span><span class="lang-es">Descubrir Booster</span> →
 					</a>
@@ -583,6 +678,7 @@ get_header();
 						<span class="lang-en">40% concentrated monosilicic acid.</span>
 						<span class="lang-es">Ácido monosilícico concentrado al 40 %.</span>
 					</p>
+					<?php agnsee_sector_chips( array( 'serres', 'champs' ), 'hort-brands__chips' ); ?>
 					<a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Grow Genius</span><span class="lang-en">Discover Grow Genius</span><span class="lang-es">Descubrir Grow Genius</span> →
 					</a>
@@ -595,10 +691,11 @@ get_header();
 					<span class="hort-brands__item-tag"><span class="lang-fr">Homologué Santé Canada</span><span class="lang-en">Health Canada registered</span><span class="lang-es">Registrado ante Health Canada</span></span>
 					<h3 class="hort-brands__m-name">Safe Disinfectant</h3>
 					<p class="hort-brands__m-desc">
-						<span class="lang-fr">Acide hypochloreux à 0,046 %, pour établissements de santé, locaux alimentaires, usage institutionnel/industriel et bâtiments d'élevage.</span>
-						<span class="lang-en">0.046% hypochlorous acid, for healthcare facilities, food premises, institutional/industrial and barn use.</span>
-						<span class="lang-es">Ácido hipocloroso al 0,046 %, para instalaciones de salud, locales alimentarios, uso institucional/industrial y establos.</span>
+						<span class="lang-fr">Désinfectant homologué par Santé Canada, pour les bâtiments d'élevage, les locaux alimentaires et les établissements de santé.</span>
+						<span class="lang-en">Health Canada–registered disinfectant for livestock buildings, food premises and healthcare facilities.</span>
+						<span class="lang-es">Desinfectante registrado por Health Canada para instalaciones ganaderas, locales alimentarios y establecimientos de salud.</span>
 					</p>
+					<?php agnsee_sector_chips( array( 'elevage' ), 'hort-brands__chips' ); ?>
 					<a href="<?php echo esc_url( home_url( '/produits/safe-disinfectant/' ) ); ?>" class="hort-brands__item-link">
 						<span class="lang-fr">Découvrir Safe Disinfectant</span><span class="lang-en">Discover Safe Disinfectant</span><span class="lang-es">Descubrir Safe Disinfectant</span> →
 					</a>
@@ -641,9 +738,9 @@ get_header();
 			<div style="max-width:560px;">
 				<div class="eyebrow"><span class="lang-fr">Outils gratuits</span><span class="lang-en">Free tools</span><span class="lang-es">Herramientas gratuitas</span></div>
 				<h2>
-					<span class="lang-fr">Des outils techniques pour vos projets</span>
-					<span class="lang-en">Technical tools for your projects</span>
-					<span class="lang-es">Herramientas técnicas para tus proyectos</span>
+					<span class="lang-fr">Des outils techniques pour vos projets, en serre, au champ et à la ferme</span>
+					<span class="lang-en">Technical tools for your projects, in the greenhouse, in the field and on the farm</span>
+					<span class="lang-es">Herramientas técnicas para sus proyectos, en el invernadero, en el campo y en la granja</span>
 				</h2>
 				<p>
 					<span class="lang-fr">SunTracker, calculateur SafeGrow AG et d'autres outils à venir, en accès libre.</span>
@@ -707,9 +804,9 @@ get_header();
 				<span class="lang-es">Hablemos de tu próximo proyecto</span>
 			</h2>
 			<p style="max-width:560px;margin:0 auto 1.5rem;">
-				<span class="lang-fr">Distributeurs et acheteurs institutionnels — contactez-nous pour une consultation technique ou une commande sur mesure.</span>
-				<span class="lang-en">Distributors and institutional buyers — reach out for a technical consultation or a custom order.</span>
-				<span class="lang-es">Distribuidores y compradores institucionales — contáctanos para una consulta técnica o un pedido a medida.</span>
+				<span class="lang-fr">Distributeurs, entreprises agricoles et acheteurs institutionnels : contactez-nous pour une consultation technique ou une commande sur mesure.</span>
+				<span class="lang-en">Distributors, farm businesses and institutional buyers: contact us for a technical consultation or a custom order.</span>
+				<span class="lang-es">Distribuidores, empresas agrícolas y compradores institucionales: contáctenos para una consulta técnica o un pedido a medida.</span>
 			</p>
 			<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 				<span class="lang-fr">Nous contacter</span><span class="lang-en">Contact us</span><span class="lang-es">Contáctanos</span>

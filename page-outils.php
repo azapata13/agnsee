@@ -11,6 +11,7 @@ get_header();
 $agnsee_tools = array(
 	array(
 		'slug' => 'suntracker',
+		'sectors' => array( 'serres' ),
 		'name' => 'SunTracker',
 		'fr'   => "Outil de suivi de l'ensoleillement pour planifier l'éclairage horticole.",
 		'en'   => 'Sunlight tracking tool to help plan horticultural lighting.',
@@ -18,6 +19,7 @@ $agnsee_tools = array(
 	),
 	array(
 		'slug' => 'calculateur-safegrow-ag',
+		'sectors' => array( 'serres', 'champs' ),
 		'name' => 'SafeGrow AG / HOCl',
 		'fr'   => 'Calculateur de dosage pour SafeGrow AG.',
 		'en'   => 'Dosing calculator for SafeGrow AG.',
@@ -28,6 +30,8 @@ $agnsee_tools = array(
 
 <main id="main-content" class="site-main">
 
+	<style>.tool-chips { margin: 0 0 0.6rem; }</style>
+
 	<section class="hero" style="padding-bottom:2rem;">
 		<div class="container">
 			<div class="eyebrow hero-eyebrow"><span class="lang-fr">Accès libre</span><span class="lang-en">Free access</span><span class="lang-es">Acceso libre</span></div>
@@ -37,9 +41,9 @@ $agnsee_tools = array(
 				<span class="lang-es">Herramientas técnicas gratuitas</span>
 			</h1>
 			<p class="hero-lead">
-				<span class="lang-fr">Des outils pratiques pour appuyer vos projets agricoles, mis à jour régulièrement.</span>
-				<span class="lang-en">Practical tools to support your agricultural projects, updated regularly.</span>
-				<span class="lang-es">Herramientas prácticas para apoyar tus proyectos agrícolas, actualizadas regularmente.</span>
+				<span class="lang-fr">Des outils pratiques pour appuyer vos projets agricoles (en serre, au champ et à la ferme), mis à jour régulièrement.</span>
+				<span class="lang-en">Practical tools to support your farm projects (in the greenhouse, in the field and on the farm), updated regularly.</span>
+				<span class="lang-es">Herramientas prácticas para apoyar sus proyectos agrícolas (en el invernadero, en el campo y en la granja), actualizadas regularmente.</span>
 			</p>
 		</div>
 	</section>
@@ -53,6 +57,7 @@ $agnsee_tools = array(
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
 						</div>
 						<h4><?php echo esc_html( $tool['name'] ); ?></h4>
+						<?php agnsee_sector_chips( $tool['sectors'], 'tool-chips' ); ?>
 						<p>
 							<span class="lang-fr"><?php echo esc_html( $tool['fr'] ); ?></span>
 							<span class="lang-en"><?php echo esc_html( $tool['en'] ); ?></span>
@@ -67,9 +72,9 @@ $agnsee_tools = array(
 					</div>
 					<h4><span class="lang-fr">À venir</span><span class="lang-en">Coming soon</span><span class="lang-es">Próximamente</span></h4>
 					<p>
-						<span class="lang-fr">D'autres outils techniques seront ajoutés à cette section.</span>
-						<span class="lang-en">More technical tools will be added to this section.</span>
-						<span class="lang-es">Más herramientas técnicas se añadirán a esta sección.</span>
+						<span class="lang-fr">D'autres outils, pour les grandes cultures et l'élevage, s'ajouteront à cette section.</span>
+						<span class="lang-en">More tools, for field crops and livestock, will be added to this section.</span>
+						<span class="lang-es">Se añadirán a esta sección más herramientas, para cultivos extensivos y ganadería.</span>
 					</p>
 				</div>
 			</div>

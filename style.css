@@ -3,7 +3,7 @@ Theme Name: Agnsee
 Theme URI: https://agnsee.ca
 Author: Agnsee
 Description: Thème custom pour agnsee.ca — agent manufacturier en horticulture protégée. Bilingue FR/EN, sans WooCommerce.
-Version: 1.0.0
+Version: 1.1.0
 Requires at least: 6.0
 Requires PHP: 7.4
 Text Domain: agnsee
@@ -671,7 +671,7 @@ p { color: var(--color-text-secondary); }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr repeat(3, 1fr);
+  grid-template-columns: 1.4fr repeat(4, 1fr);
   gap: var(--space-lg);
   padding-bottom: var(--space-lg);
   border-bottom: 1px solid var(--color-border-dark);
@@ -938,3 +938,44 @@ p { color: var(--color-text-secondary); }
 }
 
 .skip-link:focus { left: var(--space-sm); }
+
+/* ==========================================================================
+   SECTEURS — étiquettes, tuiles, filtre
+   ========================================================================== */
+.sector-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+.sector-chip { display: inline-block; padding: 0.25rem 0.7rem; border-radius: 100px; background: #e7f2ec; color: #1a7a4a; font-size: var(--fs-xs); font-weight: 600; line-height: 1.4; }
+
+.sectors-head { text-align: center; max-width: 640px; margin: 0 auto var(--space-lg); }
+.sectors-head .eyebrow { display: block; }
+.sectors-head p { color: var(--color-text-secondary); }
+.sectors-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
+@media (max-width: 992px) { .sectors-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .sectors-grid { grid-template-columns: 1fr; } }
+.sector-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: #fff; color: inherit; text-decoration: none; transition: box-shadow var(--transition), transform var(--transition); }
+.sector-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.sector-card__media { height: 200px; background: var(--color-bg-alt); overflow: hidden; }
+.sector-card__media img, .sector-card__media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sector-card__body { display: flex; flex-direction: column; flex: 1; padding: 1.25rem 1.25rem 1.4rem; }
+.sector-card__axis { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #1a7a4a; margin-bottom: 0.5rem; }
+.sector-card__title { font-size: var(--fs-lg); font-weight: 700; margin: 0 0 0.5rem; line-height: 1.25; }
+.sector-card__text { font-size: var(--fs-sm); color: var(--color-text-secondary); margin: 0 0 1rem; }
+.sector-card__link { margin-top: auto; font-size: var(--fs-sm); font-weight: 600; color: var(--color-text); }
+
+.sector-filter { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: var(--space-lg); }
+.sector-filter__label { font-size: var(--fs-sm); color: var(--color-text-secondary); margin-right: 0.25rem; }
+.sector-filter__btn { padding: 0.5rem 1.1rem; border: 1px solid var(--color-border); border-radius: 100px; background: #fff; color: var(--color-text); font: inherit; font-size: var(--fs-sm); font-weight: 500; cursor: pointer; transition: background var(--transition), color var(--transition), border-color var(--transition); }
+.sector-filter__btn:hover { border-color: var(--color-text); }
+.sector-filter__btn.is-active { background: var(--color-text); border-color: var(--color-text); color: #fff; }
+.sector-empty { max-width: 520px; margin: 0 auto; padding: var(--space-lg) var(--space-md); text-align: center; color: var(--color-text-inverse); }
+.sector-empty p { color: rgba(245, 245, 247, 0.8); margin-bottom: 1.25rem; }
+
+.sector-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.sector-tile { padding: 1.1rem; border-radius: var(--radius-md); min-height: 120px; display: flex; flex-direction: column; justify-content: flex-end; }
+.sector-tile__axis { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.75; margin-bottom: 0.3rem; }
+.sector-tile__name { font-weight: 700; line-height: 1.25; }
+.sector-tile--1 { background: #e7f2ec; color: #145c38; }
+.sector-tile--2 { background: #eef3e2; color: #46551f; }
+.sector-tile--3 { background: #f3ece2; color: #6b4a22; }
+.sector-tile--4 { background: #e6eef2; color: #2c4a5a; }
+.sector-tiles-caption { margin-top: 0.75rem; font-size: var(--fs-sm); color: var(--color-text-secondary); }
+

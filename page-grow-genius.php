@@ -13,7 +13,7 @@ get_header();
 	get_template_part( 'product-showcase', null, array(
 		'name'      => 'Grow Genius',
 		'eyebrow'   => array( 'fr' => 'Acide monosilicique', 'en' => 'Monosilicic acid', 'es' => 'Ácido monosilícico' ),
-		'lead'      => array( 'fr' => 'Acide monosilicique concentré à 40 %, destiné aux programmes de culture en horticulture protégée.', 'en' => '40% concentrated monosilicic acid, designed for growing programs in protected horticulture.', 'es' => 'Ácido monosilícico concentrado al 40 %, diseñado para programas de cultivo en horticultura protegida.' ),
+		'lead'      => array( 'fr' => 'Acide monosilicique concentré à 40 %, destiné aux programmes de culture, en serre comme au champ.', 'en' => '40% concentrated monosilicic acid for growing programs, in the greenhouse and in the field.', 'es' => 'Ácido monosilícico concentrado al 40 %, para programas de cultivo, en invernadero y en campo.' ),
 		'stats'     => array(
 			array( 'fr' => 'Acide monosilicique 40 %', 'en' => '40% monosilicic acid', 'es' => 'Ácido monosilícico 40 %' ),
 			array( 'fr' => 'Programmes de culture', 'en' => 'Growing programs', 'es' => 'Programas de cultivo' ),
@@ -23,7 +23,7 @@ get_header();
 			array( 'title' => array( 'fr' => 'Description', 'en' => 'Description', 'es' => 'Descripción' ), 'text' => array( 'fr' => 'Grow Genius est un concentré d\'acide monosilicique à 40 %, conçu pour s\'intégrer aux programmes de culture existants. Aucune allégation de santé ou de rendement des plantes n\'est associée à ce produit.', 'en' => 'Grow Genius is a 40% concentrated monosilicic acid, designed to integrate into existing growing programs. No plant health or performance claims are associated with this product.', 'es' => 'Grow Genius es un concentrado de ácido monosilícico al 40 %, diseñado para integrarse a los programas de cultivo existentes. No se asocia a este producto ninguna alegación de salud o rendimiento de las plantas.' ) ),
 			array( 'title' => array( 'fr' => 'Fiche technique', 'en' => 'Specifications', 'es' => 'Ficha técnica' ), 'list' => array(
 				array( 'fr' => 'Concentration : acide monosilicique 40 %', 'en' => 'Concentration: 40% monosilicic acid', 'es' => 'Concentración: ácido monosilícico al 40 %' ),
-				array( 'fr' => 'Usage : programmes de culture protégée', 'en' => 'Use: protected-crop growing programs', 'es' => 'Uso: programas de cultivo protegido' ),
+				array( 'fr' => 'Usage : Programmes de culture (serres et plein champ)', 'en' => 'Use: Growing programs (greenhouses and open field)', 'es' => 'Uso: Programas de cultivo (invernaderos y campo abierto)' ),
 				array( 'fr' => 'Format : sur demande', 'en' => 'Format: on request', 'es' => 'Formato: bajo pedido' ),
 			) ),
 			array( 'title' => array( 'fr' => 'Commander ou distribuer', 'en' => 'Order or distribute', 'es' => 'Pedir o distribuir' ), 'text' => array( 'fr' => 'Formats, prix distributeur et documentation (fiche technique, FDS) sur demande. Notre équipe vous répond rapidement.', 'en' => 'Formats, distributor pricing and documentation (spec sheet, SDS) on request. Our team will get back to you quickly.', 'es' => 'Formatos, precios para distribuidores y documentación (ficha técnica, HDS) bajo pedido. Nuestro equipo le responderá rápidamente.' ) ),
@@ -31,6 +31,7 @@ get_header();
 		'images'    => array(
 			array( 'src' => $agnsee_product_img ? $agnsee_product_img : 'https://agnsee.ca/wp-content/uploads/2026/11/GrowGeniusMonoSilicic-5L.webp', 'label' => array( 'fr' => 'Produit', 'en' => 'Product', 'es' => 'Producto' ) ),
 		),
+		'sectors'   => array( 'serres', 'champs' ),
 		'secondary' => array( 'href' => home_url( '/produits/' ), 'fr' => 'Tous les produits', 'en' => 'All products', 'es' => 'Todos los productos' ),
 	) );
 	?>

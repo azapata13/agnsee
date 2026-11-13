@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'AGNSEE_VERSION', '1.0.0' );
+define( 'AGNSEE_VERSION', '1.1.0' );
 define( 'AGNSEE_LANG_COOKIE', 'agnsee_lang' );
 
 /* ==========================================================================
@@ -334,3 +334,90 @@ function agnsee_purge_cache_on_deploy() {
 	}
 }
 add_action( 'init', 'agnsee_purge_cache_on_deploy' );
+
+/* ==========================================================================
+   10. SECTEURS (serres, champs, élevage, pâturage)
+   ========================================================================== */
+
+/**
+ * Secteurs couverts par Agnsee. 'chip' = étiquette courte (cartes, fiches),
+ * 'filter' = libellé du filtre de la page Produits.
+ */
+function agnsee_sectors() {
+	return array(
+		'serres'   => array(
+			'chip'   => array( 'fr' => 'Serres', 'en' => 'Greenhouses', 'es' => 'Invernaderos' ),
+			'filter' => array( 'fr' => 'Serres', 'en' => 'Greenhouses', 'es' => 'Invernaderos' ),
+		),
+		'champs'   => array(
+			'chip'   => array( 'fr' => 'Champs', 'en' => 'Fields', 'es' => 'Campo' ),
+			'filter' => array( 'fr' => 'Champs', 'en' => 'Fields', 'es' => 'Campo' ),
+		),
+		'elevage'  => array(
+			'chip'   => array( 'fr' => 'Élevage', 'en' => 'Livestock', 'es' => 'Ganadería' ),
+			'filter' => array( 'fr' => 'Élevage en bâtiment', 'en' => 'Indoor livestock', 'es' => 'Ganadería en instalaciones' ),
+		),
+		'paturage' => array(
+			'chip'   => array( 'fr' => 'Pâturage', 'en' => 'Pasture', 'es' => 'Pastoreo' ),
+			'filter' => array( 'fr' => 'Pâturage', 'en' => 'Pasture', 'es' => 'Pastoreo' ),
+		),
+	);
+}
+
+/**
+ * Affiche les étiquettes secteur (pastilles vertes) pour une liste de clés.
+ */
+function agnsee_sector_chips( $keys, $class = '' ) {
+	$sectors = agnsee_sectors();
+	echo '<ul class="sector-chips ' . esc_attr( $class ) . '">';
+	foreach ( (array) $keys as $key ) {
+		if ( empty( $sectors[ $key ] ) ) {
+			continue;
+		}
+		$chip = $sectors[ $key ]['chip'];
+		echo '<li class="sector-chip">';
+		echo '<span class="lang-fr">' . esc_html( $chip['fr'] ) . '</span>';
+		echo '<span class="lang-en">' . esc_html( $chip['en'] ) . '</span>';
+		echo '<span class="lang-es">' . esc_html( $chip['es'] ) . '</span>';
+		echo '</li>';
+	}
+	echo '</ul>';
+}
+
+/* ==========================================================================
+   11. SEO — TITRES ET MÉTA-DESCRIPTION
+   ========================================================================== */
+
+function agnsee_document_title( $title ) {
+	if ( is_front_page() ) {
+		return agnsee_t(
+			'Agnsee | Agent manufacturier en agriculture moderne : serres, grandes cultures, élevage',
+			"Agnsee | Manufacturer's agent for modern agriculture: greenhouses, field crops, livestock",
+			'Agnsee | Agente de fabricantes para la agricultura moderna: invernaderos, cultivos extensivos, ganadería'
+		);
+	}
+	return $title;
+}
+add_filter( 'pre_get_document_title', 'agnsee_document_title' );
+
+function agnsee_document_title_parts( $parts ) {
+	if ( is_page( 'safe-disinfectant' ) ) {
+		$parts['title'] = 'Safe Disinfectant';
+	}
+	return $parts;
+}
+add_filter( 'document_title_parts', 'agnsee_document_title_parts' );
+
+function agnsee_meta_description() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+	$description = agnsee_t(
+		"Agnsee représente des produits techniques pour les serres, les grandes cultures et l'élevage au Canada, et connecte les fabricants aux distributeurs et aux entreprises agricoles.",
+		'Agnsee represents technical products for greenhouses, field crops and livestock in Canada, connecting manufacturers with distributors and farm businesses.',
+		'Agnsee representa productos técnicos para invernaderos, cultivos extensivos y ganadería en Canadá, y conecta a los fabricantes con distribuidores y empresas agrícolas.'
+	);
+	echo '<meta name="description" content="' . esc_attr( $description ) . '">' . "\n";
+}
+add_action( 'wp_head', 'agnsee_meta_description', 1 );
+

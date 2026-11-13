@@ -17,9 +17,9 @@ get_header();
 				<span class="lang-es">Servicios</span>
 			</h1>
 			<p class="hero-lead">
-				<span class="lang-fr">Un accompagnement technique complet, du plan d'éclairage à la mise en service, pour les distributeurs et acheteurs institutionnels.</span>
-				<span class="lang-en">Full technical support, from lighting plans to commissioning, for distributors and institutional buyers.</span>
-				<span class="lang-es">Un acompañamiento técnico completo, desde el plan de iluminación hasta la puesta en marcha, para distribuidores y compradores institucionales.</span>
+				<span class="lang-fr">Un accompagnement technique complet, de l'analyse des besoins à la mise en service, pour les distributeurs, les entreprises agricoles et les acheteurs institutionnels.</span>
+				<span class="lang-en">Complete technical support, from needs assessment to commissioning, for distributors, farm businesses and institutional buyers.</span>
+				<span class="lang-es">Un acompañamiento técnico completo, desde el análisis de necesidades hasta la puesta en marcha, para distribuidores, empresas agrícolas y compradores institucionales.</span>
 			</p>
 		</div>
 	</section>
@@ -54,29 +54,26 @@ get_header();
 						<span class="lang-es">Soporte técnico</span>
 					</h3>
 					<p>
-						<span class="lang-fr">Un accompagnement direct sur le dosage et l'installation de nos produits, en collaboration avec les fabricants représentés.</span>
-						<span class="lang-en">Direct support on dosing and installation of our products, in collaboration with the manufacturers we represent.</span>
-						<span class="lang-es">Acompañamiento directo en la dosificación e instalación de nuestros productos, en colaboración con los fabricantes que representamos.</span>
+						<span class="lang-fr">Un accompagnement direct sur le dosage et l'installation de nos produits, en serre, au champ et en bâtiment d'élevage, en collaboration avec les fabricants représentés.</span>
+						<span class="lang-en">Hands-on support with dosing and installation of our products, in the greenhouse, in the field and in livestock buildings, in collaboration with the manufacturers we represent.</span>
+						<span class="lang-es">Acompañamiento directo en la dosificación e instalación de nuestros productos, en invernadero, en campo y en instalaciones ganaderas, en colaboración con los fabricantes representados.</span>
 					</p>
 				</div>
 
 				<div class="card">
 					<div class="card-icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
 					</div>
 					<h3>
-						<span class="lang-fr">Partenariats Gensea</span>
-						<span class="lang-en">Gensea partnerships</span>
-						<span class="lang-es">Alianzas con Gensea</span>
+						<span class="lang-fr">Accès au marché canadien pour fabricants</span>
+						<span class="lang-en">Canadian market access for manufacturers</span>
+						<span class="lang-es">Acceso al mercado canadiense para fabricantes</span>
 					</h3>
 					<p>
-						<span class="lang-fr">Des partenariats à venir avec Gensea pour élargir notre offre technique.</span>
-						<span class="lang-en">Upcoming partnerships with Gensea to expand our technical offering.</span>
-						<span class="lang-es">Próximas alianzas con Gensea para ampliar nuestra oferta técnica.</span>
+						<span class="lang-fr">Représentation, mise en marché et réseau de distribution, en productions végétales comme animales.</span>
+						<span class="lang-en">Representation, marketing and distribution network, for both crop and livestock production.</span>
+						<span class="lang-es">Representación, comercialización y red de distribución, tanto en producción vegetal como animal.</span>
 					</p>
-					<span class="badge" style="margin-top:0.75rem;display:inline-block;">
-						<span class="lang-fr">À venir</span><span class="lang-en">Coming soon</span><span class="lang-es">Próximamente</span>
-					</span>
 				</div>
 
 			</div>

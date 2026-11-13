@@ -13,25 +13,31 @@
 						<?php endif; ?>
 					</div>
 					<p style="max-width:280px;">
-						<span class="lang-fr">Agent manufacturier représentant des produits techniques pour l'agriculture — irrigation, désinfection, nutrition des cultures — au Canada et à l'international.</span>
-						<span class="lang-en">Manufacturer's representative for technical agricultural products — irrigation, disinfection, crop nutrition — in Canada and internationally.</span>
-						<span class="lang-es">Agente manufacturero que representa productos técnicos para la agricultura — riego, desinfección, nutrición de cultivos — en Canadá y a nivel internacional.</span>
+						<span class="lang-fr">Agnsee est un agent manufacturier de produits techniques au service de l'agriculture moderne partout au Canada : serres, grandes cultures et élevage.</span>
+						<span class="lang-en">Agnsee is a manufacturer's agent for technical products serving modern agriculture across Canada: greenhouses, field crops and livestock.</span>
+						<span class="lang-es">Agnsee es un agente de fabricantes de productos técnicos al servicio de la agricultura moderna en todo Canadá: invernaderos, cultivos extensivos y ganadería.</span>
 					</p>
 				</div>
 
 				<div class="footer-col">
 					<div class="footer-col-title"><span class="lang-fr">Produits</span><span class="lang-en">Products</span><span class="lang-es">Productos</span></div>
-					<?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-						<?php dynamic_sidebar( 'footer-2' ); ?>
-					<?php else : ?>
-						<ul>
-							<li><a href="<?php echo esc_url( home_url( '/produits/safegrow-ag/' ) ); ?>">SafeGrow AG</a></li>
-							<li><a href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>">Booster</a></li>
-							<li><a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>">Grow Genius</a></li>
-							<li><a href="<?php echo esc_url( home_url( '/produits/safe-disinfectant/' ) ); ?>">Safe Disinfectant</a></li>
-							<li><a href="<?php echo esc_url( home_url( '/produits/' ) ); ?>"><span class="lang-fr">Tous les produits</span><span class="lang-en">All products</span><span class="lang-es">Todos los productos</span></a></li>
-						</ul>
-					<?php endif; ?>
+					<ul>
+						<li><a href="<?php echo esc_url( home_url( '/produits/safegrow-ag/' ) ); ?>">SafeGrow AG</a></li>
+						<li><a href="<?php echo esc_url( home_url( '/produits/booster/' ) ); ?>">Booster</a></li>
+						<li><a href="<?php echo esc_url( home_url( '/produits/grow-genius/' ) ); ?>">Grow Genius</a></li>
+						<li><a href="<?php echo esc_url( home_url( '/produits/safe-disinfectant/' ) ); ?>">Safe Disinfectant</a></li>
+						<li><a href="<?php echo esc_url( home_url( '/produits/' ) ); ?>"><span class="lang-fr">Tous les produits</span><span class="lang-en">All products</span><span class="lang-es">Todos los productos</span></a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<div class="footer-col-title"><span class="lang-fr">Secteurs</span><span class="lang-en">Sectors</span><span class="lang-es">Sectores</span></div>
+					<ul>
+						<li><a href="<?php echo esc_url( home_url( '/produits/?secteur=serres' ) ); ?>"><span class="lang-fr">Serres et culture intérieure</span><span class="lang-en">Greenhouses and indoor growing</span><span class="lang-es">Invernaderos y cultivo interior</span></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/produits/?secteur=champs' ) ); ?>"><span class="lang-fr">Grandes cultures, maraîcher, vergers</span><span class="lang-en">Field crops, vegetables, orchards</span><span class="lang-es">Cultivos extensivos, hortalizas, huertos frutales</span></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/produits/?secteur=elevage' ) ); ?>"><span class="lang-fr">Élevage en bâtiment</span><span class="lang-en">Indoor livestock</span><span class="lang-es">Ganadería en instalaciones</span></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/produits/?secteur=paturage' ) ); ?>"><span class="lang-fr">Pâturage</span><span class="lang-en">Pasture</span><span class="lang-es">Pastoreo</span></a></li>
+					</ul>
 				</div>
 
 				<div class="footer-col">

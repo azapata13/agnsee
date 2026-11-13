@@ -9,37 +9,41 @@ $agnsee_products = array(
 	array(
 		'slug'    => 'safegrow-ag',
 		'segment' => 'irrigation',
+		'sectors' => array( 'serres', 'champs' ),
 		'name'    => 'SafeGrow AG',
-		'fr'      => "Nettoyant d'infrastructure d'irrigation à base de HOCl stabilisé — cible les dépôts minéraux et résidus nutritifs dans les lignes, goutteurs et réservoirs.",
-		'en'      => 'Irrigation infrastructure cleaner based on stabilized HOCl — targets mineral and nutrient buildup in lines, drippers and tanks.',
-		'es'      => 'Limpiador de infraestructura de irrigación a base de HOCl estabilizado — ataca depósitos minerales y residuos nutritivos en líneas, goteros y tanques.',
+		'fr'      => 'Nettoyant d\'infrastructure d\'irrigation à base de HOCl stabilisé. Il cible les dépôts minéraux et résidus nutritifs dans les lignes, goutteurs et réservoirs, en serre comme en irrigation goutte-à-goutte au champ.',
+		'en'      => 'Stabilized HOCl-based irrigation infrastructure cleaner. It targets mineral deposits and nutrient residues in lines, emitters and tanks, in greenhouses and in open-field drip irrigation.',
+		'es'      => 'Limpiador de infraestructura de riego a base de HOCl estabilizado. Actúa sobre depósitos minerales y residuos de nutrientes en líneas, goteros y tanques, en invernadero y en riego por goteo a campo abierto.',
 		'img'     => 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-AG-Group-Packaging-4L-1000L-August-72026.png',
 	),
 	array(
 		'slug'    => 'booster',
 		'segment' => 'programmes',
+		'sectors' => array( 'serres', 'champs' ),
 		'name'    => 'Booster',
-		'fr'      => "Extrait d'algues marines conçu pour s'intégrer aux programmes de culture en horticulture protégée.",
-		'en'      => 'Marine seaweed extract designed to integrate into growing programs in protected horticulture.',
-		'es'      => 'Extracto de algas marinas diseñado para integrarse a los programas de cultivo en horticultura protegida.',
+		'fr'      => 'Extrait d\'algues marines conçu pour s\'intégrer aux programmes de culture, en serre comme au champ.',
+		'en'      => 'Marine seaweed extract designed to fit into growing programs, in the greenhouse and in the field.',
+		'es'      => 'Extracto de algas marinas diseñado para integrarse en los programas de cultivo, en invernadero y en campo.',
 		'img'     => 'https://agnsee.ca/wp-content/uploads/2026/08/Safegrow-Booster-4Litre-July-2026-1.png',
 	),
 	array(
 		'slug'    => 'grow-genius',
 		'segment' => 'programmes',
+		'sectors' => array( 'serres', 'champs' ),
 		'name'    => 'Grow Genius',
-		'fr'      => "Concentré d'acide monosilicique à 40 %, conçu pour s'intégrer aux programmes de culture existants.",
-		'en'      => '40% concentrated monosilicic acid, designed to integrate into existing growing programs.',
-		'es'      => 'Concentrado de ácido monosilícico al 40 %, diseñado para integrarse a los programas de cultivo existentes.',
+		'fr'      => 'Concentré d\'acide monosilicique à 40 %, conçu pour s\'intégrer aux programmes de culture existants, en serre et au champ.',
+		'en'      => '40% monosilicic acid concentrate, designed to fit into existing growing programs, in the greenhouse and in the field.',
+		'es'      => 'Concentrado de ácido monosilícico al 40 %, diseñado para integrarse en los programas de cultivo existentes, en invernadero y en campo.',
 		'img'     => 'https://agnsee.ca/wp-content/uploads/2026/08/Grow-Genius-Mono-Silicic-Acid-40-—-500-ml_2.png',
 	),
 	array(
 		'slug'    => 'safe-disinfectant',
 		'segment' => 'disinfection',
+		'sectors' => array( 'elevage' ),
 		'name'    => 'Safe Disinfectant',
-		'fr'      => "Désinfectant à base d'acide hypochloreux (HOCl) à 0,046 %, homologué par Santé Canada pour établissements de santé, locaux alimentaires et bâtiments d'élevage.",
-		'en'      => 'Hypochlorous acid (HOCl) 0.046% disinfectant, Health Canada registered for healthcare facilities, food premises and barn settings.',
-		'es'      => 'Desinfectante a base de ácido hipocloroso (HOCl) al 0,046 %, registrado ante Health Canada para instalaciones de salud, locales alimentarios y establos.',
+		'fr'      => 'Désinfectant à base d\'acide hypochloreux (HOCl) à 0,046 %, homologué par Santé Canada pour les bâtiments d\'élevage, les locaux alimentaires et les établissements de santé.',
+		'en'      => '0.046% hypochlorous acid (HOCl) disinfectant, registered by Health Canada for livestock buildings, food premises and healthcare facilities.',
+		'es'      => 'Desinfectante a base de ácido hipocloroso (HOCl) al 0,046 %, registrado por Health Canada para instalaciones ganaderas, locales alimentarios y establecimientos de salud.',
 		'img'     => 'https://agnsee.ca/wp-content/uploads/2026/08/safe-disinfectantGOOD.png',
 	),
 );
@@ -62,10 +66,30 @@ $agnsee_segments = array(
 				<span class="lang-es">Nuestros productos</span>
 			</h1>
 			<p class="hero-lead">
-				<span class="lang-fr">Une sélection de produits techniques pour l'agriculture — irrigation, désinfection, nutrition des cultures — réservée aux distributeurs et acheteurs institutionnels.</span>
-				<span class="lang-en">A selection of technical agricultural products — irrigation, disinfection, crop nutrition — reserved for distributors and institutional buyers.</span>
-				<span class="lang-es">Una selección de productos técnicos para la agricultura — riego, desinfección, nutrición de cultivos — reservada a distribuidores y compradores institucionales.</span>
+				<span class="lang-fr">Une sélection de produits techniques pour l'agriculture moderne (serres, champs et bâtiments d'élevage), offerte aux distributeurs, aux entreprises agricoles et aux acheteurs institutionnels.</span>
+				<span class="lang-en">A selection of technical products for modern agriculture (greenhouses, fields and livestock buildings), available to distributors, farm businesses and institutional buyers.</span>
+				<span class="lang-es">Una selección de productos técnicos para la agricultura moderna (invernaderos, campos e instalaciones ganaderas), disponible para distribuidores, empresas agrícolas y compradores institucionales.</span>
 			</p>
+		</div>
+	</section>
+
+	<section class="section" style="padding:0 0 var(--space-md);">
+		<div class="container">
+			<div class="sector-filter" role="group">
+				<span class="sector-filter__label">
+					<span class="lang-fr">Filtrer par secteur :</span><span class="lang-en">Filter by sector:</span><span class="lang-es">Filtrar por sector:</span>
+				</span>
+				<button type="button" class="sector-filter__btn is-active" data-sector="all">
+					<span class="lang-fr">Tous</span><span class="lang-en">All</span><span class="lang-es">Todos</span>
+				</button>
+				<?php foreach ( agnsee_sectors() as $agnsee_key => $agnsee_sector ) : ?>
+					<button type="button" class="sector-filter__btn" data-sector="<?php echo esc_attr( $agnsee_key ); ?>">
+						<span class="lang-fr"><?php echo esc_html( $agnsee_sector['filter']['fr'] ); ?></span>
+						<span class="lang-en"><?php echo esc_html( $agnsee_sector['filter']['en'] ); ?></span>
+						<span class="lang-es"><?php echo esc_html( $agnsee_sector['filter']['es'] ); ?></span>
+					</button>
+				<?php endforeach; ?>
+			</div>
 		</div>
 	</section>
 
@@ -173,6 +197,7 @@ $agnsee_segments = array(
 		margin: 0 0 0.4rem;
 		line-height: 1.15;
 	}
+	.pcf-card-chips { justify-content: center; margin: 0 0 0.6rem; }
 	.pcf-card-divider {
 		width: 30px;
 		height: 2px;
@@ -260,7 +285,7 @@ $agnsee_segments = array(
 					<?php if ( ! $agnsee_product_img && ! empty( $product['img'] ) ) : ?>
 						<?php $agnsee_product_img = $product['img']; ?>
 					<?php endif; ?>
-					<div class="pcf-card" data-index="<?php echo (int) $agnsee_i; ?>" data-img="<?php echo esc_attr( $agnsee_product_img ); ?>">
+					<div class="pcf-card" data-index="<?php echo (int) $agnsee_i; ?>" data-sectors="<?php echo esc_attr( implode( ' ', $product['sectors'] ) ); ?>" data-img="<?php echo esc_attr( $agnsee_product_img ); ?>">
 						<?php if ( $agnsee_product_img ) : ?>
 							<img class="pcf-card-img" src="<?php echo esc_url( $agnsee_product_img ); ?>" alt="<?php echo esc_attr( $product['name'] ); ?>">
 						<?php endif; ?>
@@ -272,6 +297,7 @@ $agnsee_segments = array(
 								<span class="lang-es"><?php echo esc_html( $agnsee_segments[ $product['segment'] ]['es'] ); ?></span>
 							</div>
 							<h3 class="pcf-card-title"><?php echo esc_html( $product['name'] ); ?></h3>
+							<?php agnsee_sector_chips( $product['sectors'], 'pcf-card-chips' ); ?>
 							<div class="pcf-card-divider"></div>
 							<p class="pcf-card-desc">
 								<span class="lang-fr"><?php echo esc_html( $product['fr'] ); ?></span>
@@ -292,6 +318,17 @@ $agnsee_segments = array(
 			<button type="button" class="pcf-nav-btn pcf-next" id="pcf-next" aria-label="<?php esc_attr_e( 'Produit suivant' ); ?>">
 				<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
 			</button>
+
+			<div class="sector-empty" id="sector-empty" hidden>
+				<p>
+					<span class="lang-fr">Secteur en développement. Contactez-nous pour discuter de vos besoins.</span>
+					<span class="lang-en">Sector in development. Contact us to discuss your needs.</span>
+					<span class="lang-es">Sector en desarrollo. Contáctenos para hablar de sus necesidades.</span>
+				</p>
+				<a class="btn btn-light" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+					<span class="lang-fr">Nous contacter</span><span class="lang-en">Contact us</span><span class="lang-es">Contáctanos</span>
+				</a>
+			</div>
 
 			<div class="pcf-dots" id="pcf-dots">
 				<?php foreach ( $agnsee_products as $agnsee_i => $product ) : ?>
@@ -318,8 +355,13 @@ $agnsee_segments = array(
 	'use strict';
 
 	var stage   = document.getElementById( 'pcf-stage' );
-	var cards   = Array.prototype.slice.call( stage.querySelectorAll( '.pcf-card' ) );
-	var dots    = Array.prototype.slice.call( document.querySelectorAll( '#pcf-dots .pcf-dot' ) );
+	var allCards = Array.prototype.slice.call( stage.querySelectorAll( '.pcf-card' ) );
+	var allDots  = Array.prototype.slice.call( document.querySelectorAll( '#pcf-dots .pcf-dot' ) );
+	var cards   = allCards.slice();
+	var dots    = allDots.slice();
+	var emptyEl = document.getElementById( 'sector-empty' );
+	var dotsEl  = document.getElementById( 'pcf-dots' );
+	var filterBtns = Array.prototype.slice.call( document.querySelectorAll( '[data-sector]' ) );
 	var prevBtn = document.getElementById( 'pcf-prev' );
 	var nextBtn = document.getElementById( 'pcf-next' );
 	var bgImg   = document.getElementById( 'pcf-bg-img' );
@@ -366,15 +408,40 @@ $agnsee_segments = array(
 			dot.classList.toggle( 'is-active', idx === current );
 		} );
 
-		if ( bgImg ) {
+		if ( bgImg && cards[ current ] ) {
 			var newSrc = cards[ current ].getAttribute( 'data-img' );
 			if ( newSrc ) { bgImg.src = newSrc; }
 		}
 	}
 
 	function goTo( idx ) {
+		if ( ! total ) { return; }
 		current = ( idx + total ) % total;
 		render();
+	}
+
+	function applyFilter( sector ) {
+		cards = allCards.filter( function ( card ) {
+			return 'all' === sector || ( ' ' + card.getAttribute( 'data-sectors' ) + ' ' ).indexOf( ' ' + sector + ' ' ) !== -1;
+		} );
+		dots = allDots.filter( function ( dot, idx ) {
+			return cards.indexOf( allCards[ idx ] ) !== -1;
+		} );
+		allCards.forEach( function ( card ) { card.style.display = cards.indexOf( card ) !== -1 ? '' : 'none'; } );
+		allDots.forEach( function ( dot ) { dot.style.display = dots.indexOf( dot ) !== -1 ? '' : 'none'; } );
+		filterBtns.forEach( function ( btn ) {
+			btn.classList.toggle( 'is-active', btn.getAttribute( 'data-sector' ) === sector );
+		} );
+		total   = cards.length;
+		current = 0;
+		var empty = 0 === total;
+		stage.style.display  = empty ? 'none' : '';
+		dotsEl.style.display = empty ? 'none' : '';
+		prevBtn.style.display = total > 1 ? '' : 'none';
+		nextBtn.style.display = total > 1 ? '' : 'none';
+		emptyEl.hidden = ! empty;
+		render();
+		startAutoplay();
 	}
 
 	function next() { goTo( current + 1 ); }
@@ -392,19 +459,25 @@ $agnsee_segments = array(
 	prevBtn.addEventListener( 'click', function () { prev(); startAutoplay(); } );
 	nextBtn.addEventListener( 'click', function () { next(); startAutoplay(); } );
 
-	dots.forEach( function ( dot ) {
+	allDots.forEach( function ( dot ) {
 		dot.addEventListener( 'click', function () {
-			goTo( parseInt( dot.getAttribute( 'data-index' ), 10 ) );
+			goTo( cards.indexOf( allCards[ parseInt( dot.getAttribute( 'data-index' ), 10 ) ] ) );
 			startAutoplay();
 		} );
 	} );
 
-	cards.forEach( function ( card ) {
+	allCards.forEach( function ( card ) {
 		card.addEventListener( 'click', function () {
 			if ( ! card.classList.contains( 'is-center' ) ) {
-				goTo( parseInt( card.getAttribute( 'data-index' ), 10 ) );
+				goTo( cards.indexOf( card ) );
 				startAutoplay();
 			}
+		} );
+	} );
+
+	filterBtns.forEach( function ( btn ) {
+		btn.addEventListener( 'click', function () {
+			applyFilter( btn.getAttribute( 'data-sector' ) );
 		} );
 	} );
 
@@ -428,8 +501,9 @@ $agnsee_segments = array(
 		}
 	}, { passive: true } );
 
-	render();
-	startAutoplay();
+	var initialSector = ( window.location.search.match( /[?&]secteur=([a-z]+)/ ) || [] )[1];
+	var knownSector = filterBtns.some( function ( btn ) { return btn.getAttribute( 'data-sector' ) === initialSector; } );
+	applyFilter( knownSector ? initialSector : 'all' );
 } )();
 </script>
 

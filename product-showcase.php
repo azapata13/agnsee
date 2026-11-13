@@ -20,6 +20,7 @@ $ps        = wp_parse_args( $args, array(
 	'steps'     => array(),
 	'images'    => array(),
 	'secondary' => array(),
+	'sectors'   => array(),
 ) );
 $ps_id     = 'ps-' . sanitize_title( $ps['name'] );
 $ps_text   = static function ( $t, $k ) {
@@ -38,6 +39,10 @@ $ps_text   = static function ( $t, $k ) {
 			</div>
 
 			<h1 class="ps__title"><?php echo esc_html( $ps['name'] ); ?></h1>
+
+			<?php if ( $ps['sectors'] ) : ?>
+				<?php agnsee_sector_chips( $ps['sectors'], 'ps__sectors' ); ?>
+			<?php endif; ?>
 
 			<p class="ps__lead">
 				<span class="lang-fr"><?php echo esc_html( $ps_text( $ps['lead'], 'fr' ) ); ?></span>
@@ -138,6 +143,7 @@ $ps_text   = static function ( $t, $k ) {
 		@media (min-width: 900px) { .ps__grid { grid-template-columns: 1fr 1fr; gap: 3.5rem; } }
 		.ps__badge { display: inline-block; padding: 0.3rem 0.85rem; margin-bottom: var(--space-md); border: 1px solid var(--color-border); border-radius: 100px; font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-text-secondary); }
 		.ps__title { font-size: clamp(2.5rem, 5.5vw, 4rem); font-weight: 700; line-height: 0.95; letter-spacing: -0.03em; margin: 0; }
+		.ps__sectors { margin-top: var(--space-sm); }
 		.ps__lead { margin-top: var(--space-md); max-width: 36rem; font-size: var(--fs-lg); color: var(--color-text-secondary); }
 		.ps__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: var(--space-md) 0 0; padding: 0; list-style: none; }
 		.ps__chip { padding: 0.35rem 0.8rem; border-radius: 100px; background: var(--color-bg-alt); font-size: var(--fs-xs); font-weight: 500; color: var(--color-text); }

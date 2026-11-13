@@ -7,6 +7,17 @@ get_header();
 
 $agnsee_preselect = isset( $_GET['produit'] ) ? sanitize_text_field( wp_unslash( $_GET['produit'] ) ) : '';
 $agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Safe Disinfectant' );
+$agnsee_business_sectors = array(
+	array( 'fr' => 'Serres / culture intérieure', 'en' => 'Greenhouse / indoor growing', 'es' => 'Invernadero / cultivo interior' ),
+	array( 'fr' => 'Grandes cultures', 'en' => 'Field crops', 'es' => 'Cultivos extensivos' ),
+	array( 'fr' => 'Maraîcher / vergers', 'en' => 'Vegetables / orchards', 'es' => 'Hortalizas / huertos frutales' ),
+	array( 'fr' => 'Élevage en bâtiment', 'en' => 'Indoor livestock', 'es' => 'Ganadería en instalaciones' ),
+	array( 'fr' => 'Pâturage', 'en' => 'Pasture', 'es' => 'Pastoreo' ),
+	array( 'fr' => 'Distributeur', 'en' => 'Distributor', 'es' => 'Distribuidor' ),
+	array( 'fr' => 'Fabricant', 'en' => 'Manufacturer', 'es' => 'Fabricante' ),
+	array( 'fr' => 'Autre', 'en' => 'Other', 'es' => 'Otro' ),
+);
+$agnsee_product_other = array( 'fr' => 'Autre / je ne sais pas encore', 'en' => 'Other / not sure yet', 'es' => 'Otro / aún no lo sé' );
 ?>
 
 <main id="main-content" class="site-main">
@@ -20,9 +31,9 @@ $agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Safe Disinf
 				<span class="lang-es">Contacto</span>
 			</h1>
 			<p class="hero-lead">
-				<span class="lang-fr">Distributeurs et acheteurs institutionnels — écrivez-nous pour toute question technique ou demande de collaboration.</span>
-				<span class="lang-en">Distributors and institutional buyers — reach out for any technical question or partnership inquiry.</span>
-				<span class="lang-es">Distribuidores y compradores institucionales — escríbenos para cualquier pregunta técnica o solicitud de colaboración.</span>
+				<span class="lang-fr">Distributeurs, entreprises agricoles et acheteurs institutionnels : écrivez-nous pour toute question technique ou demande de collaboration.</span>
+				<span class="lang-en">Distributors, farm businesses and institutional buyers: write to us with any technical question or partnership request.</span>
+				<span class="lang-es">Distribuidores, empresas agrícolas y compradores institucionales: escríbanos para cualquier consulta técnica o solicitud de colaboración.</span>
 			</p>
 		</div>
 	</section>
@@ -39,7 +50,7 @@ $agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Safe Disinf
 						<input type="hidden" name="_template" value="table">
 						<input type="hidden" name="_captcha" value="false">
 						<div class="form-field" style="position:absolute;left:-9999px;" aria-hidden="true">
-							<label for="website">Website</label>
+							<label for="website"><span class="lang-fr">Site Web</span><span class="lang-en">Website</span><span class="lang-es">Sitio web</span></label>
 							<input type="text" id="website" name="_honey" tabindex="-1" autocomplete="off">
 						</div>
 
@@ -72,11 +83,27 @@ $agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Safe Disinf
 						</div>
 
 						<div class="form-field">
+							<label for="sector">
+								<span class="lang-fr">Secteur d'activité</span><span class="lang-en">Business sector</span><span class="lang-es">Sector de actividad</span>
+							</label>
+							<select id="sector" name="sector">
+								<option value="" data-fr="Sélectionner..." data-en="Select..." data-es="Seleccionar...">
+									<?php echo esc_html( agnsee_t( 'Sélectionner...', 'Select...', 'Seleccionar...' ) ); ?>
+								</option>
+								<?php foreach ( $agnsee_business_sectors as $agnsee_sector_option ) : ?>
+									<option value="<?php echo esc_attr( $agnsee_sector_option['fr'] ); ?>" data-fr="<?php echo esc_attr( $agnsee_sector_option['fr'] ); ?>" data-en="<?php echo esc_attr( $agnsee_sector_option['en'] ); ?>" data-es="<?php echo esc_attr( $agnsee_sector_option['es'] ); ?>">
+										<?php echo esc_html( agnsee_t( $agnsee_sector_option['fr'], $agnsee_sector_option['en'], $agnsee_sector_option['es'] ) ); ?>
+									</option>
+								<?php endforeach; ?>
+							</select>
+						</div>
+
+						<div class="form-field">
 							<label for="product">
 								<span class="lang-fr">Produit d'intérêt</span><span class="lang-en">Product of interest</span><span class="lang-es">Producto de interés</span>
 							</label>
 							<select id="product" name="product">
-								<option value="">
+								<option value="" data-fr="Sélectionner..." data-en="Select..." data-es="Seleccionar...">
 									<?php echo esc_html( agnsee_t( 'Sélectionner...', 'Select...', 'Seleccionar...' ) ); ?>
 								</option>
 								<?php foreach ( $agnsee_products as $product ) : ?>
@@ -84,6 +111,9 @@ $agnsee_products  = array( 'SafeGrow AG', 'Booster', 'Grow Genius', 'Safe Disinf
 										<?php echo esc_html( $product ); ?>
 									</option>
 								<?php endforeach; ?>
+								<option value="<?php echo esc_attr( $agnsee_product_other['fr'] ); ?>" data-fr="<?php echo esc_attr( $agnsee_product_other['fr'] ); ?>" data-en="<?php echo esc_attr( $agnsee_product_other['en'] ); ?>" data-es="<?php echo esc_attr( $agnsee_product_other['es'] ); ?>">
+									<?php echo esc_html( agnsee_t( $agnsee_product_other['fr'], $agnsee_product_other['en'], $agnsee_product_other['es'] ) ); ?>
+								</option>
 							</select>
 						</div>
 
