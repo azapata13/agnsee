@@ -17,9 +17,9 @@ get_header();
 				<span class="lang-es">Acerca de Agnsee</span>
 			</h1>
 			<p class="hero-lead">
-				<span class="lang-fr">Agnsee est une agence manufacturière canadienne dédiée à l'horticulture protégée.</span>
-				<span class="lang-en">Agnsee is a Canadian manufacturer's representative agency dedicated to protected horticulture.</span>
-				<span class="lang-es">Agnsee es una agencia manufacturera canadiense dedicada a la horticultura protegida.</span>
+				<span class="lang-fr">Agnsee est une agence manufacturière canadienne qui représente des produits techniques pour l'agriculture.</span>
+				<span class="lang-en">Agnsee is a Canadian manufacturer's representative agency for technical agricultural products.</span>
+				<span class="lang-es">Agnsee es una agencia manufacturera canadiense que representa productos técnicos para la agricultura.</span>
 			</p>
 		</div>
 	</section>
@@ -30,9 +30,9 @@ get_header();
 				<div>
 					<h2><span class="lang-fr">Notre mission</span><span class="lang-en">Our mission</span><span class="lang-es">Nuestra misión</span></h2>
 					<p>
-						<span class="lang-fr">Connecter les fabricants de produits techniques aux distributeurs et acheteurs institutionnels du secteur de l'horticulture protégée, en apportant une expertise technique locale et un support terrain fiable.</span>
-						<span class="lang-en">Connecting technical product manufacturers with distributors and institutional buyers in the protected horticulture sector, bringing local technical expertise and reliable field support.</span>
-						<span class="lang-es">Conectar a fabricantes de productos técnicos con distribuidores y compradores institucionales del sector de la horticultura protegida, aportando experiencia técnica local y soporte confiable en campo.</span>
+						<span class="lang-fr">Connecter les fabricants de produits techniques aux distributeurs et acheteurs institutionnels du secteur agricole, en apportant une expertise technique locale et un support terrain fiable.</span>
+						<span class="lang-en">Connecting technical product manufacturers with distributors and institutional buyers in the agricultural sector, bringing local technical expertise and reliable field support.</span>
+						<span class="lang-es">Conectar a fabricantes de productos técnicos con distribuidores y compradores institucionales del sector agrícola, aportando experiencia técnica local y soporte confiable en campo.</span>
 					</p>
 				</div>
 				<div>
