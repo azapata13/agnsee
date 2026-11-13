@@ -36,14 +36,14 @@ get_header();
 					<span class="lang-es">Agente manufacturero</span>
 				</div>
 				<h1 class="hero-video-title">
-					<span class="lang-fr">L'horticulture protégée, propulsée par la bonne technologie</span>
-					<span class="lang-en">Protected horticulture, powered by the right technology</span>
-					<span class="lang-es">Horticultura protegida, impulsada por la tecnología adecuada</span>
+					<span class="lang-fr">Des produits agricoles techniques pour votre réseau de distribution</span>
+					<span class="lang-en">Technical agricultural products for your distribution network</span>
+					<span class="lang-es">Productos agrícolas técnicos para su red de distribución</span>
 				</h1>
 				<p class="hero-video-lead">
-					<span class="lang-fr">Nous représentons des produits techniques sélectionnés pour les serres et la culture intérieure, et connectons les fabricants aux distributeurs et acheteurs institutionnels.</span>
-					<span class="lang-en">We represent carefully selected technical products for greenhouses and indoor growing, connecting manufacturers with distributors and institutional buyers.</span>
-					<span class="lang-es">Representamos productos técnicos cuidadosamente seleccionados para invernaderos y cultivo interior, conectando fabricantes con distribuidores y compradores institucionales.</span>
+					<span class="lang-fr">Nettoyants pour lignes d'irrigation, désinfectants et intrants de culture : nous représentons des fabricants spécialisés et les connectons aux distributeurs agricoles, au Canada et à l'international.</span>
+					<span class="lang-en">Irrigation line cleaners, disinfectants and crop inputs: we represent specialized manufacturers and connect them with agricultural distributors in Canada and internationally.</span>
+					<span class="lang-es">Limpiadores para líneas de riego, desinfectantes e insumos de cultivo: representamos a fabricantes especializados y los conectamos con distribuidores agrícolas en Canadá y a nivel internacional.</span>
 				</p>
 				<div class="hero-video-actions">
 					<a class="btn btn-hero-solid" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
@@ -64,14 +64,14 @@ get_header();
 					<span class="lang-es">Agente manufacturero</span>
 				</div>
 				<h1>
-					<span class="lang-fr">Agent manufacturier pour l'horticulture protégée</span>
-					<span class="lang-en">Manufacturer's representative for protected horticulture</span>
-					<span class="lang-es">Agente manufacturero para la horticultura protegida</span>
+					<span class="lang-fr">Agent manufacturier pour l'agriculture</span>
+					<span class="lang-en">Manufacturer's representative for agriculture</span>
+					<span class="lang-es">Agente manufacturero para la agricultura</span>
 				</h1>
 				<p class="hero-lead">
-					<span class="lang-fr">Nous représentons des produits techniques sélectionnés pour les serres et la culture intérieure, et connectons les fabricants aux distributeurs et acheteurs institutionnels.</span>
-					<span class="lang-en">We represent carefully selected technical products for greenhouses and indoor growing, connecting manufacturers with distributors and institutional buyers.</span>
-					<span class="lang-es">Representamos productos técnicos cuidadosamente seleccionados para invernaderos y cultivo interior, conectando fabricantes con distribuidores y compradores institucionales.</span>
+					<span class="lang-fr">Nettoyants pour lignes d'irrigation, désinfectants et intrants de culture : nous représentons des fabricants spécialisés et les connectons aux distributeurs agricoles, au Canada et à l'international.</span>
+					<span class="lang-en">Irrigation line cleaners, disinfectants and crop inputs: we represent specialized manufacturers and connect them with agricultural distributors in Canada and internationally.</span>
+					<span class="lang-es">Limpiadores para líneas de riego, desinfectantes e insumos de cultivo: representamos a fabricantes especializados y los conectamos con distribuidores agrícolas en Canadá y a nivel internacional.</span>
 				</p>
 				<div class="hero-actions">
 					<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/produits/' ) ); ?>">
@@ -382,9 +382,9 @@ get_header();
 						<span class="lang-es">Experiencia técnica</span>
 					</h3>
 					<p>
-						<span class="lang-fr">Une compréhension approfondie des enjeux de la culture protégée pour orienter chaque client vers la bonne solution.</span>
-						<span class="lang-en">A deep understanding of protected-crop challenges to guide every client toward the right solution.</span>
-						<span class="lang-es">Un conocimiento profundo de los desafíos del cultivo protegido para guiar a cada cliente hacia la solución adecuada.</span>
+						<span class="lang-fr">Une compréhension approfondie des enjeux agricoles — irrigation, hygiène, nutrition des cultures — pour orienter chaque client vers la bonne solution.</span>
+						<span class="lang-en">A deep understanding of agricultural challenges — irrigation, sanitation, crop nutrition — to guide every client toward the right solution.</span>
+						<span class="lang-es">Un conocimiento profundo de los desafíos agrícolas — riego, higiene, nutrición de cultivos — para guiar a cada cliente hacia la solución adecuada.</span>
 					</p>
 				</div>
 
@@ -462,9 +462,9 @@ get_header();
 				<span class="lang-es">Productos destacados</span>
 			</h2>
 			<p class="hort-brands__sub">
-				<span class="lang-fr">Des produits techniques sélectionnés pour l'horticulture protégée, représentés en exclusivité au Canada.</span>
-				<span class="lang-en">Technical products selected for protected horticulture, exclusively represented across Canada.</span>
-				<span class="lang-es">Productos técnicos seleccionados para la horticultura protegida, representados en exclusiva en Canadá.</span>
+				<span class="lang-fr">Irrigation, désinfection et nutrition des cultures : des produits techniques pour l'agriculture, représentés en exclusivité au Canada.</span>
+				<span class="lang-en">Irrigation, disinfection and crop nutrition: technical products for agriculture, exclusively represented across Canada.</span>
+				<span class="lang-es">Riego, desinfección y nutrición de cultivos: productos técnicos para la agricultura, representados en exclusiva en Canadá.</span>
 			</p>
 		</div>
 
