@@ -31,7 +31,7 @@
 	};
 
 	function currentLang() {
-		var lang = document.documentElement.getAttribute( 'data-lang' );
+		var lang = document.documentElement.getAttribute( 'data-lang' ) || document.body.getAttribute( 'data-lang' );
 		return messages.success[ lang ] ? lang : 'fr';
 	}
 
@@ -40,6 +40,16 @@
 		messageBox.className = isError ? 'form-error' : 'form-success';
 		messageBox.style.display = 'block';
 	}
+
+	// Libellés des listes déroulantes : suivre la langue choisie sans recharger la page.
+	function translateOptions() {
+		var lang = currentLang();
+		form.querySelectorAll( 'option[data-' + lang + ']' ).forEach( function ( option ) {
+			option.textContent = option.getAttribute( 'data-' + lang );
+		} );
+	}
+	translateOptions();
+	new MutationObserver( translateOptions ).observe( document.body, { attributes: true, attributeFilter: [ 'data-lang' ] } );
 
 	form.addEventListener( 'submit', function ( e ) {
 		e.preventDefault();
