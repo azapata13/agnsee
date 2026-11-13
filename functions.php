@@ -206,12 +206,12 @@ function agnsee_video_url( $relative, $extensions = array( 'mp4', 'webm' ) ) {
  * avec une valeur par défaut pointant vers le média déjà uploadé. Se met à
  * jour sans redéploiement, directement depuis wp-admin.
  */
-define( 'AGNSEE_HERO_VIDEO_DEFAULT', 'https://agnsee.ca/wp-content/uploads/2026/11/Video-Project.mp4' );
+define( 'AGNSEE_HERO_VIDEO_DEFAULT', 'https://agnsee.ca/wp-content/uploads/2026/11/Video-Project-1.mp4' );
 
 function agnsee_hero_video_url() {
 	$url = get_theme_mod( 'agnsee_hero_video_url', AGNSEE_HERO_VIDEO_DEFAULT );
-	// Ancienne valeur par défaut éventuellement enregistrée dans le Customizer.
-	if ( 'https://agnsee.ca/wp-content/uploads/2026/07/agnseehero.mp4' === $url ) {
+	// Anciennes valeurs par défaut éventuellement enregistrées dans le Customizer.
+	if ( in_array( $url, array( 'https://agnsee.ca/wp-content/uploads/2026/07/agnseehero.mp4', 'https://agnsee.ca/wp-content/uploads/2026/11/Video-Project.mp4' ), true ) ) {
 		$url = AGNSEE_HERO_VIDEO_DEFAULT;
 	}
 	return $url ? esc_url( $url ) : agnsee_video_url( 'hero' );
