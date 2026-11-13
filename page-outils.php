@@ -37,9 +37,9 @@ $agnsee_tools = array(
 				<span class="lang-es">Herramientas técnicas gratuitas</span>
 			</h1>
 			<p class="hero-lead">
-				<span class="lang-fr">Des outils pratiques pour appuyer vos projets d'horticulture protégée, mis à jour régulièrement.</span>
-				<span class="lang-en">Practical tools to support your protected-horticulture projects, updated regularly.</span>
-				<span class="lang-es">Herramientas prácticas para apoyar tus proyectos de horticultura protegida, actualizadas regularmente.</span>
+				<span class="lang-fr">Des outils pratiques pour appuyer vos projets agricoles, mis à jour régulièrement.</span>
+				<span class="lang-en">Practical tools to support your agricultural projects, updated regularly.</span>
+				<span class="lang-es">Herramientas prácticas para apoyar tus proyectos agrícolas, actualizadas regularmente.</span>
 			</p>
 		</div>
 	</section>
